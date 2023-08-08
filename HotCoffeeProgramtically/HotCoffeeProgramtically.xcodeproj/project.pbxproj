@@ -21,6 +21,8 @@
 		E89632E72A826A4E00F566CD /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89632E62A826A4E00F566CD /* ServiceError.swift */; };
 		E89632E92A826A5D00F566CD /* JsonHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89632E82A826A5D00F566CD /* JsonHelper.swift */; };
 		E89632EB2A826A8B00F566CD /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89632EA2A826A8B00F566CD /* OrderViewModel.swift */; };
+		E89632ED2A82745100F566CD /* AddCoffeeOrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89632EC2A82745100F566CD /* AddCoffeeOrderCell.swift */; };
+		E89632EF2A8276D500F566CD /* AddCoffeeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89632EE2A8276D500F566CD /* AddCoffeeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		E89632E62A826A4E00F566CD /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
 		E89632E82A826A5D00F566CD /* JsonHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonHelper.swift; sourceTree = "<group>"; };
 		E89632EA2A826A8B00F566CD /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
+		E89632EC2A82745100F566CD /* AddCoffeeOrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCoffeeOrderCell.swift; sourceTree = "<group>"; };
+		E89632EE2A8276D500F566CD /* AddCoffeeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCoffeeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				E89632EA2A826A8B00F566CD /* OrderViewModel.swift */,
+				E89632EE2A8276D500F566CD /* AddCoffeeViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -125,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				E89632D52A824C8100F566CD /* PresentCurrentCoffeeOrderTableViewCell.swift */,
+				E89632EC2A82745100F566CD /* AddCoffeeOrderCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -210,6 +216,8 @@
 			files = (
 				E89632DC2A82602000F566CD /* AddCoffeeViewController.swift in Sources */,
 				E89632BF2A8246A300F566CD /* ViewController.swift in Sources */,
+				E89632EF2A8276D500F566CD /* AddCoffeeViewModel.swift in Sources */,
+				E89632ED2A82745100F566CD /* AddCoffeeOrderCell.swift in Sources */,
 				E89632E12A82646000F566CD /* Order.swift in Sources */,
 				E89632E52A826A3500F566CD /* Resource.swift in Sources */,
 				E89632D62A824C8100F566CD /* PresentCurrentCoffeeOrderTableViewCell.swift in Sources */,

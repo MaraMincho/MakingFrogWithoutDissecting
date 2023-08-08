@@ -39,7 +39,6 @@ extension ViewController {
         let nextView = AddCoffeeViewController()
         nextView.loadViewIfNeeded()
         self.navigationController?.pushViewController(nextView, animated: true)
-        
     }
 }
 
