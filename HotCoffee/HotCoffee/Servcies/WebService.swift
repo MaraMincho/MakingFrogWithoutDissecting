@@ -38,8 +38,7 @@ class Webservice {
         
         URLSession.shared.dataTask(with: request) {data, response, error in
             guard let data = data, error == nil else {
-                completion(.failure(.domainError))
-                return
+                return completion(.failure(.domainError))
             }
             
             let result = try? JSONDecoder().decode(T.self, from: data)
