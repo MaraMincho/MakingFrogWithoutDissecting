@@ -31,15 +31,15 @@ class NewsCell: UITableViewCell {
         self.addSubview(newsHeadLineLabel)
         newsHeadLineLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 5).isActive = true
         newsHeadLineLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        newsHeadLineLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        newsHeadLineLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        newsHeadLineLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10).isActive = true
+        newsHeadLineLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10).isActive = true
         
         self.addSubview(newsContent)
         newsContent.topAnchor.constraint(equalTo: newsHeadLineLabel.bottomAnchor, constant: 10).isActive = true
         newsContent.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         newsContent.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -15).isActive = true
-        newsContent.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        newsContent.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        newsContent.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10).isActive = true
+        newsContent.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10).isActive = true
     }
     
     

@@ -9,10 +9,10 @@ import Foundation
 
 class NewsServices {
 
-    func getNews(completion: @escaping ([Article]?) -> ()) throws {
+    func getNews(completion: @escaping ([Article]?, Error?) -> ()){
         guard let url = URL(string: "https://newsapi.org/v2/top-headlines?country=kr&apiKey=94fcf972c2a64da7b2ee888a35af6718")
         else {
-            throw ServicesError.WrongURL
+            return completion(nil, ServicesError.WrongURL)
         }
         var urlRquest = URLRequest(url: url)
         urlRquest.timeoutInterval = .greatestFiniteMagnitude
@@ -20,20 +20,18 @@ class NewsServices {
         
         URLSession.shared.dataTask(with: url) { data, response, error in
             guard error == nil else {
-                completion(nil)
-                return
+                return completion(nil, ServicesError.cantDecodeJson)
             }
             
             guard let data = data else {
-                completion(nil)
+                completion(nil, ServicesError.WrongConnection)
                 fatalError(ServicesError.WrongConnection.localizedDescription)
             }
             
             guard let article = try? JSONDecoder().decode(ArticleList.self, from: data) else {
-                completion(nil)
-                fatalError(ServicesError.cantDecodeJson.localizedDescription)
+                return completion(nil, ServicesError.cantDecodeJson)
             }
-            return completion(article.articles)
+            return completion(article.articles, nil)
         }.resume()
         
     }

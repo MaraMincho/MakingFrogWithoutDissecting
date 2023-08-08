@@ -33,7 +33,10 @@ class ViewController: UITableViewController, RefreshData {
         DispatchQueue.main.async {
             self.newsTableView.newsTableView.reloadData()
         }
-        try? newsServices.getNews(completion: { articles in
+        newsServices.getNews(completion: { articles, error in
+            guard error == nil else {
+                return print(error!.localizedDescription)
+            }
             guard let articles = articles else {return}
             self.newsTableView.articlesVM = ArticlesViewModel(articles: articles)
             DispatchQueue.main.async {

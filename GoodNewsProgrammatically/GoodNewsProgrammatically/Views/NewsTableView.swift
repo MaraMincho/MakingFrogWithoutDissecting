@@ -37,9 +37,6 @@ class NewsTableView:UIView, UITableViewDelegate, UITableViewDataSource {
     
     
     private func setupUI() {
-        
-        
-        
         //setuptitle
         self.addSubview(titleLabel)
         self.titleLabel.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
