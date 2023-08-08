@@ -10,9 +10,13 @@
 		E89632BB2A8246A300F566CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89632BA2A8246A300F566CD /* AppDelegate.swift */; };
 		E89632BD2A8246A300F566CD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89632BC2A8246A300F566CD /* SceneDelegate.swift */; };
 		E89632BF2A8246A300F566CD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89632BE2A8246A300F566CD /* ViewController.swift */; };
-		E89632C22A8246A300F566CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E89632C02A8246A300F566CD /* Main.storyboard */; };
 		E89632C42A8246A400F566CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E89632C32A8246A400F566CD /* Assets.xcassets */; };
-		E89632C72A8246A400F566CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E89632C52A8246A400F566CD /* LaunchScreen.storyboard */; };
+		E89632D32A82499400F566CD /* PresentCurrentCoffeeOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89632D22A82499400F566CD /* PresentCurrentCoffeeOrder.swift */; };
+		E89632D62A824C8100F566CD /* PresentCurrentCoffeeOrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89632D52A824C8100F566CD /* PresentCurrentCoffeeOrderTableViewCell.swift */; };
+		E89632DC2A82602000F566CD /* AddCoffeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89632DB2A82601F00F566CD /* AddCoffeeViewController.swift */; };
+		E89632DE2A82605F00F566CD /* AddCoffeeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89632DD2A82605F00F566CD /* AddCoffeeView.swift */; };
+		E89632E12A82646000F566CD /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89632E02A82646000F566CD /* Order.swift */; };
+		E89632E32A8264D700F566CD /* CoffeeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89632E22A8264D700F566CD /* CoffeeService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,10 +24,14 @@
 		E89632BA2A8246A300F566CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E89632BC2A8246A300F566CD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E89632BE2A8246A300F566CD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E89632C12A8246A300F566CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E89632C32A8246A400F566CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E89632C62A8246A400F566CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E89632C82A8246A400F566CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E89632D22A82499400F566CD /* PresentCurrentCoffeeOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentCurrentCoffeeOrder.swift; sourceTree = "<group>"; };
+		E89632D52A824C8100F566CD /* PresentCurrentCoffeeOrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentCurrentCoffeeOrderTableViewCell.swift; sourceTree = "<group>"; };
+		E89632DB2A82601F00F566CD /* AddCoffeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCoffeeViewController.swift; sourceTree = "<group>"; };
+		E89632DD2A82605F00F566CD /* AddCoffeeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCoffeeView.swift; sourceTree = "<group>"; };
+		E89632E02A82646000F566CD /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		E89632E22A8264D700F566CD /* CoffeeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +64,67 @@
 		E89632B92A8246A300F566CD /* HotCoffeeProgramtically */ = {
 			isa = PBXGroup;
 			children = (
+				E89632D02A82492600F566CD /* Model */,
+				E89632D12A82492F00F566CD /* ViewModels */,
+				E89632DF2A82644100F566CD /* Services */,
+				E89632CF2A82492200F566CD /* Controllers */,
+				E89632CE2A82491D00F566CD /* Views */,
 				E89632BA2A8246A300F566CD /* AppDelegate.swift */,
 				E89632BC2A8246A300F566CD /* SceneDelegate.swift */,
-				E89632BE2A8246A300F566CD /* ViewController.swift */,
-				E89632C02A8246A300F566CD /* Main.storyboard */,
 				E89632C32A8246A400F566CD /* Assets.xcassets */,
-				E89632C52A8246A400F566CD /* LaunchScreen.storyboard */,
 				E89632C82A8246A400F566CD /* Info.plist */,
 			);
 			path = HotCoffeeProgramtically;
+			sourceTree = "<group>";
+		};
+		E89632CE2A82491D00F566CD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E89632D42A824C6800F566CD /* Cells */,
+				E89632D22A82499400F566CD /* PresentCurrentCoffeeOrder.swift */,
+				E89632DD2A82605F00F566CD /* AddCoffeeView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E89632CF2A82492200F566CD /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E89632BE2A8246A300F566CD /* ViewController.swift */,
+				E89632DB2A82601F00F566CD /* AddCoffeeViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		E89632D02A82492600F566CD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E89632E02A82646000F566CD /* Order.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E89632D12A82492F00F566CD /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		E89632D42A824C6800F566CD /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E89632D52A824C8100F566CD /* PresentCurrentCoffeeOrderTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		E89632DF2A82644100F566CD /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E89632E22A8264D700F566CD /* CoffeeService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,9 +185,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E89632C72A8246A400F566CD /* LaunchScreen.storyboard in Resources */,
 				E89632C42A8246A400F566CD /* Assets.xcassets in Resources */,
-				E89632C22A8246A300F566CD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,32 +196,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E89632DC2A82602000F566CD /* AddCoffeeViewController.swift in Sources */,
 				E89632BF2A8246A300F566CD /* ViewController.swift in Sources */,
+				E89632E12A82646000F566CD /* Order.swift in Sources */,
+				E89632D62A824C8100F566CD /* PresentCurrentCoffeeOrderTableViewCell.swift in Sources */,
+				E89632DE2A82605F00F566CD /* AddCoffeeView.swift in Sources */,
+				E89632E32A8264D700F566CD /* CoffeeService.swift in Sources */,
 				E89632BB2A8246A300F566CD /* AppDelegate.swift in Sources */,
+				E89632D32A82499400F566CD /* PresentCurrentCoffeeOrder.swift in Sources */,
 				E89632BD2A8246A300F566CD /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		E89632C02A8246A300F566CD /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E89632C12A8246A300F566CD /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		E89632C52A8246A400F566CD /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E89632C62A8246A400F566CD /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		E89632C92A8246A400F566CD /* Debug */ = {
@@ -291,7 +336,6 @@
 				INFOPLIST_FILE = HotCoffeeProgramtically/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -318,7 +362,6 @@
 				INFOPLIST_FILE = HotCoffeeProgramtically/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
