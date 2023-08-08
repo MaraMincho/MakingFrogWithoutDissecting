@@ -6,19 +6,19 @@
 //
 
 import Foundation
-enum CoffeeType:Codable {
-    case capuccino
-    case americano
-    case gogumaLatte
+enum CoffeeType:String, Codable, CaseIterable {
+    case cappucino
     case latte
-    case chickenLatte
-    case blackBeanLatte
+    case americano
+    case espresso
+    case cortado
+    case gogumaLatte
 }
 
-enum CoffeeSize:Codable {
-    case venti
+enum CoffeeSize:String, Codable, CaseIterable {
+    case small
     case medium
-    case tall
+    case large
 }
 
 struct Order: Codable {

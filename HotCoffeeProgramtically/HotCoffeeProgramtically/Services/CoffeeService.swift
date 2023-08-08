@@ -8,39 +8,32 @@
 import Foundation
 
 
-enum httpMethod: String {
-    case post = "POST"
-    case get = "GET"
-}
-
-struct Resource {
-    var url: URL
-    let data: Data? = nil
-    var httpMethod: httpMethod = .get
-}
-
-
-enum ServiceError: Error, LocalizedError {
-    case serviceError
-    case jsonDecodeError
-    
-    
-}
 
 
 class CoffeeService {
-    func load<T>(resource: Resource, completetion: @escaping (Result<T, Error>) -> Void) {
+    func load<T>(resource: Resource<T>, completeion: @escaping (Result<T, Error>) -> Void) {
         let request = getHTTPREqueset(resource: resource)
         
-        
+        print(T.self)
         URLSession.shared.dataTask(with: request) { data, response, error in
             guard error == nil else{
-                return completetion(.failure(<#T##Error#>))
+                return completeion(.failure(ServiceError.serviceError))
             }
-        }
+            
+            guard let data = data else {
+                return completeion(.failure(ServiceError.noData))
+            }
+            
+            guard let result = try? JsonHelper.jsonDecoder.decode(T.self, from: data) else {
+                print(String(data: data, encoding: .utf8)!)
+                return completeion(.failure(ServiceError.jsonDecodeError))
+            }
+            return completeion(.success(result))
+        }.resume()
     }
     
-    private func getHTTPREqueset(resource: Resource) -> URLRequest {
+    
+    private func getHTTPREqueset<T>(resource: Resource<T>) -> URLRequest {
         var request = URLRequest(url: resource.url)
         request.httpMethod = resource.httpMethod.rawValue
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")

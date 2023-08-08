@@ -20,6 +20,7 @@ class ViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        getOrder()
     }
 
 }
@@ -42,3 +43,30 @@ extension ViewController {
     }
 }
 
+
+extension ViewController {
+    func getOrder() {
+        guard let curURL = CoffeeOrderViewControllerConst.url else { return }
+        let resource = Resource<[Order]>(url: curURL)
+        
+        let service = CoffeeService()
+        service.load(resource: resource) { result in
+            switch result {
+            case .failure(let error) :
+                return print(error)
+            case .success(let orders) :
+                self.presentCurrentCoffeeOrderView.orderVM = OrdersViewModel(orders: orders)
+                DispatchQueue.main.async {
+                    self.presentCurrentCoffeeOrderView.tableView.reloadData()
+                }
+            }
+        }
+    }
+    
+}
+
+
+
+enum CoffeeOrderViewControllerConst {
+    static let url = URL(string: "https://warp-wiry-rugby.glitch.me/orders")
+}

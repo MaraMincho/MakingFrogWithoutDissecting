@@ -17,6 +17,10 @@
 		E89632DE2A82605F00F566CD /* AddCoffeeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89632DD2A82605F00F566CD /* AddCoffeeView.swift */; };
 		E89632E12A82646000F566CD /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89632E02A82646000F566CD /* Order.swift */; };
 		E89632E32A8264D700F566CD /* CoffeeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89632E22A8264D700F566CD /* CoffeeService.swift */; };
+		E89632E52A826A3500F566CD /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89632E42A826A3500F566CD /* Resource.swift */; };
+		E89632E72A826A4E00F566CD /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89632E62A826A4E00F566CD /* ServiceError.swift */; };
+		E89632E92A826A5D00F566CD /* JsonHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89632E82A826A5D00F566CD /* JsonHelper.swift */; };
+		E89632EB2A826A8B00F566CD /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89632EA2A826A8B00F566CD /* OrderViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +36,10 @@
 		E89632DD2A82605F00F566CD /* AddCoffeeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCoffeeView.swift; sourceTree = "<group>"; };
 		E89632E02A82646000F566CD /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		E89632E22A8264D700F566CD /* CoffeeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeService.swift; sourceTree = "<group>"; };
+		E89632E42A826A3500F566CD /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
+		E89632E62A826A4E00F566CD /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
+		E89632E82A826A5D00F566CD /* JsonHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonHelper.swift; sourceTree = "<group>"; };
+		E89632EA2A826A8B00F566CD /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				E89632E02A82646000F566CD /* Order.swift */,
+				E89632E82A826A5D00F566CD /* JsonHelper.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -107,6 +116,7 @@
 		E89632D12A82492F00F566CD /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				E89632EA2A826A8B00F566CD /* OrderViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -123,6 +133,8 @@
 			isa = PBXGroup;
 			children = (
 				E89632E22A8264D700F566CD /* CoffeeService.swift */,
+				E89632E42A826A3500F566CD /* Resource.swift */,
+				E89632E62A826A4E00F566CD /* ServiceError.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -199,10 +211,14 @@
 				E89632DC2A82602000F566CD /* AddCoffeeViewController.swift in Sources */,
 				E89632BF2A8246A300F566CD /* ViewController.swift in Sources */,
 				E89632E12A82646000F566CD /* Order.swift in Sources */,
+				E89632E52A826A3500F566CD /* Resource.swift in Sources */,
 				E89632D62A824C8100F566CD /* PresentCurrentCoffeeOrderTableViewCell.swift in Sources */,
 				E89632DE2A82605F00F566CD /* AddCoffeeView.swift in Sources */,
 				E89632E32A8264D700F566CD /* CoffeeService.swift in Sources */,
+				E89632E72A826A4E00F566CD /* ServiceError.swift in Sources */,
 				E89632BB2A8246A300F566CD /* AppDelegate.swift in Sources */,
+				E89632E92A826A5D00F566CD /* JsonHelper.swift in Sources */,
+				E89632EB2A826A8B00F566CD /* OrderViewModel.swift in Sources */,
 				E89632D32A82499400F566CD /* PresentCurrentCoffeeOrder.swift in Sources */,
 				E89632BD2A8246A300F566CD /* SceneDelegate.swift in Sources */,
 			);

@@ -10,7 +10,7 @@ import UIKit
 
 
 class PresentCurrentCoffeeOrder:UIView {
-    
+    var orderVM = OrdersViewModel(orders: [])
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -61,7 +61,8 @@ extension PresentCurrentCoffeeOrder:UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return orderVM.numOfOrders()
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -69,8 +70,8 @@ extension PresentCurrentCoffeeOrder:UITableViewDelegate, UITableViewDataSource {
         else {
             fatalError("셀을 설정 요류")
         }
-        cell.titleLabel.text = "하이"
-        cell.descriptionLabel.text = "설명"
+        cell.titleLabel.text = orderVM.currentOrder(index: indexPath.row).titleLabelText
+        cell.descriptionLabel.text = orderVM.currentOrder(index: indexPath.row).descriptionText
         return cell
     }
 }
