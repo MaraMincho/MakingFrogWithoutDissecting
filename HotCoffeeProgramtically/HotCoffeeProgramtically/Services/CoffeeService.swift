@@ -41,3 +41,7 @@ class CoffeeService {
         return request
     }
 }
+
+enum CoffeeServiceHelper {
+    static let cofffeeService = CoffeeService()
+}

@@ -11,7 +11,6 @@ import UIKit
 class OrdersTableViewController: UITableViewController, AddCoffeeOrderDelegate {
     
     // MARK: - DelegateFunction
-
     func addCoffeeOrderViewControllerDidSave(order: Order, controller: UIViewController) {
         controller.dismiss(animated: true, completion: nil)
         let orderVM = OrderViewModel(order:order)

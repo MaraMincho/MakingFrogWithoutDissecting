@@ -9,6 +9,10 @@ import Foundation
 
 struct OrdersViewModel {
     private var orders: [OrderViewModel] = []
+    mutating func appendOrder(order: Order) {
+        let orderVM = OrderViewModel(order: order)
+        orders.append(orderVM)
+    }
     func numOfOrders() -> Int {
         return orders.count
     }

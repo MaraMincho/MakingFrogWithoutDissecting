@@ -37,6 +37,7 @@ extension ViewController {
     
     @objc func presentNextView() {
         let nextView = AddCoffeeViewController()
+        nextView.presentOrderDelegate = self
         nextView.loadViewIfNeeded()
         self.navigationController?.pushViewController(nextView, animated: true)
     }
@@ -45,10 +46,10 @@ extension ViewController {
 
 extension ViewController {
     func getOrder() {
-        guard let curURL = CoffeeOrderViewControllerConst.url else { return }
+        guard let curURL = CoffeeOrderURL.url else { return }
         let resource = Resource<[Order]>(url: curURL)
         
-        let service = CoffeeService()
+        let service = CoffeeServiceHelper.cofffeeService
         service.load(resource: resource) { result in
             switch result {
             case .failure(let error) :
@@ -64,8 +65,34 @@ extension ViewController {
     
 }
 
+extension ViewController: AddOrderWhileNavigation {
+    func AddOrderInCurrentTableView(order: Order, currentViewController: UIViewController) {
+        currentViewController.navigationController?.popViewController(animated: true)
+        presentCurrentCoffeeOrderView.orderVM.appendOrder(order: order)
+        
+        // MARK: - case1 전체 리로딩
+//        DispatchQueue.main.async {
+//            self.getOrder()
+//            self.presentCurrentCoffeeOrderView.tableView.reloadData()
+//        }
+        // MARK: - case2 현재만 리로딩
+        print("여기 들어옴?")
+        presentCurrentCoffeeOrderView.tableView
+            .insertRows(at: [IndexPath.init(row: presentCurrentCoffeeOrderView.orderVM.numOfOrders() - 1, section: 0)],
+                        with: .automatic)
+        print("22?")
+        
+    }
+    
+}
+
+protocol AddOrderWhileNavigation {
+    func AddOrderInCurrentTableView(order:Order, currentViewController: UIViewController)
+}
 
 
-enum CoffeeOrderViewControllerConst {
+
+
+enum CoffeeOrderURL {
     static let url = URL(string: "https://warp-wiry-rugby.glitch.me/orders")
 }

@@ -9,8 +9,9 @@ import Foundation
 
 struct Resource<T: Codable> {
     var url: URL
-    let data: Data? = nil
+    var data: Data? = nil
     var httpMethod: httpMethod = .get
+    
 }
 
 

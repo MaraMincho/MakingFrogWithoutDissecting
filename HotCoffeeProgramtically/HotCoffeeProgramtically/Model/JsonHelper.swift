@@ -9,4 +9,5 @@ import Foundation
 
 enum JsonHelper {
     static let jsonDecoder = JSONDecoder()
+    static let jsonEncoder = JSONEncoder()
 }
