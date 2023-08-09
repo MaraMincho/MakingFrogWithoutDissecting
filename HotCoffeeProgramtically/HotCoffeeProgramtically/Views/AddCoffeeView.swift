@@ -22,6 +22,7 @@ class AddCoffeeView: UIView, UITextFieldDelegate {
         let tb = UITableView()
         tb.rowHeight = UITableView.automaticDimension
         tb.estimatedRowHeight = 100
+        
         tb.translatesAutoresizingMaskIntoConstraints = false
         return tb
     }()
@@ -133,15 +134,19 @@ extension AddCoffeeView:UITableViewDelegate, UITableViewDataSource {
         }
         cell.detailTextLabel?.text = addCoffeeVM.sizes[indexPath.row]
         cell.textLabel?.text = addCoffeeVM.types[indexPath.row]
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
-}
-
-
-extension AddCoffeeOrderCell {
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        curTableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
+    }
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        curTableView.cellForRow(at: indexPath)?.accessoryType = .none
+    }
 }
+

@@ -26,6 +26,7 @@ class PresentCurrentCoffeeOrder:UIView {
         let tableView = UITableView()
         tableView.estimatedRowHeight = 90
         tableView.rowHeight = UITableView.automaticDimension
+        tableView.allowsSelection = false
         
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
@@ -74,6 +75,7 @@ extension PresentCurrentCoffeeOrder:UITableViewDelegate, UITableViewDataSource {
         cell.descriptionLabel.text = orderVM.currentOrder(index: indexPath.row).descriptionText
         return cell
     }
+    
 }
 
 

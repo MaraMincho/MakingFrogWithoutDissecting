@@ -71,16 +71,16 @@ extension ViewController: AddOrderWhileNavigation {
         presentCurrentCoffeeOrderView.orderVM.appendOrder(order: order)
         
         // MARK: - case1 전체 리로딩
-//        DispatchQueue.main.async {
-//            self.getOrder()
-//            self.presentCurrentCoffeeOrderView.tableView.reloadData()
-//        }
+        DispatchQueue.main.async {
+            self.getOrder()
+            self.presentCurrentCoffeeOrderView.tableView.reloadData()
+        }
         // MARK: - case2 현재만 리로딩
-        print("여기 들어옴?")
-        presentCurrentCoffeeOrderView.tableView
-            .insertRows(at: [IndexPath.init(row: presentCurrentCoffeeOrderView.orderVM.numOfOrders() - 1, section: 0)],
-                        with: .automatic)
-        print("22?")
+//        print("여기 들어옴?")
+//        presentCurrentCoffeeOrderView.tableView
+//            .insertRows(at: [IndexPath.init(row: presentCurrentCoffeeOrderView.orderVM.numOfOrders() - 1, section: 0)],
+//                        with: .automatic)
+//        print("22?")
         
     }
     
