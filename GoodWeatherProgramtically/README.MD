@@ -1,5 +1,6 @@
 
-
+<br/><br/>
+![Simulator Screen Recording - iPhone 14 Pro - 2023-08-10 at 23 59 42](https://github.com/MaraMincho/MakingFrogWithoutDissecting/assets/103064352/100a59e6-44de-4120-bcf2-4ca03b694baf)
 
 
 
@@ -82,6 +83,9 @@ override func viewDidLoad() {
 }
 ```
 
+<br/> <br/>
+
+
 ```swift
 // MARK:- ---> UITextFieldDelegate
 
@@ -138,6 +142,8 @@ extension ViewController: UITextFieldDelegate {
 // MARK: UITextFieldDelegate <---
 ```
 
+<br/> <br/>
+
 ### UITableView Cell을 어떻게 삭제하지??
 
 delegate method가 따로 있음
@@ -155,7 +161,7 @@ func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.Ed
         }
     }
 ```
-
+<br/> <br/>
 ### 만약 TableView초기 조건( 특정 조건에 따라 이미 선택된 셀을 표시하고 싶음)
 
 tableView가 cell을 dequeue할 때 조건을 설정해주면 된다. 아래의 코드는 현재 `VM`에 어떤  `unitType` 이 있는지 확인한다. 만드는 셀의 `UnitType` 과 VM의 `UnitType` 이 같다면 `cell.accessoryType` 을 변경해 준다.
@@ -176,7 +182,7 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
     return cell
 }
 ```
-
+<br/> <br/>
 # ViewController와 View를 나누다 보니 생긴 문제들
 
 ### View안의 ViewModel을 수정하기
@@ -195,11 +201,14 @@ View의 ViewModel의 데이터 수정과 삭제를 ViewController가 수행한�
 
 ![image](https://blog.kakaocdn.net/dn/vSicX/btrc4EKdpfF/kJ75Yb18u3H0MP10cH8tOk/img.png)
 
+<br/> <br/>
 ### 초기화와 데이터 변동 이슈
 
 View의 데이터 설정하는 것을 ViewModel을 통해서 설정을 했다. ViewController의 로직 적인 부분이나, 만약 사용자에 의해 데이터가 수정 또는 삭제가 될 때 껄끄러운 상황이 발생한다. 예를 들어보자
 
-![image](https://github.com/MaraMincho/MakingFrogWithoutDissecting/assets/103064352/8f362bf8-3d32-4c89-97c2-d61a73811e85)
+
+![image](https://github.com/MaraMincho/MakingFrogWithoutDissecting/assets/103064352/f73e5a95-147e-40e9-b287-555320f6f057)
+
 
 내가 진행한 화면 전환 시나리오 이다. ViewController를 바꾸면서 화면 전환을 하게 된다면, 
 
@@ -224,9 +233,11 @@ View의 데이터 설정하는 것을 ViewModel을 통해서 설정을 했다. V
 
 보는 것과 같이 view안에 있는 viewModel을 통한 데이터 전달이 일어나는데, 이게 맞는건지 확신이 서지 않는다. 더욱이 struct라 View가 ViewModel을 소유하는 것 처럼 보여진다. 그러면 이 방법이 맞는지 의구심이 든다.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6824123b-5128-43e7-bb6a-df77147add0f/Untitled.png)
+![image](https://github.com/MaraMincho/MakingFrogWithoutDissecting/assets/103064352/8f362bf8-3d32-4c89-97c2-d61a73811e85)
 
 `ViewModel`을 `ViewController`가 소유 혹은, 참조를 하면서 데이터를 전달하는 방식으로 구현하는 것이 맞을까? 이 방법의 문제는 `View`와 직접연관있는 `ViewModel`을 무조건 `ViewController`를 통해 데이터를 참고해야 한다. 특히 View의 데이터 변화가 일어났을 때 `ViewController`가 `View`의 변화를 `VIewController`에서 해야할 경우가 더러 생긴다. 
+
+<br/>
 
 ### 왜 이렇게 스파게티가 되었을까?ㅡ
 
@@ -240,11 +251,14 @@ View의 데이터 설정하는 것을 ViewModel을 통해서 설정을 했다. V
 
 싱글톤 패턴을 사용하지 않으니, ViewModeld을 자주 갱신하고 이어줘야 했다.
 
+<br/>
+
 ### 하고싶은 말이 뭔데?
 
 - 오늘 공부하다 보니 `[View`가 항상 `ViewController`의 ViewModel을 참고하는 편이 좋아보인다](https://www.notion.so/8-10-3788dfb0e6b64d9596e2e016a0ff8abb?pvs=21). (깔끔해 보이기도 하고) 데이터 방향도 다음이 맞을 것 같다. protocol을 활용해 `ViewController`의 `자원을 공유`하는 것이 괜찮아 보인다.
 - 그래서, 어차피 모바일 앱인데, 싱글톤을 활용하는게 좋을까? 아니면 지금처럼 계속해서 `ViewController`를 통해서 `ViewModel`을 이어주는게 좋을까?
 
+<br/> <br/>
 # 기능 소개
 
 ### 1. 앱을 종료해도 유지되는 데이터 저장
@@ -268,7 +282,7 @@ View의 데이터 설정하는 것을 ViewModel을 통해서 설정을 했다. V
     }
     ```
     
-
+<br/> <br/>
 ### 2. 종료 했던 앱을 키면, 현재 시간에 맞춰 날씨 데이터를 서버를 통해 업데이트 한다.
 
 - 저장한 날씨 데이터가 있는지 확인한다. 만약 데이터가 있다면 현재 ViewModel의 MetaData를 추가한다.
@@ -362,7 +376,7 @@ View의 데이터 설정하는 것을 ViewModel을 통해서 설정을 했다. V
     }
     ```
     
-
+<br/> <br/>
 ### 3. 목표로 하는 City 추가
 
 - 목표로 하는 City 추가시 viweModel을 업데이트 한다.
@@ -385,7 +399,7 @@ View의 데이터 설정하는 것을 ViewModel을 통해서 설정을 했다. V
     }
     ```
     
-
+<br/> <br/>
 ### 4. appDelegate 코드
 
 ```swift
@@ -401,6 +415,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
     }
 ```
 
+<br/> <br/>
 ### 5. ConstUnit
 
 - constUnit을 통해서 상수값을 안전하게 접근할 수 있었습니다.
