@@ -191,9 +191,9 @@ View의 ViewModel의 데이터 수정과 삭제를 ViewController가 수행한�
 
 어제 자료를 봤는데, ViewController에서 View는 lazy하다고 하더라 그래서 ViewController 안에 있는 View를 활성화 시키기 위해서 `_ = UIViewController.view`, `nextVC.loadViewIfNeeded()` 를 통해 View를 깨운다고 하더라. `viewDidLoad()`
 
-![image]https://blog.kakaocdn.net/dn/s8n78/btrcXjU50QU/F9QpsnVRKHCOFayLsEPDR0/img.png
+![image](https://blog.kakaocdn.net/dn/s8n78/btrcXjU50QU/F9QpsnVRKHCOFayLsEPDR0/img.png)
 
-![image]https://blog.kakaocdn.net/dn/vSicX/btrc4EKdpfF/kJ75Yb18u3H0MP10cH8tOk/img.png
+![image](https://blog.kakaocdn.net/dn/vSicX/btrc4EKdpfF/kJ75Yb18u3H0MP10cH8tOk/img.png)
 
 ### 초기화와 데이터 변동 이슈
 
@@ -228,7 +228,7 @@ View의 데이터 설정하는 것을 ViewModel을 통해서 설정을 했다. V
 
 `ViewModel`을 `ViewController`가 소유 혹은, 참조를 하면서 데이터를 전달하는 방식으로 구현하는 것이 맞을까? 이 방법의 문제는 `View`와 직접연관있는 `ViewModel`을 무조건 `ViewController`를 통해 데이터를 참고해야 한다. 특히 View의 데이터 변화가 일어났을 때 `ViewController`가 `View`의 변화를 `VIewController`에서 해야할 경우가 더러 생긴다. 
 
-### 왜 이렇게 스파게티가 되었을까?
+### 왜 이렇게 스파게티가 되었을까?ㅡ
 
 모든 문제는 사실 **소유에서** 파생되었다. **소유**가 아닌 **참조로** 문제를 해결하면 되었지만 **“`싱글톤 패턴`을 이용하고 싶지 않아서 였다.”** 싱글톤 패턴은 대표적인 안티 패턴이다. 
 
