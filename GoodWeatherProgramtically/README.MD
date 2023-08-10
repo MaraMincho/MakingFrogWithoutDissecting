@@ -199,7 +199,7 @@ View의 ViewModel의 데이터 수정과 삭제를 ViewController가 수행한�
 
 View의 데이터 설정하는 것을 ViewModel을 통해서 설정을 했다. ViewController의 로직 적인 부분이나, 만약 사용자에 의해 데이터가 수정 또는 삭제가 될 때 껄끄러운 상황이 발생한다. 예를 들어보자
 
-![image](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4d706b10-eca0-4780-88e1-8fb2500a1516/Untitled.png)
+![image](https://github.com/MaraMincho/MakingFrogWithoutDissecting/assets/103064352/8f362bf8-3d32-4c89-97c2-d61a73811e85)
 
 내가 진행한 화면 전환 시나리오 이다. ViewController를 바꾸면서 화면 전환을 하게 된다면, 
 
