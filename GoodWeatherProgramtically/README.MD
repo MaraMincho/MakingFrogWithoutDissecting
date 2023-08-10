@@ -183,7 +183,7 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
 
 View의 ViewModel의 데이터 수정과 삭제를 ViewController가 수행한다. 이렇게 됨으로서 자연스레 데이터 흐름이 `ViewController` → `View` → `ViewModel` 로 이루어 지는 코드를 작성하였다. 사실 이는 ViewController의 문제인데, View가 갖고 있는 ViewModel을 ViewController에서 수정하려고 하기 때문이다. 
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3253c56a-003a-4cca-b971-b1c3a5fb0066/Untitled.png)
+![image](https://github.com/MaraMincho/MakingFrogWithoutDissecting/assets/103064352/9c49f426-7f89-4a85-b3ce-88cb37a5963c)
 
 ### ViewController를 부를 때 View가 lazy하게 업데이트 되는 이슈
 
@@ -191,15 +191,15 @@ View의 ViewModel의 데이터 수정과 삭제를 ViewController가 수행한�
 
 어제 자료를 봤는데, ViewController에서 View는 lazy하다고 하더라 그래서 ViewController 안에 있는 View를 활성화 시키기 위해서 `_ = UIViewController.view`, `nextVC.loadViewIfNeeded()` 를 통해 View를 깨운다고 하더라. `viewDidLoad()`
 
-!https://blog.kakaocdn.net/dn/s8n78/btrcXjU50QU/F9QpsnVRKHCOFayLsEPDR0/img.png
+![image]https://blog.kakaocdn.net/dn/s8n78/btrcXjU50QU/F9QpsnVRKHCOFayLsEPDR0/img.png
 
-!https://blog.kakaocdn.net/dn/vSicX/btrc4EKdpfF/kJ75Yb18u3H0MP10cH8tOk/img.png
+![image]https://blog.kakaocdn.net/dn/vSicX/btrc4EKdpfF/kJ75Yb18u3H0MP10cH8tOk/img.png
 
 ### 초기화와 데이터 변동 이슈
 
 View의 데이터 설정하는 것을 ViewModel을 통해서 설정을 했다. ViewController의 로직 적인 부분이나, 만약 사용자에 의해 데이터가 수정 또는 삭제가 될 때 껄끄러운 상황이 발생한다. 예를 들어보자
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4d706b10-eca0-4780-88e1-8fb2500a1516/Untitled.png)
+![image](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4d706b10-eca0-4780-88e1-8fb2500a1516/Untitled.png)
 
 내가 진행한 화면 전환 시나리오 이다. ViewController를 바꾸면서 화면 전환을 하게 된다면, 
 
