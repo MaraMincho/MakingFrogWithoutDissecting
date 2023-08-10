@@ -8,7 +8,9 @@
 import UIKit
 
 class WeatherStatusView: UIView {
-    var weatherListVM = WeatherListViewModel()
+    var weatherListVM: WeatherListViewModel!
+    var userTemperatureViewModel = UserTemperatureViewModel()
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -27,7 +29,8 @@ class WeatherStatusView: UIView {
     
     let tableView: UITableView = {
         let tableView = UITableView()
-        tableView.allowsSelection = false
+        tableView.allowsSelection = true
+        
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
@@ -52,7 +55,7 @@ extension WeatherStatusView:UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return weatherListVM.numOfCitys()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -60,8 +63,8 @@ extension WeatherStatusView:UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
         
-        let tempVM = WeatherViewModel(weather: WeatherResponse(name: "멜버른", main: Weather(temp: 20.0, humidity: 10.0)))
-//        let tmepVM = weatherListVM.weatherViewModel(index: indexPath.row)
+//        let tempVM = WeatherViewModel(weather: WeatherResponse(name: "멜버른", main: Weather(temp: 20.0, humidity: 10.0)))
+        let tempVM = weatherListVM.weatherViewModel(index: indexPath.row)
         cell.setupLabelText(weatherVM: tempVM)
         return cell
     }
@@ -69,5 +72,16 @@ extension WeatherStatusView:UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 120
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            self.weatherListVM.deleteViewModel(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .left)
+        }
+    }
+}
+
+
+extension WeatherStatusView {
     
 }

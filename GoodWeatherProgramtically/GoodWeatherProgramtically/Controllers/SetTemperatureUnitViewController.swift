@@ -15,6 +15,7 @@ class SetTemperatureUnitViewController: UIViewController, SetTemperatureDelegate
     override func loadView() {
         super.loadView()
         let view = SetTemperatureUnitView()
+        view.setTemperatrueDelegate = self
         
         self.setTempertureUnitView = view
         self.view = setTempertureUnitView

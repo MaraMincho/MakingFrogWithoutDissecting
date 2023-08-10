@@ -52,10 +52,14 @@ class AddCityView: UIView {
     }()
 }
 
-extension AddCityView {
+extension AddCityView:UITextFieldDelegate {
     
     @objc func dismissScreen() {
         addCityViewDelegate.dismissAddCityView()
+    }
+    
+    func setupTextFieldDelegate() {
+        inputTextField.delegate = self
     }
     
     func setupConstraints() {

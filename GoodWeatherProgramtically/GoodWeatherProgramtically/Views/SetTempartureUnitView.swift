@@ -10,6 +10,8 @@ import UIKit
 class SetTemperatureUnitView: UIView {
     
     var setTemperatrueDelegate: SetTemperatureDelegate?
+    var unitViewModel = UnitViewModel()
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -66,7 +68,7 @@ extension SetTemperatureUnitView:UITableViewDataSource, UITableViewDelegate {
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return unitViewModel.numOfUnit()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -74,12 +76,13 @@ extension SetTemperatureUnitView:UITableViewDataSource, UITableViewDelegate {
         else {
             fatalError("it isnt work")
         }
-        cell.textLabel?.text = "섭씨"
+        cell.textLabel?.text = unitViewModel.getUnitRawValue(index: indexPath.row)
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
+        setTemperatrueDelegate?.dismissSetTemperatureScreen()
     }
     
     func tableView(_ tableView: UITableView, willDeselectRowAt indexPath: IndexPath) -> IndexPath? {

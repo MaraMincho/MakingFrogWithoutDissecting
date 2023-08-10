@@ -19,9 +19,13 @@
 		E8F37CD32A84771000EECB93 /* WeatherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F37CD22A84771000EECB93 /* WeatherResponse.swift */; };
 		E8F37CD52A84774200EECB93 /* WeatherListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F37CD42A84774200EECB93 /* WeatherListViewModel.swift */; };
 		E8F37CD72A847EF000EECB93 /* AddCityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F37CD62A847EF000EECB93 /* AddCityView.swift */; };
-		E8F37CD92A84869900EECB93 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F37CD82A84869900EECB93 /* Unit.swift */; };
+		E8F37CD92A84869900EECB93 /* TemperatureUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F37CD82A84869900EECB93 /* TemperatureUnit.swift */; };
 		E8F37CDB2A84870000EECB93 /* SetTempartureUnitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F37CDA2A84870000EECB93 /* SetTempartureUnitView.swift */; };
 		E8F37CDD2A849BE700EECB93 /* SetTemperatureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F37CDC2A849BE700EECB93 /* SetTemperatureTableViewCell.swift */; };
+		E8F37CDF2A84A09600EECB93 /* UnitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F37CDE2A84A09600EECB93 /* UnitViewModel.swift */; };
+		E8F37CE12A84A25D00EECB93 /* WeatherServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F37CE02A84A25D00EECB93 /* WeatherServices.swift */; };
+		E8F37CE42A84AAD400EECB93 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F37CE32A84AAD400EECB93 /* Unit.swift */; };
+		E8F37CE62A84AE0000EECB93 /* UserTemperatureSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F37CE52A84AE0000EECB93 /* UserTemperatureSettingViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,9 +43,13 @@
 		E8F37CD22A84771000EECB93 /* WeatherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResponse.swift; sourceTree = "<group>"; };
 		E8F37CD42A84774200EECB93 /* WeatherListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherListViewModel.swift; sourceTree = "<group>"; };
 		E8F37CD62A847EF000EECB93 /* AddCityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCityView.swift; sourceTree = "<group>"; };
-		E8F37CD82A84869900EECB93 /* Unit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
+		E8F37CD82A84869900EECB93 /* TemperatureUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureUnit.swift; sourceTree = "<group>"; };
 		E8F37CDA2A84870000EECB93 /* SetTempartureUnitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTempartureUnitView.swift; sourceTree = "<group>"; };
 		E8F37CDC2A849BE700EECB93 /* SetTemperatureTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTemperatureTableViewCell.swift; sourceTree = "<group>"; };
+		E8F37CDE2A84A09600EECB93 /* UnitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitViewModel.swift; sourceTree = "<group>"; };
+		E8F37CE02A84A25D00EECB93 /* WeatherServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherServices.swift; sourceTree = "<group>"; };
+		E8F37CE32A84AAD400EECB93 /* Unit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
+		E8F37CE52A84AE0000EECB93 /* UserTemperatureSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTemperatureSettingViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +82,7 @@
 		E8F37CAC2A846BA600EECB93 /* GoodWeatherProgramtically */ = {
 			isa = PBXGroup;
 			children = (
+				E8F37CE22A84AACD00EECB93 /* Const */,
 				E8F37CC52A846C0200EECB93 /* Models */,
 				E8F37CC42A846BF800EECB93 /* ViewModels */,
 				E8F37CC32A846BF300EECB93 /* Services */,
@@ -112,6 +121,7 @@
 		E8F37CC32A846BF300EECB93 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				E8F37CE02A84A25D00EECB93 /* WeatherServices.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -120,6 +130,8 @@
 			isa = PBXGroup;
 			children = (
 				E8F37CD42A84774200EECB93 /* WeatherListViewModel.swift */,
+				E8F37CDE2A84A09600EECB93 /* UnitViewModel.swift */,
+				E8F37CE52A84AE0000EECB93 /* UserTemperatureSettingViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -128,7 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				E8F37CD22A84771000EECB93 /* WeatherResponse.swift */,
-				E8F37CD82A84869900EECB93 /* Unit.swift */,
+				E8F37CD82A84869900EECB93 /* TemperatureUnit.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -140,6 +152,14 @@
 				E8F37CDC2A849BE700EECB93 /* SetTemperatureTableViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		E8F37CE22A84AACD00EECB93 /* Const */ = {
+			isa = PBXGroup;
+			children = (
+				E8F37CE32A84AAD400EECB93 /* Unit.swift */,
+			);
+			path = Const;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,8 +232,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8F37CCA2A846C8600EECB93 /* AddCityViewController.swift in Sources */,
+				E8F37CDF2A84A09600EECB93 /* UnitViewModel.swift in Sources */,
 				E8F37CDB2A84870000EECB93 /* SetTempartureUnitView.swift in Sources */,
 				E8F37CB22A846BA600EECB93 /* ViewController.swift in Sources */,
+				E8F37CE12A84A25D00EECB93 /* WeatherServices.swift in Sources */,
 				E8F37CD72A847EF000EECB93 /* AddCityView.swift in Sources */,
 				E8F37CC72A846C6600EECB93 /* WeatherStatusViewController.swift in Sources */,
 				E8F37CDD2A849BE700EECB93 /* SetTemperatureTableViewCell.swift in Sources */,
@@ -222,7 +244,9 @@
 				E8F37CCC2A846CAD00EECB93 /* SetTemperatureUnitViewController.swift in Sources */,
 				E8F37CCE2A846D8300EECB93 /* WeatherStatusView.swift in Sources */,
 				E8F37CD32A84771000EECB93 /* WeatherResponse.swift in Sources */,
-				E8F37CD92A84869900EECB93 /* Unit.swift in Sources */,
+				E8F37CE42A84AAD400EECB93 /* Unit.swift in Sources */,
+				E8F37CD92A84869900EECB93 /* TemperatureUnit.swift in Sources */,
+				E8F37CE62A84AE0000EECB93 /* UserTemperatureSettingViewModel.swift in Sources */,
 				E8F37CB02A846BA600EECB93 /* SceneDelegate.swift in Sources */,
 				E8F37CD52A84774200EECB93 /* WeatherListViewModel.swift in Sources */,
 			);

@@ -9,7 +9,7 @@ import UIKit
 
 class AddCityViewController: UIViewController {
     var addCityView: AddCityView!
-    
+    var updateWatherListVMDelegate: UpdateWeatherListViewModelDelegate?
     
     override func loadView() {
         super.loadView()
@@ -30,16 +30,16 @@ class AddCityViewController: UIViewController {
     
 
 
-    
-
-
 }
 
 
 
 extension AddCityViewController: AddCityViewDelegate {
-   
     @objc func dismissAddCityView() {
+        let curInput = addCityView.inputTextField.text ?? ""
+        print(curInput)
+        updateWatherListVMDelegate!.updateCurrentViewModel(cityName: curInput)
+        
         self.dismiss(animated: true, completion: nil)
     }
 }

@@ -28,7 +28,6 @@ class WeatherStatusTableViewCell: UITableViewCell {
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
     }
     
     
@@ -51,6 +50,7 @@ class WeatherStatusTableViewCell: UITableViewCell {
     
     func steup() {
         setupConstraints()
+        self.selectionStyle = .none
     }
 
 }

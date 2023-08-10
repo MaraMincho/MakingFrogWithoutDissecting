@@ -19,5 +19,4 @@ class SetTemperatureTableViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
-    
 }
