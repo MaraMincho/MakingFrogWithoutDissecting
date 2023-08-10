@@ -62,7 +62,6 @@ extension WeatherStatusView:UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
         
-//        let tempVM = WeatherViewModel(weather: WeatherResponse(name: "멜버른", main: Weather(temp: 20.0, humidity: 10.0)))
         let tempVM = weatherListVM.weatherViewModel(index: indexPath.row)
         cell.setupLabelText(weatherVM: tempVM, tempType: userTemperatureViewModel.userTemperatureUnit)
         return cell
@@ -78,9 +77,4 @@ extension WeatherStatusView:UITableViewDelegate, UITableViewDataSource {
             tableView.deleteRows(at: [indexPath], with: .left)
         }
     }
-}
-
-
-extension WeatherStatusView {
-    
 }

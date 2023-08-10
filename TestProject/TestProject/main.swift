@@ -7,8 +7,6 @@
 
 import Foundation
 
-print("Hello, World!")
-
 struct App {
     var contacts = [String]() {
         willSet {

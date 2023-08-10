@@ -32,7 +32,6 @@ class WeatherServices {
             
             return completion(.success(curStruct))
         }.resume()
-        
     }
     
     func getCurrentURLRequset<T>(resource: Resource<T>) -> URLRequest {

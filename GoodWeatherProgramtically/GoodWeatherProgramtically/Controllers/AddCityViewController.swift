@@ -35,13 +35,14 @@ class AddCityViewController: UIViewController {
 
 
 extension AddCityViewController: AddCityViewDelegate {
+    
     @objc func dismissAddCityView() {
         let curInput = addCityView.inputTextField.text ?? ""
-        print(curInput)
         updateWatherListVMDelegate!.updateCurrentViewModel(cityName: curInput)
         
         self.dismiss(animated: true, completion: nil)
     }
+    
 }
 protocol AddCityViewDelegate {
     func dismissAddCityView()

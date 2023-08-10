@@ -79,6 +79,7 @@ extension SetTemperatureUnitView:UITableViewDataSource, UITableViewDelegate {
             fatalError("it isnt work")
         }
         
+        
         let curUnit = userTemperatureVM.userTemperatureUnit!
         if unitViewModel.getUnit(index: indexPath.row) == curUnit {
             cell.accessoryType = .checkmark

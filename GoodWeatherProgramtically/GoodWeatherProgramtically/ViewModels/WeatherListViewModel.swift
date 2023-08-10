@@ -9,12 +9,13 @@ import Foundation
 
 
 class WeatherListViewModel {
+    var loadInitalWeatherDelegate: LoadInitalWeatherDelegate?
+    
     private var weathers: [WeatherViewModel] = [] {
         didSet {
             saveCurrentWeathers()
         }
     }
-    var loadInitalWeatherDelegate: LoadInitalWeatherDelegate?
     
     private func saveCurrentWeathers() {
         let curWeatherResponseList: [WeatherResponse] = weathers.map{$0.weather}
@@ -26,16 +27,14 @@ class WeatherListViewModel {
     private func loadPrevWeathers() {
         if let data = UserDefaults.standard.object(forKey: ConstUnit.WeatherResponseKey) as? Data{
             if let prevWeathersResponses = try? JsonHelper.jsonDecoer.decode([WeatherResponse].self, from: data) {
-                prevWeathersResponses.forEach{
-                    weathers.append(WeatherViewModel(weather: $0))
-                }
+                prevWeathersResponses.forEach{ weathers.append(WeatherViewModel(weather: $0)) }
             }
         }
         var count = 0
-        let curGroup = DispatchGroup()
         for ind in 0..<self.numOfCitys() {
-            DispatchQueue.global().async(group: curGroup) { [weak self] in
+            DispatchQueue.global().async { [weak self] in
                 guard let curViewModel = self?.weatherViewModel(index: ind) else {return}
+                
                 self?.updateWeathersVM(weatherViewModel: curViewModel) { result in
                     switch result {
                     case .failure(let error) :
@@ -47,6 +46,7 @@ class WeatherListViewModel {
                 }
             }
         }
+        
         DispatchQueue.global().async { [weak self] in
             while true {
                 print(count)

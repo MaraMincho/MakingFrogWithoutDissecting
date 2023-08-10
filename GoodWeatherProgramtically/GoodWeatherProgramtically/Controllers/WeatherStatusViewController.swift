@@ -60,11 +60,9 @@ class WeatherStatusViewController: UIViewController {
 extension WeatherStatusViewController: UpdateWeatherListViewModelDelegate, LoadInitalWeatherDelegate {
     
     func updateCurrentViewModel(cityName: String) {
-        guard let curURL = ConstUnit.urlByCityTemperatureUnit(city: cityName) else {
-            return
-        }
-        let resource = Resource<WeatherResponse>(httpRequestType: .get, data: nil, url: curURL)
+        guard let curURL = ConstUnit.urlByCityTemperatureUnit(city: cityName) else { return }
         
+        let resource = Resource<WeatherResponse>(httpRequestType: .get, data: nil, url: curURL)
         services.load(resource: resource) { result in
             switch result {
             case .failure(let error) :
@@ -112,7 +110,6 @@ extension WeatherStatusViewController: UpdateWeatherListViewModelDelegate, LoadI
         weatherStatusView.userTemperatureViewModel = UserTemperatureViewModel()
         nextVC.setTempertureUnitView.userTemperatureVM = weatherStatusView.userTemperatureViewModel
         nextVC.setTempertureUnitView.setTemperatrueDelegate = self
-        
         
         present(nextVC, animated: true)
     }
