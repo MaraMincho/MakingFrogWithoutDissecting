@@ -8,22 +8,56 @@
 import UIKit
 
 class WeatherStatusViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    var weatherStatusView: WeatherStatusView!
+    
+    override func loadView() {
+        super.loadView()
+        let view = WeatherStatusView()
+        self.view = view
+        self.weatherStatusView = view
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupNaviagationController()
     }
-    */
+    
+    func setupNaviagationController() {
+        self.navigationItem.title = "현재 각 국의 날씨입니다."
+      
+        setupSettingBarButtonItem()
+        setupAddCityBarButtonItem()
+    }
+    
+    private func setupSettingBarButtonItem() {
+        let settingItem: UIBarButtonItem = {
+            let item = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(presentSettingScreen))
+            return item
+        }()
+        self.navigationItem.leftBarButtonItem = settingItem
+    }
+    
+    private func setupAddCityBarButtonItem() {
+        let addCitiyItem: UIBarButtonItem = {
+            let item = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(presentAddCityScreen))
+            return item
+        }()
+        self.navigationItem.rightBarButtonItem = addCitiyItem
+    }
 
+}
+
+extension WeatherStatusViewController {
+    @objc func presentAddCityScreen() {
+        let nextVC = AddCityViewController()
+        nextVC.loadViewIfNeeded()
+        present(nextVC, animated: true)
+    }
+    
+    @objc func presentSettingScreen() {
+        let nextVC = SetTemperatureUnitViewController()
+        nextVC.loadViewIfNeeded()
+        present(nextVC, animated: true)
+    }
 }

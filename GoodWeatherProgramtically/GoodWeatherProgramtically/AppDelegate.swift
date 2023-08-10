@@ -13,7 +13,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        UINavigationBar.appearance().backgroundColor = .systemGray4
+        UINavigationBar.appearance().barTintColor = .white
+        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.black, .font : UIFont.systemFont(ofSize: 35, weight: .heavy)]
+        UINavigationBar.appearance().prefersLargeTitles = true
+        UIBarButtonItem.appearance().tintColor = .black
+        
+        
         return true
     }
 

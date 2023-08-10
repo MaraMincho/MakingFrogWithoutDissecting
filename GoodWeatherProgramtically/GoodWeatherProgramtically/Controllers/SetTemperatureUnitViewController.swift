@@ -7,23 +7,34 @@
 
 import UIKit
 
-class SetTemperatureUnitViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+class SetTemperatureUnitViewController: UIViewController, SetTemperatureDelegate {
+    
+    var setTempertureUnitView: SetTemperatureUnitView!
+    
+    
+    override func loadView() {
+        super.loadView()
+        let view = SetTemperatureUnitView()
+        
+        self.setTempertureUnitView = view
+        self.view = setTempertureUnitView
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupNavigationItem()
     }
-    */
+    
+    func setupNavigationItem() {
+        self.title = "세팅을 설정하세요"
+    }
+    
+    func dismissSetTemperatureScreen() {
+        self.dismiss(animated: true)
+    }
+}
 
+
+protocol SetTemperatureDelegate {
+    func dismissSetTemperatureScreen()
 }
