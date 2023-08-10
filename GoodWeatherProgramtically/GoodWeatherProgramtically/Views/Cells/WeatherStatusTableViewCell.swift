@@ -65,8 +65,10 @@ extension WeatherStatusTableViewCell {
         degreeLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20).isActive = true
     }
     
-    func setupLabelText(weatherVM: WeatherViewModel) {
+    func setupLabelText(weatherVM: WeatherViewModel, tempType: TemperatureUnit) {
         cityLabel.text = weatherVM.cityName
-        degreeLabel.text = String(format: "%.2f", weatherVM.degree)
+        var degree = String(format: "%.2f", tempType == .celsius ? weatherVM.degree : weatherVM.fahrenheitDegree)
+        degree = tempType == .celsius ? degree + "℃" : degree + "℉"
+        degreeLabel.text = degree
     }
 }

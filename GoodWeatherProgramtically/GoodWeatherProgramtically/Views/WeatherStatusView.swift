@@ -11,7 +11,6 @@ class WeatherStatusView: UIView {
     var weatherListVM: WeatherListViewModel!
     var userTemperatureViewModel = UserTemperatureViewModel()
     
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -65,7 +64,7 @@ extension WeatherStatusView:UITableViewDelegate, UITableViewDataSource {
         
 //        let tempVM = WeatherViewModel(weather: WeatherResponse(name: "멜버른", main: Weather(temp: 20.0, humidity: 10.0)))
         let tempVM = weatherListVM.weatherViewModel(index: indexPath.row)
-        cell.setupLabelText(weatherVM: tempVM)
+        cell.setupLabelText(weatherVM: tempVM, tempType: userTemperatureViewModel.userTemperatureUnit)
         return cell
     }
     

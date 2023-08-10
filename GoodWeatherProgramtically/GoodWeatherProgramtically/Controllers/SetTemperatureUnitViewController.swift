@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SetTemperatureUnitViewController: UIViewController, SetTemperatureDelegate {
+class SetTemperatureUnitViewController: UIViewController {
     
     var setTempertureUnitView: SetTemperatureUnitView!
     
@@ -15,8 +15,8 @@ class SetTemperatureUnitViewController: UIViewController, SetTemperatureDelegate
     override func loadView() {
         super.loadView()
         let view = SetTemperatureUnitView()
-        view.setTemperatrueDelegate = self
         
+        view.curVC = self
         self.setTempertureUnitView = view
         self.view = setTempertureUnitView
     }
@@ -36,6 +36,3 @@ class SetTemperatureUnitViewController: UIViewController, SetTemperatureDelegate
 }
 
 
-protocol SetTemperatureDelegate {
-    func dismissSetTemperatureScreen()
-}

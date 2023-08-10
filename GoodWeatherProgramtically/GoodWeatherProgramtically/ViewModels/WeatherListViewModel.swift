@@ -14,17 +14,16 @@ class WeatherListViewModel {
             saveCurrentWeathers()
         }
     }
-    
     var loadInitalWeatherDelegate: LoadInitalWeatherDelegate?
     
-    func saveCurrentWeathers() {
+    private func saveCurrentWeathers() {
         let curWeatherResponseList: [WeatherResponse] = weathers.map{$0.weather}
         guard let data = try? JsonHelper.jsonEncoder.encode(curWeatherResponseList) else {return}
         UserDefaults.standard.set(data, forKey: ConstUnit.WeatherResponseKey)
     }
     
     
-    func loadPrevWeathers() {
+    private func loadPrevWeathers() {
         if let data = UserDefaults.standard.object(forKey: ConstUnit.WeatherResponseKey) as? Data{
             if let prevWeathersResponses = try? JsonHelper.jsonDecoer.decode([WeatherResponse].self, from: data) {
                 prevWeathersResponses.forEach{
@@ -48,23 +47,20 @@ class WeatherListViewModel {
                 }
             }
         }
-        
         DispatchQueue.global().async { [weak self] in
             while true {
+                print(count)
                 sleep(1)
                 if count == self?.weathers.count {
                     self?.loadInitalWeatherDelegate?.reloadTableViewData()
-                    print("실행함")
                     return
                 }
             }
         }
-        
-        
     }
     
-    func updateWeathersVM(weatherViewModel: WeatherViewModel, completion: @escaping (Result<WeatherViewModel, Error>) -> ()){
-        guard let url = ConstUnit.urlByCityTemperatureUnit(city: weatherViewModel.cityName, tempUnit: .celsius) else {return}
+    private func updateWeathersVM(weatherViewModel: WeatherViewModel, completion: @escaping (Result<WeatherViewModel, Error>) -> ()){
+        guard let url = ConstUnit.urlByCityTemperatureUnit(city: weatherViewModel.cityName) else {return}
         let resource = Resource<WeatherResponse>(httpRequestType: .get, url: url)
         loadInitalWeatherDelegate?.loadWeatherData(resource: resource,completion: { result in
             switch result {
@@ -110,6 +106,11 @@ struct WeatherViewModel {
     var degree: Double {
         get {
             return weather.main.temp
+        }
+    }
+    var fahrenheitDegree: Double {
+        get {
+            return (weather.main.temp * Double(9 / 5)) + 32
         }
     }
 }

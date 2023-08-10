@@ -18,6 +18,9 @@ struct UnitViewModel {
         let curUnit = unit[index]
         return unitRawValueKoreanValueMap[curUnit] ?? ""
     }
+    func getUnit(index: Int) -> TemperatureUnit {
+        return unit[index]
+    }
 }
 
 //

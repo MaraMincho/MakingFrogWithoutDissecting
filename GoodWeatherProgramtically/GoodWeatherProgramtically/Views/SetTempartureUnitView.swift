@@ -9,8 +9,10 @@ import UIKit
 
 class SetTemperatureUnitView: UIView {
     
+    var userTemperatureVM: UserTemperatureViewModel!
     var setTemperatrueDelegate: SetTemperatureDelegate?
     var unitViewModel = UnitViewModel()
+    var curVC: UIViewController!
     
     
     override init(frame: CGRect) {
@@ -76,13 +78,21 @@ extension SetTemperatureUnitView:UITableViewDataSource, UITableViewDelegate {
         else {
             fatalError("it isnt work")
         }
+        
+        let curUnit = userTemperatureVM.userTemperatureUnit!
+        if unitViewModel.getUnit(index: indexPath.row) == curUnit {
+            cell.accessoryType = .checkmark
+        }
         cell.textLabel?.text = unitViewModel.getUnitRawValue(index: indexPath.row)
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
-        setTemperatrueDelegate?.dismissSetTemperatureScreen()
+        let curUnit = unitViewModel.getUnit(index: indexPath.row)
+        userTemperatureVM.saveUserTemperatureUnitType(tempType: curUnit)
+        
+        setTemperatrueDelegate?.dismissSetTemperatureScreen(viewController: curVC)
     }
     
     func tableView(_ tableView: UITableView, willDeselectRowAt indexPath: IndexPath) -> IndexPath? {

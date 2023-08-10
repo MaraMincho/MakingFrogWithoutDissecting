@@ -9,9 +9,9 @@ import Foundation
 
 
 enum ConstUnit {
-    static func urlByCityTemperatureUnit(city: String, tempUnit: TemperatureUnit) -> URL?{
-        let curTempUnitString = tempUnit.apiCallString
-        return URL(string: "https://api.openweathermap.org/data/2.5/weather?q=\(city)&appid=ef0fd9866ca027e0dca474cee84c53be&units=\(curTempUnitString)")!
+    static func urlByCityTemperatureUnit(city: String) -> URL?{
+        let curTempUnitString = TemperatureUnit.celsius.apiCallString
+        return URL(string: "https://api.openweathermap.org/data/2.5/weather?q=\(city)&appid=4941418c74d04be14deb3f49b9718d63&units=\(curTempUnitString)")!
     }
     static let temperatureUnitKey = "TemperatureUnitKey"
     static let WeatherResponseKey = "WeatherResponseKey"

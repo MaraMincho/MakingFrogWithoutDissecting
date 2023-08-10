@@ -25,7 +25,6 @@ class WeatherStatusViewController: UIViewController {
         self.weatherStatusView = view
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNaviagationController()
@@ -33,7 +32,6 @@ class WeatherStatusViewController: UIViewController {
     
     func setupNaviagationController() {
         self.navigationItem.title = "현재 각 국의 날씨입니다."
-      
         setupSettingBarButtonItem()
         setupAddCityBarButtonItem()
     }
@@ -55,14 +53,14 @@ class WeatherStatusViewController: UIViewController {
         }()
         self.navigationItem.rightBarButtonItem = addCitiyItem
     }
+    
 
 }
 
 extension WeatherStatusViewController: UpdateWeatherListViewModelDelegate, LoadInitalWeatherDelegate {
     
     func updateCurrentViewModel(cityName: String) {
-        let tempUnit = self.weatherStatusView.userTemperatureViewModel.userTemperatureUnit!
-        guard let curURL = ConstUnit.urlByCityTemperatureUnit(city: cityName, tempUnit: tempUnit) else {
+        guard let curURL = ConstUnit.urlByCityTemperatureUnit(city: cityName) else {
             return
         }
         let resource = Resource<WeatherResponse>(httpRequestType: .get, data: nil, url: curURL)
@@ -111,9 +109,25 @@ extension WeatherStatusViewController: UpdateWeatherListViewModelDelegate, LoadI
         let nextVC = SetTemperatureUnitViewController()
         nextVC.loadViewIfNeeded()
         
+        weatherStatusView.userTemperatureViewModel = UserTemperatureViewModel()
+        nextVC.setTempertureUnitView.userTemperatureVM = weatherStatusView.userTemperatureViewModel
+        nextVC.setTempertureUnitView.setTemperatrueDelegate = self
+        
+        
         present(nextVC, animated: true)
     }
 }
+extension WeatherStatusViewController: SetTemperatureDelegate {
+    func dismissSetTemperatureScreen(viewController: UIViewController) {
+        viewController.dismiss(animated: true)
+        weatherStatusView.userTemperatureViewModel = UserTemperatureViewModel()
+        reloadTableViewData()
+    }
+    
+    
+}
+
+
 
 protocol UpdateWeatherListViewModelDelegate {
     func updateCurrentViewModel(cityName: String)
@@ -122,4 +136,8 @@ protocol UpdateWeatherListViewModelDelegate {
 protocol LoadInitalWeatherDelegate {
     func loadWeatherData(resource: Resource<WeatherResponse>, completion: @escaping (Result<WeatherViewModel, Error>) -> ())
     func reloadTableViewData()
+}
+
+protocol SetTemperatureDelegate {
+    func dismissSetTemperatureScreen(viewController: UIViewController)
 }

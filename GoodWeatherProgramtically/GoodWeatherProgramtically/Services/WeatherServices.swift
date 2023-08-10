@@ -26,7 +26,6 @@ class WeatherServices {
             guard error == nil else {
                 return completion(.failure(error!))
             }
-            print(data)
             guard let curStruct = try? JsonHelper.jsonDecoer.decode(T.self, from: data!) else{
                 return completion(.failure(UserError.jsonDecodeError))
             }
