@@ -90,14 +90,13 @@ class ViewController: UIViewController {
     var cancellables: Set<AnyCancellable> = []
 
     func bind() {
+        
         NotificationCenter.default.publisher(for: UITextField.textDidChangeNotification, object: emailTextField)
             .compactMap { ($0.object as? UITextField)?.text }
             .receive(on: DispatchQueue.global())
             .subscribe(on: DispatchQueue.global(qos: .background))
             .sink { [weak self] text in
-                print(text)
                 if text.count > 5 {
-                    print("이메일 check가 바뀌었습니다.")
                     self?.emailCheck = true
                 } else {
                     self?.emailCheck = false
@@ -117,7 +116,6 @@ class ViewController: UIViewController {
                     print(completion)
                 }
             } receiveValue: {[weak self] value in
-                print(value)
                 if value.count > 5 {
                     self?.passwordCheck = true
                 }else {
@@ -126,24 +124,42 @@ class ViewController: UIViewController {
             }
             .store(in: &cancellables)
         
-        $passwordCheck.receive(on: DispatchQueue.main)
+        Publishers.CombineLatest($emailCheck, $passwordCheck)
             .subscribe(on: DispatchQueue.global())
-            .sink { value in
-                switch value {
+            .receive(on: DispatchQueue.global())
+            .sink { completion in
+                switch completion {
+                case .finished:
+                    print(completion)
+                case .failure(let error) :
+                    print(error)
+                }
+            } receiveValue: { value in
+                DispatchQueue.main.async {
+                    self.loginButton.isEnabled = (value.0 && value.1) == true ? true : false
+                }
+            }.store(in: &cancellables)
+        
+        self.loginButton.publisher(for: .touchDragOutside)
+            .subscribe(on: DispatchQueue.global())
+            .receive(on: DispatchQueue.global())
+            .sink { completion in
+                switch completion {
                 case .failure(let error) :
                     print(error)
                 case .finished :
-                    print(value)
+                    print(completion)
                 }
-            } receiveValue: { value in
-                print(value)
-                if self.passwordCheck && self.emailCheck {
-                    self.loginButton.isEnabled = true
-                }else {
-                    self.loginButton.isEnabled = false
-                }
+            } receiveValue: { event in
+                print("event is occured")
             }.store(in: &cancellables)
-
+        
+        let ges = UITapGestureRecognizer(target: self, action: #selector(tabView(_:)))
+        self.view.addGestureRecognizer(ges)
+    }
+    @objc func tabView(_ sender:UITapGestureRecognizer) {
+        //에디팅이 끝나면 키보드를 내림
+        self.view.endEditing(true)
     }
 }
 
@@ -155,4 +171,59 @@ extension Notification.Name {
     static let ssss = Notification.Name("ssss")
     
 }
+extension UIControl {
+    
+    fileprivate class EventControlSubscription<EventSubscriber: Subscriber>: Subscription where EventSubscriber.Input == UIControl, EventSubscriber.Failure == Never {
 
+        let control: UIControl
+        let event: UIControl.Event
+        var subscriber: EventSubscriber?
+        
+        var currentDemand: Subscribers.Demand = .none
+
+        init(control: UIControl, event: UIControl.Event, subscriber: EventSubscriber) {
+            self.control = control
+            self.event = event
+            self.subscriber = subscriber
+            DispatchQueue.main.async {
+                control.addTarget(self, action: #selector(self.eventRaised), for: event)
+            }
+            
+        }
+
+        func request(_ demand: Subscribers.Demand) {
+          currentDemand += demand
+        }
+
+        func cancel() {
+            subscriber = nil
+            control.removeTarget(self,  action: #selector(eventRaised), for: event)
+        }
+
+        @objc func eventRaised() {
+            if currentDemand > 0 {
+              currentDemand += subscriber?.receive(control) ?? .none
+              currentDemand -= 1
+            }
+        }
+    }
+    
+    struct EventControlPublisher: Publisher {
+       typealias Output = UIControl
+       typealias Failure = Never
+
+       let control: UIControl
+       let controlEvent: UIControl.Event
+
+       func receive<S>(subscriber: S) where S : Subscriber, Failure == S.Failure, Output == S.Input {
+         // instantiate the new subscription
+         let subscription = EventControlSubscription(control: control, event: controlEvent, subscriber: subscriber)
+         // tell the subscriber that it has successfully subscribed to the publisher
+         subscriber.receive(subscription: subscription)
+       }
+     }
+    
+    func publisher(for event: UIControl.Event) -> UIControl.EventControlPublisher {
+      return UIControl.EventControlPublisher(control: self, controlEvent: event)
+    }
+}
