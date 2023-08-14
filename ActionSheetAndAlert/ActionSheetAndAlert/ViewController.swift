@@ -11,21 +11,20 @@ class ViewController: UIViewController {
     
     private lazy var alertSheet: UIAlertController = {
         let ac = UIAlertController(title: "TestAlertController", message: "정말로 그것을 하시겠습니까?", preferredStyle: .alert)
-        ac.addAction(self.firstAction)
-        ac.addAction(secondAction)
+        ac.addAction(UIAlertAction(title: "OK", style: .default))
+        ac.addAction(UIAlertAction(title: "Noop", style: .destructive))
         
         return ac
     }()
     
     private lazy var actionSheet: UIAlertController = {
         let ac = UIAlertController(title: "TestAlertController", message: "정말로 그것을 하시겠습니까?", preferredStyle: .actionSheet)
-        ac.addAction(self.firstAction)
-        ac.addAction(secondAction)
+        ac.addAction(UIAlertAction(title: "OK", style: .default))
+        ac.addAction(UIAlertAction(title: "Noop", style: .destructive))
         
         return ac
     }()
-    private let firstAction = UIAlertAction(title: "0k", style: .default)
-    private let secondAction = UIAlertAction(title: "N0", style: .destructive)
+
     
     private let acctionButton: UIButton = {
         let button = UIButton(type: .system)
@@ -87,3 +86,4 @@ class ViewController: UIViewController {
     }
 }
 
+let temp = ViewController()
