@@ -26,14 +26,13 @@ class ViewController: UIViewController {
         let services = NetwrokService()
         let url = URL(string: "https://jsonplaceholder.typicode.com/todos")!
         let resource = Resource<[User]>(url: url, httpMethod: .get)
-        Task {
+        Task { () -> Result<[User], Error> in
             do {
                 let data = try await services.publishWay(resource: resource)
                 userData = data
-                print("유저 데이터는?")
-                print(userData)
+                return .success(userData)
             }catch {
-                print(error.localizedDescription)
+                return .failure(error)
             }
         }
     }

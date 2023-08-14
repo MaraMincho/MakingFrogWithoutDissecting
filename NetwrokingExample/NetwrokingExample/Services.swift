@@ -56,7 +56,7 @@ class NetwrokService {
     }
     
     func createURLRequstByResource<T>(resource: Resource<T>) -> URLRequest?{
-        var urlSession = URLRequest(url: resource.url)
+        var urlSession = URLRequest(url: resource.url, timeoutInterval: .greatestFiniteMagnitude)
         urlSession.addValue("application/json", forHTTPHeaderField: "Content-Type")
         urlSession.httpBody = resource.body
         urlSession.httpMethod = resource.httpMethod.rawValue
