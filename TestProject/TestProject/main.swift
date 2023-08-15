@@ -1,24 +1,15 @@
 import Combine
 import SwiftUI
 
-
-
-Task {
-    for _ in 1...1000 {
-        print("🥹", terminator: ", ")
-    }
+func address(of object: UnsafeRawPointer) -> String{
+    let address = Int(bitPattern: object)
+    return String(format: "%p", address)
 }
 
-Task {
-    for _ in 1...1000 {
-        print("😡", terminator: ", ")
-    }
-}
 
-Task {
-    for _ in 1...1000 {
-        print("✅", terminator: ", ")
-    }
-}
-readLine()
+var tes = [1, 2, 3, 4]
+print(address(of: &tes[0]))
+print(address(of: &tes[0]))
+print(address(of: &tes[1]))
+print(address(of: &tes[2]))
 
