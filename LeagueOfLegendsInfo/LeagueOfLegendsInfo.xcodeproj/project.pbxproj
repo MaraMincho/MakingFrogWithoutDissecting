@@ -27,6 +27,9 @@
 		E85EDABE2A8DFD87001DF951 /* LOLService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85EDABD2A8DFD87001DF951 /* LOLService.swift */; };
 		E85EDAC12A8E0AC7001DF951 /* ChampionLineCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85EDAC02A8E0AC7001DF951 /* ChampionLineCollectionViewCell.swift */; };
 		E85EDAC32A8E0DC7001DF951 /* LineAndInputTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85EDAC22A8E0DC7001DF951 /* LineAndInputTextView.swift */; };
+		E85EDAC52A8E2380001DF951 /* ChampionInputTextFiledView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85EDAC42A8E2380001DF951 /* ChampionInputTextFiledView.swift */; };
+		E85EDAC92A8E4E56001DF951 /* ChampionsPortraitCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85EDAC82A8E4E56001DF951 /* ChampionsPortraitCollectionView.swift */; };
+		E85EDACB2A8E4ED3001DF951 /* ChampionsPortraitCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85EDACA2A8E4ED3001DF951 /* ChampionsPortraitCollectionViewCell.swift */; };
 		FD097D2A1A6CF81B6543304E /* Pods_LeagueOfLegendsInfo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87E3A0EFC6CE0C21C95DE00E /* Pods_LeagueOfLegendsInfo.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +59,9 @@
 		E85EDABD2A8DFD87001DF951 /* LOLService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LOLService.swift; sourceTree = "<group>"; };
 		E85EDAC02A8E0AC7001DF951 /* ChampionLineCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChampionLineCollectionViewCell.swift; sourceTree = "<group>"; };
 		E85EDAC22A8E0DC7001DF951 /* LineAndInputTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineAndInputTextView.swift; sourceTree = "<group>"; };
+		E85EDAC42A8E2380001DF951 /* ChampionInputTextFiledView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChampionInputTextFiledView.swift; sourceTree = "<group>"; };
+		E85EDAC82A8E4E56001DF951 /* ChampionsPortraitCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChampionsPortraitCollectionView.swift; sourceTree = "<group>"; };
+		E85EDACA2A8E4ED3001DF951 /* ChampionsPortraitCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChampionsPortraitCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,8 +171,8 @@
 		E80126892A8CA92B00E19913 /* Asset */ = {
 			isa = PBXGroup;
 			children = (
-				E801268B2A8CA96100E19913 /* InitialSelectButton.swift */,
-				E85EDAC22A8E0DC7001DF951 /* LineAndInputTextView.swift */,
+				E85EDAC72A8E4D87001DF951 /* MeetUp */,
+				E85EDAC62A8E4D6E001DF951 /* ChampionSelect */,
 			);
 			path = Asset;
 			sourceTree = "<group>";
@@ -175,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				E85EDAC02A8E0AC7001DF951 /* ChampionLineCollectionViewCell.swift */,
+				E85EDACA2A8E4ED3001DF951 /* ChampionsPortraitCollectionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -203,6 +210,24 @@
 				E85EDAB92A8DF6C3001DF951 /* Champion.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		E85EDAC62A8E4D6E001DF951 /* ChampionSelect */ = {
+			isa = PBXGroup;
+			children = (
+				E85EDAC22A8E0DC7001DF951 /* LineAndInputTextView.swift */,
+				E85EDAC42A8E2380001DF951 /* ChampionInputTextFiledView.swift */,
+				E85EDAC82A8E4E56001DF951 /* ChampionsPortraitCollectionView.swift */,
+			);
+			path = ChampionSelect;
+			sourceTree = "<group>";
+		};
+		E85EDAC72A8E4D87001DF951 /* MeetUp */ = {
+			isa = PBXGroup;
+			children = (
+				E801268B2A8CA96100E19913 /* InitialSelectButton.swift */,
+			);
+			path = MeetUp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -324,12 +349,15 @@
 				E80126922A8CC5B700E19913 /* ConstOfAppUnit.swift in Sources */,
 				E801269C2A8CFE1E00E19913 /* constOfAppanimation.swift in Sources */,
 				E85EDAC32A8E0DC7001DF951 /* LineAndInputTextView.swift in Sources */,
+				E85EDAC92A8E4E56001DF951 /* ChampionsPortraitCollectionView.swift in Sources */,
 				E801268C2A8CA96100E19913 /* InitialSelectButton.swift in Sources */,
 				E80126A02A8D035200E19913 /* ChampionSelectView.swift in Sources */,
 				E85EDABC2A8DFC7A001DF951 /* UserDefaults.swift in Sources */,
 				E801269A2A8CF8EF00E19913 /* UIImageView+ExtensionUIimageView+Extension.swift in Sources */,
+				E85EDACB2A8E4ED3001DF951 /* ChampionsPortraitCollectionViewCell.swift in Sources */,
 				E80126742A8CA5FA00E19913 /* MeetUpVC.swift in Sources */,
 				E85EDABE2A8DFD87001DF951 /* LOLService.swift in Sources */,
+				E85EDAC52A8E2380001DF951 /* ChampionInputTextFiledView.swift in Sources */,
 				E80126702A8CA5FA00E19913 /* AppDelegate.swift in Sources */,
 				E801268F2A8CB31300E19913 /* UIimage+Extension.swift in Sources */,
 				E85EDABA2A8DF6C3001DF951 /* Champion.swift in Sources */,

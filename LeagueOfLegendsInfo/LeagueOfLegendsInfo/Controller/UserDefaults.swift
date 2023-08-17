@@ -8,9 +8,12 @@
 import Foundation
 
 struct ChampionUserDefaults {
-    func getChampion() ->[Champion]? {
+    func getChampion() async ->[Champion] {
         guard let champions = UserDefaults.standard.object(forKey: "ChampionsName") as? [Champion] else {
-            return nil
+            return await Task {
+                let name = await LOLServices().getChampionName()
+                return name
+            }.value
         }
         return champions
     }

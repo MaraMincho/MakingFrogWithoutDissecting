@@ -8,14 +8,15 @@
 import UIKit
 import SwiftSoup
 
-class ChampionSelectVC: UIViewController, UIGestureRecognizerDelegate {
+class ChampionSelectVC: UIViewController, UIGestureRecognizerDelegate, ChampionsPortraitDelegate {
     var championSelectView:ChampionSelectView?
     var champions: [Champion] = []
     
     override func loadView() {
         super.loadView()
-        self.championSelectView = ChampionSelectView()
-        championSelectView?.layoutIfNeeded()
+        self.championSelectView = ChampionSelectView(frame: self.view.frame)
+        self.championSelectView!.viewModel = self
+        self.championSelectView!.layoutIfNeeded()
         
         self.view = self.championSelectView
     }
@@ -24,8 +25,6 @@ class ChampionSelectVC: UIViewController, UIGestureRecognizerDelegate {
         super.viewDidLoad()
         setNavigationItem()
         getChampion()
-        
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -36,8 +35,10 @@ class ChampionSelectVC: UIViewController, UIGestureRecognizerDelegate {
     
     func getChampion() {
         Task {
-            let name = await LOLServices().getChampionName()
-            self.champions = champions
+            self.champions = await ChampionUserDefaults().getChampion()
+            DispatchQueue.main.async {
+                self.championSelectView!.reloadchampionsPortraitsCollectionView()
+            }
         }
     }
 }
@@ -49,6 +50,12 @@ extension ChampionSelectVC {
         navigationController?.interactivePopGestureRecognizer?.delegate = self
     }
     func addGesture() {
-        
+        //TODO: 입력하다가 다른 곳 클릭하면 isEditing = false하는 코드 추가
     }
+}
+
+
+
+protocol ChampionsPortraitDelegate {
+    var champions: [Champion] {get}
 }

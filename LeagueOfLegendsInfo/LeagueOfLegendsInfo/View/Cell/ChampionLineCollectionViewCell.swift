@@ -32,14 +32,16 @@ class ChampionLineCollectionViewCell: UICollectionViewCell {
     }()
     
     func setup() {
+        self.layer.borderColor = UIColor.black.cgColor
+        self.layer.borderWidth = 1
         setupConstraints()
     }
     func setupConstraints() {
         
         self.addSubview(lineImage)
-        lineImage.topAnchor.constraint(equalTo: self.topAnchor, constant: 3).isActive = true
-        lineImage.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -3).isActive = true
-        lineImage.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 3).isActive = true
-        lineImage.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -3).isActive = true
+        lineImage.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        lineImage.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        lineImage.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
+        lineImage.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
     }
 }
