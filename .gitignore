@@ -83,3 +83,4 @@ iOSInjectionProject/
 
 
 .DS_Store
+.env.swift
