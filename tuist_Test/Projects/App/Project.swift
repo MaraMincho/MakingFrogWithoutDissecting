@@ -1,5 +1,3 @@
-
-
 import ProjectDescription
 import ProjectDescriptionHelpers
 

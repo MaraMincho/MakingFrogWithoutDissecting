@@ -1,5 +1,3 @@
-
-
 import ProjectDescription
 import ProjectDescriptionHelpers
 
@@ -10,5 +8,3 @@ let project = Project.makeModule(
 			.Presentaion.home.project,
 		]
 )
-
-
