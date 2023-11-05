@@ -1,14 +1,15 @@
 
+
+
 import ProjectDescription
 import ProjectDescriptionHelpers
 
 let project = Project.makeModule(
-		name: "Home",
+		name: "PostListViewModel",
 		product: .framework,
 		dependencies: [
-			
-		],
-		resources: ["Resources/**"]
+			.Presentaion.postList.project,
+		]
 )
 
 

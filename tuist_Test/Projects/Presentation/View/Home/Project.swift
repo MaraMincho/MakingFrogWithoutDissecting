@@ -1,15 +1,13 @@
 
-
 import ProjectDescription
 import ProjectDescriptionHelpers
 
 let project = Project.makeModule(
-		name: "HomeViewModel",
+		name: "Home",
 		product: .framework,
 		dependencies: [
-			.PresentaionDependencies.home.project,
-		],
-		resources: ["Resources/**"]
+			
+		]
 )
 
 
