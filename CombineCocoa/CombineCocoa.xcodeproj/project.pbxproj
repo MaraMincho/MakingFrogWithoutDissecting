@@ -7,104 +7,102 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E8CCE9F62B452F5D00094EEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8CCE9F52B452F5D00094EEA /* AppDelegate.swift */; };
-		E8CCE9F82B452F5D00094EEA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8CCE9F72B452F5D00094EEA /* SceneDelegate.swift */; };
-		E8CCE9FA2B452F5D00094EEA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8CCE9F92B452F5D00094EEA /* ViewController.swift */; };
-		E8CCE9FF2B452F5F00094EEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8CCE9FE2B452F5F00094EEA /* Assets.xcassets */; };
-		E8CCEA022B452F5F00094EEA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8CCEA002B452F5F00094EEA /* LaunchScreen.storyboard */; };
-		E8CCEA0B2B45303B00094EEA /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = E8CCEA0A2B45303B00094EEA /* Kingfisher */; };
+		E81752F12B4E9BB700F9C24D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81752F02B4E9BB700F9C24D /* AppDelegate.swift */; };
+		E81752F32B4E9BB700F9C24D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81752F22B4E9BB700F9C24D /* SceneDelegate.swift */; };
+		E81752F52B4E9BB700F9C24D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81752F42B4E9BB700F9C24D /* ViewController.swift */; };
+		E81752F82B4E9BB700F9C24D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E81752F62B4E9BB700F9C24D /* Main.storyboard */; };
+		E81752FA2B4E9BB800F9C24D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E81752F92B4E9BB800F9C24D /* Assets.xcassets */; };
+		E81752FD2B4E9BB800F9C24D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E81752FB2B4E9BB800F9C24D /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E8CCE9F22B452F5D00094EEA /* KingFisherExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KingFisherExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E8CCE9F52B452F5D00094EEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E8CCE9F72B452F5D00094EEA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E8CCE9F92B452F5D00094EEA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E8CCE9FE2B452F5F00094EEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E8CCEA012B452F5F00094EEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		E8CCEA032B452F5F00094EEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E81752ED2B4E9BB700F9C24D /* CombineCocoa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CombineCocoa.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E81752F02B4E9BB700F9C24D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E81752F22B4E9BB700F9C24D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		E81752F42B4E9BB700F9C24D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E81752F72B4E9BB700F9C24D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E81752F92B4E9BB800F9C24D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E81752FC2B4E9BB800F9C24D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E81752FE2B4E9BB800F9C24D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		E8CCE9EF2B452F5D00094EEA /* Frameworks */ = {
+		E81752EA2B4E9BB700F9C24D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E8CCEA0B2B45303B00094EEA /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E8CCE9E92B452F5D00094EEA = {
+		E81752E42B4E9BB600F9C24D = {
 			isa = PBXGroup;
 			children = (
-				E8CCE9F42B452F5D00094EEA /* KingFisherExample */,
-				E8CCE9F32B452F5D00094EEA /* Products */,
+				E81752EF2B4E9BB700F9C24D /* CombineCocoa */,
+				E81752EE2B4E9BB700F9C24D /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		E8CCE9F32B452F5D00094EEA /* Products */ = {
+		E81752EE2B4E9BB700F9C24D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E8CCE9F22B452F5D00094EEA /* KingFisherExample.app */,
+				E81752ED2B4E9BB700F9C24D /* CombineCocoa.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E8CCE9F42B452F5D00094EEA /* KingFisherExample */ = {
+		E81752EF2B4E9BB700F9C24D /* CombineCocoa */ = {
 			isa = PBXGroup;
 			children = (
-				E8CCE9F52B452F5D00094EEA /* AppDelegate.swift */,
-				E8CCE9F72B452F5D00094EEA /* SceneDelegate.swift */,
-				E8CCE9F92B452F5D00094EEA /* ViewController.swift */,
-				E8CCE9FE2B452F5F00094EEA /* Assets.xcassets */,
-				E8CCEA002B452F5F00094EEA /* LaunchScreen.storyboard */,
-				E8CCEA032B452F5F00094EEA /* Info.plist */,
+				E81752F02B4E9BB700F9C24D /* AppDelegate.swift */,
+				E81752F22B4E9BB700F9C24D /* SceneDelegate.swift */,
+				E81752F42B4E9BB700F9C24D /* ViewController.swift */,
+				E81752F62B4E9BB700F9C24D /* Main.storyboard */,
+				E81752F92B4E9BB800F9C24D /* Assets.xcassets */,
+				E81752FB2B4E9BB800F9C24D /* LaunchScreen.storyboard */,
+				E81752FE2B4E9BB800F9C24D /* Info.plist */,
 			);
-			path = KingFisherExample;
+			path = CombineCocoa;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E8CCE9F12B452F5D00094EEA /* KingFisherExample */ = {
+		E81752EC2B4E9BB700F9C24D /* CombineCocoa */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E8CCEA062B452F5F00094EEA /* Build configuration list for PBXNativeTarget "KingFisherExample" */;
+			buildConfigurationList = E81753012B4E9BB800F9C24D /* Build configuration list for PBXNativeTarget "CombineCocoa" */;
 			buildPhases = (
-				E8CCE9EE2B452F5D00094EEA /* Sources */,
-				E8CCE9EF2B452F5D00094EEA /* Frameworks */,
-				E8CCE9F02B452F5D00094EEA /* Resources */,
+				E81752E92B4E9BB700F9C24D /* Sources */,
+				E81752EA2B4E9BB700F9C24D /* Frameworks */,
+				E81752EB2B4E9BB700F9C24D /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = KingFisherExample;
-			packageProductDependencies = (
-				E8CCEA0A2B45303B00094EEA /* Kingfisher */,
-			);
-			productName = KingFisherExample;
-			productReference = E8CCE9F22B452F5D00094EEA /* KingFisherExample.app */;
+			name = CombineCocoa;
+			productName = CombineCocoa;
+			productReference = E81752ED2B4E9BB700F9C24D /* CombineCocoa.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		E8CCE9EA2B452F5D00094EEA /* Project object */ = {
+		E81752E52B4E9BB600F9C24D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
-					E8CCE9F12B452F5D00094EEA = {
+					E81752EC2B4E9BB700F9C24D = {
 						CreatedOnToolsVersion = 15.0.1;
 					};
 				};
 			};
-			buildConfigurationList = E8CCE9ED2B452F5D00094EEA /* Build configuration list for PBXProject "KingFisherExample" */;
+			buildConfigurationList = E81752E82B4E9BB600F9C24D /* Build configuration list for PBXProject "CombineCocoa" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -112,49 +110,55 @@
 				en,
 				Base,
 			);
-			mainGroup = E8CCE9E92B452F5D00094EEA;
-			packageReferences = (
-				E8CCEA092B45303B00094EEA /* XCRemoteSwiftPackageReference "Kingfisher" */,
-			);
-			productRefGroup = E8CCE9F32B452F5D00094EEA /* Products */;
+			mainGroup = E81752E42B4E9BB600F9C24D;
+			productRefGroup = E81752EE2B4E9BB700F9C24D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E8CCE9F12B452F5D00094EEA /* KingFisherExample */,
+				E81752EC2B4E9BB700F9C24D /* CombineCocoa */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		E8CCE9F02B452F5D00094EEA /* Resources */ = {
+		E81752EB2B4E9BB700F9C24D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E8CCEA022B452F5F00094EEA /* LaunchScreen.storyboard in Resources */,
-				E8CCE9FF2B452F5F00094EEA /* Assets.xcassets in Resources */,
+				E81752FD2B4E9BB800F9C24D /* LaunchScreen.storyboard in Resources */,
+				E81752FA2B4E9BB800F9C24D /* Assets.xcassets in Resources */,
+				E81752F82B4E9BB700F9C24D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		E8CCE9EE2B452F5D00094EEA /* Sources */ = {
+		E81752E92B4E9BB700F9C24D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E8CCE9FA2B452F5D00094EEA /* ViewController.swift in Sources */,
-				E8CCE9F62B452F5D00094EEA /* AppDelegate.swift in Sources */,
-				E8CCE9F82B452F5D00094EEA /* SceneDelegate.swift in Sources */,
+				E81752F52B4E9BB700F9C24D /* ViewController.swift in Sources */,
+				E81752F12B4E9BB700F9C24D /* AppDelegate.swift in Sources */,
+				E81752F32B4E9BB700F9C24D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		E8CCEA002B452F5F00094EEA /* LaunchScreen.storyboard */ = {
+		E81752F62B4E9BB700F9C24D /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				E8CCEA012B452F5F00094EEA /* Base */,
+				E81752F72B4E9BB700F9C24D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E81752FB2B4E9BB800F9C24D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E81752FC2B4E9BB800F9C24D /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -162,7 +166,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		E8CCEA042B452F5F00094EEA /* Debug */ = {
+		E81752FF2B4E9BB800F9C24D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -225,7 +229,7 @@
 			};
 			name = Debug;
 		};
-		E8CCEA052B452F5F00094EEA /* Release */ = {
+		E81753002B4E9BB800F9C24D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -281,7 +285,7 @@
 			};
 			name = Release;
 		};
-		E8CCEA072B452F5F00094EEA /* Debug */ = {
+		E81753022B4E9BB800F9C24D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -290,9 +294,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2G5Z92682P;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = KingFisherExample/Info.plist;
+				INFOPLIST_FILE = CombineCocoa/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -300,7 +305,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.MaraMincho.KingFisherExample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.MaraMincho.CombineCocoa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -308,7 +313,7 @@
 			};
 			name = Debug;
 		};
-		E8CCEA082B452F5F00094EEA /* Release */ = {
+		E81753032B4E9BB800F9C24D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -317,9 +322,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2G5Z92682P;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = KingFisherExample/Info.plist;
+				INFOPLIST_FILE = CombineCocoa/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -327,7 +333,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.MaraMincho.KingFisherExample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.MaraMincho.CombineCocoa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -338,44 +344,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E8CCE9ED2B452F5D00094EEA /* Build configuration list for PBXProject "KingFisherExample" */ = {
+		E81752E82B4E9BB600F9C24D /* Build configuration list for PBXProject "CombineCocoa" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E8CCEA042B452F5F00094EEA /* Debug */,
-				E8CCEA052B452F5F00094EEA /* Release */,
+				E81752FF2B4E9BB800F9C24D /* Debug */,
+				E81753002B4E9BB800F9C24D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E8CCEA062B452F5F00094EEA /* Build configuration list for PBXNativeTarget "KingFisherExample" */ = {
+		E81753012B4E9BB800F9C24D /* Build configuration list for PBXNativeTarget "CombineCocoa" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E8CCEA072B452F5F00094EEA /* Debug */,
-				E8CCEA082B452F5F00094EEA /* Release */,
+				E81753022B4E9BB800F9C24D /* Debug */,
+				E81753032B4E9BB800F9C24D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		E8CCEA092B45303B00094EEA /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 7.10.1;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		E8CCEA0A2B45303B00094EEA /* Kingfisher */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = E8CCEA092B45303B00094EEA /* XCRemoteSwiftPackageReference "Kingfisher" */;
-			productName = Kingfisher;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = E8CCE9EA2B452F5D00094EEA /* Project object */;
+	rootObject = E81752E52B4E9BB600F9C24D /* Project object */;
 }
