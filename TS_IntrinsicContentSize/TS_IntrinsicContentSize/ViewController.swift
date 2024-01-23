@@ -14,6 +14,26 @@ final class ViewController: UIViewController {
     setupViewHierarchyAndConstraints()
   }
   
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    
+    print("view.frame.wdith")
+    print("aRatioView = \(aRatioView.frame.width), bContentWidth = \(bRatioView.frame.width)")
+    print("aContentWidth / bContnetWidth = \(aRatioView.frame.width / bRatioView.frame.width)")
+    
+    print("\nview.intrinsicContentSize")
+    print("aContentWidth = \(aRatioView.intrinsicContentSize.width), bContentWidth = \(bRatioView.intrinsicContentSize.width)")
+    print("aContentWidth / bContentWidth = \(aRatioView.intrinsicContentSize.width / bRatioView.intrinsicContentSize.width)")
+  }
+  
+  override func viewIsAppearing(_ animated: Bool) {
+    super.viewIsAppearing(animated)
+    
+    aContentView.frame.size = .init(width: 30, height: 80)
+    bContentView.frame.size = .init(width: 70, height: 80)
+  }
+  
+  
   func setupStyle() {
     view.backgroundColor = .white
   }
@@ -33,15 +53,77 @@ final class ViewController: UIViewController {
     return st
   }()
   
+  let aContentView: UIView = {
+    let view = UIView()
+    view.backgroundColor = .red
+    
+    
+    view.setContentHuggingPriority(.defaultLow, for: .horizontal)
+    view.translatesAutoresizingMaskIntoConstraints = false
+    return view
+  }()
+  
+  let bContentView: UIView = {
+    let view = UIView()
+    view.backgroundColor = .blue
+    
+    view.setContentHuggingPriority(.defaultHigh, for: .horizontal)
+    view.translatesAutoresizingMaskIntoConstraints = false
+    return view
+  }()
+  
+  let aContentLabel: UILabel = {
+    let label = UILabel()
+    label.text = "에이 컨텐트 라벨"
+    label.backgroundColor = .red
+    label.textColor = .white
+    label.setContentHuggingPriority(.defaultHigh, for: .horizontal)
+    
+    label.translatesAutoresizingMaskIntoConstraints = false
+    return label
+  }()
+  
+  let bContentLabel: UILabel = {
+    let label = UILabel()
+    label.text = "비 컨텐트 라벨 () () ()"
+    label.backgroundColor = .blue
+    label.textColor = .white
+    
+    label.translatesAutoresizingMaskIntoConstraints = false
+    return label
+  }()
+  
+  let aRatioView = RatioView(inputIntrinsicContentSize: .init(width: 40, height: 80))
+  let bRatioView = RatioView(inputIntrinsicContentSize: .init(width: 60, height: 150))
+  
+  private lazy var testStackView: UIStackView = {
+    aRatioView.backgroundColor = .red
+    bRatioView.backgroundColor = .blue
+    let st = UIStackView(arrangedSubviews: [aRatioView, bRatioView])
+    st.backgroundColor = .gray
+    st.axis = .horizontal
+    st.distribution = .fillProportionally
+    st.alignment = .center
+    
+    st.translatesAutoresizingMaskIntoConstraints = false
+    return st
+  }()
+  
   private func setupViewHierarchyAndConstraints() {
     
     let safeArea = view.safeAreaLayoutGuide
-    view.addSubview(customStackView)
+    view.addSubview(testStackView)
+    testStackView.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 30).isActive = true
+    testStackView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor).isActive = true
+    testStackView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor).isActive = true
+    testStackView.heightAnchor.constraint(equalToConstant: 50).isActive = true
     
-    customStackView.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 23).isActive = true
-    customStackView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 23).isActive = true
-    customStackView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -23).isActive = true
-//    customStackView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor).isActive = true
+
+//    view.addSubview(customStackView)
+//    
+//    customStackView.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 23).isActive = true
+//    customStackView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 23).isActive = true
+//    customStackView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -23).isActive = true
   }
 }
 
@@ -105,3 +187,17 @@ final class CustomCellView: UIStackView {
   }
 }
 
+
+final class RatioView: UIView {
+  let inputIntrinsicContentSize: CGSize
+  init(inputIntrinsicContentSize size: CGSize) {
+    self.inputIntrinsicContentSize = size
+    super.init(frame: .zero)
+  }
+  required init?(coder: NSCoder) {
+    fatalError("not implemented this method")
+  }
+  override var intrinsicContentSize: CGSize {
+    return inputIntrinsicContentSize
+  }
+}
