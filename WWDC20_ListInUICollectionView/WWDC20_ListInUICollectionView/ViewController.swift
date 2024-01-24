@@ -96,8 +96,8 @@ class ViewController: UIViewController {
     
     var snapShot = dataSource.snapshot()
     snapShot.appendSections([.top, .advertise, .list])
-    //snapShot.appendItems([1, 2, 3, 4, 5], toSection: .top)
-    //snapShot.appendItems((6...20).map{$0}, toSection: .advertise)
+    snapShot.appendItems([1, 2, 3, 4, 5], toSection: .top)
+    snapShot.appendItems((6...20).map{$0}, toSection: .advertise)
     snapShot.appendItems((21...24).map{$0}, toSection: .list)
     dataSource.apply(snapShot)
   }
@@ -134,7 +134,6 @@ class ViewController: UIViewController {
         layoutSize: footerHeaderSize,
         elementKind: UICollectionView.elementKindSectionHeader,
         alignment: .top)
-      
       section.boundarySupplementaryItems = [ header ]
       
       return section
