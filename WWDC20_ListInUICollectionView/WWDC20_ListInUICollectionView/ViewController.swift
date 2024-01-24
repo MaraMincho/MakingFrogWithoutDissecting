@@ -46,15 +46,7 @@ class ViewController: UIViewController {
   }
   
   let listCellRegistration: UICollectionView.CellRegistration<UICollectionViewListCell, Int> = .init { cell, indexPath, itemIdentifier in
-    var configure = cell.defaultContentConfiguration()
-//    configure.text = "\(itemIdentifier), Text"
-//    cell.contentConfiguration = configure
-//    cell.accessories = [
-//      .disclosureIndicator(displayed: .always),
-//      .checkmark(),
-//      .delete(displayed: .always),
-//      .reorder(displayed: .always),
-//    ]
+    
   }
   
   
@@ -80,8 +72,9 @@ class ViewController: UIViewController {
     }
     
     let header: UICollectionView.SupplementaryRegistration<CustomHeader> = .init(elementKind: UICollectionView.elementKindSectionHeader) { supplementaryView, elementKind, indexPath in
-      supplementaryView.backgroundColor = [.red, .blue , .black][Int.random(in: 0...2)]
+      
     }
+    
     dataSource.supplementaryViewProvider = { (collectionView, elementKind, indexPath) -> UICollectionReusableView? in
       print(elementKind)
       if elementKind == UICollectionView.elementKindSectionHeader {
