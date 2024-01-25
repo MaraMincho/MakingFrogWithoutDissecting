@@ -10,9 +10,9 @@
 		E862EEF72B62391C00745674 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E862EEF62B62391C00745674 /* AppDelegate.swift */; };
 		E862EEF92B62391C00745674 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E862EEF82B62391C00745674 /* SceneDelegate.swift */; };
 		E862EEFB2B62391C00745674 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E862EEFA2B62391C00745674 /* ViewController.swift */; };
-		E862EEFE2B62391C00745674 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E862EEFC2B62391C00745674 /* Main.storyboard */; };
 		E862EF002B62391E00745674 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E862EEFF2B62391E00745674 /* Assets.xcassets */; };
 		E862EF032B62391E00745674 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E862EF012B62391E00745674 /* LaunchScreen.storyboard */; };
+		E862EF0C2B623A5500745674 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = E862EF0B2B623A5500745674 /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,7 +20,6 @@
 		E862EEF62B62391C00745674 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E862EEF82B62391C00745674 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E862EEFA2B62391C00745674 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E862EEFD2B62391C00745674 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E862EEFF2B62391E00745674 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E862EF022B62391E00745674 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E862EF042B62391E00745674 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -31,6 +30,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E862EF0C2B623A5500745674 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,7 +59,6 @@
 				E862EEF62B62391C00745674 /* AppDelegate.swift */,
 				E862EEF82B62391C00745674 /* SceneDelegate.swift */,
 				E862EEFA2B62391C00745674 /* ViewController.swift */,
-				E862EEFC2B62391C00745674 /* Main.storyboard */,
 				E862EEFF2B62391E00745674 /* Assets.xcassets */,
 				E862EF012B62391E00745674 /* LaunchScreen.storyboard */,
 				E862EF042B62391E00745674 /* Info.plist */,
@@ -83,6 +82,9 @@
 			dependencies = (
 			);
 			name = QueenFisher;
+			packageProductDependencies = (
+				E862EF0B2B623A5500745674 /* Kingfisher */,
+			);
 			productName = QueenFisher;
 			productReference = E862EEF32B62391C00745674 /* QueenFisher.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +113,9 @@
 				Base,
 			);
 			mainGroup = E862EEEA2B62391C00745674;
+			packageReferences = (
+				E862EF0A2B623A5500745674 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = E862EEF42B62391C00745674 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -127,7 +132,6 @@
 			files = (
 				E862EF032B62391E00745674 /* LaunchScreen.storyboard in Resources */,
 				E862EF002B62391E00745674 /* Assets.xcassets in Resources */,
-				E862EEFE2B62391C00745674 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,14 +151,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		E862EEFC2B62391C00745674 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E862EEFD2B62391C00745674 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E862EF012B62391E00745674 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -297,7 +293,6 @@
 				INFOPLIST_FILE = QueenFisher/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -325,7 +320,6 @@
 				INFOPLIST_FILE = QueenFisher/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -363,6 +357,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E862EF0A2B623A5500745674 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.10.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E862EF0B2B623A5500745674 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E862EF0A2B623A5500745674 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E862EEEB2B62391C00745674 /* Project object */;
 }
