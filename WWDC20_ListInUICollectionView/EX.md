@@ -1,4 +1,4 @@
-# NestedCollectionView 만들기
+# Nested Section CollectionView 만들기
 
 ### 목표 화면
 <img src="https://github.com/MaraMincho/MakingFrogWithoutDissecting/assets/103064352/2498ed3e-1209-48a1-a064-4b4dacd09f95" width = 450>
