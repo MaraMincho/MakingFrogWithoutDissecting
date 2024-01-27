@@ -55,7 +55,6 @@ class ViewController: UIViewController {
   private func downsample(imageAt imageURL: URL, to pointSize: CGSize, scale: CGFloat) -> UIImage {
     let imageSourceOptions = [kCGImageSourceShouldCache: false] as CFDictionary
     let imageSource = CGImageSourceCreateWithURL(imageURL as CFURL, imageSourceOptions)!
-    let queue = DispatchQueue.global(qos: <#T##DispatchQoS.QoSClass#>)
     
     let maxDimentionInPixels = max(pointSize.width, pointSize.height) * scale
     
