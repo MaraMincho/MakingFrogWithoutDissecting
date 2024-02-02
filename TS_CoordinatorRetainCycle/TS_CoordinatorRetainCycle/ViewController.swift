@@ -11,10 +11,18 @@ class ViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view.
+    view.backgroundColor = .white
   }
-
-
+  
+  weak var router: RootCoordinator?
+  
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    
+  }
+  deinit {
+    print(Self.self, "deinited")
+  }
 }
 
 
@@ -31,7 +39,6 @@ protocol Coordinating: AnyObject {
   var parent: Coordinating? { get }
   var navigationController: UINavigationController? { get }
   var childCoordinators: [Coordinating] { get set }
-  var flow: Flow { get }
 }
 
 extension Coordinating {
@@ -39,7 +46,7 @@ extension Coordinating {
     childCoordinators.forEach { child in
       child.pop(flow: flow)
     }
-    let notProfileFlowChild = childCoordinators.filter{$0.flow != .profile}
+    let notProfileFlowChild = childCoordinators.filter{$0 !== self}
     childCoordinators = notProfileFlowChild
   }
 }
