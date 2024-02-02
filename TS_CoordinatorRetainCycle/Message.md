@@ -17,3 +17,16 @@ NotificatonCenter를 활용하지 않는 방식인 Delegate를 활용할 수도 
 ![image](https://github.com/MaraMincho/MakingFrogWithoutDissecting/assets/103064352/f477062a-e42d-499b-b509-260f2e394af9)
 
 <br/><br/>
+
+### 실제 코드 구현
+
+```swift
+func observeNotification() {
+  NotificationCenter.default.addObserver(forName: .goHomeAndReBuild, object: nil, queue: .main) { [weak self] _ in
+    guard let self else { return }
+    let tapBarRouter = childRouters[0]
+    tapBarRouter.popRouter()
+    navigationController?.popToRootViewController(animated: true)
+  }
+
+```
