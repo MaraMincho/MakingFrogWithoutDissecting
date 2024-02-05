@@ -192,7 +192,7 @@ func addTodayIsNoLeftOverFood() {
 
 <br/><br/>
 
-# 데이트 섹션 Hanidle
+# 데이트 섹션 Handle
 
 유저가 하루의 날짜 혹은 여러 날을 선택하기 위해서는 첫째로 어떤 타입으로 선택할 것인지 먼저 정의해야 합니다. 그다음 selection object와 `Delegate`을 만들어야 합니다. 그 다음 `calendarView`의 `selectionBehavior`을 assign해야 합니다.
 
