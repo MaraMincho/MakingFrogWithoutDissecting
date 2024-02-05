@@ -16,22 +16,15 @@ class ViewController: UIViewController {
     setupViewHierarchyAndConstraints()
     restrictDate()
     addValentinesDay()
-    DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-      self.addTodayIsNoLeftOverFood()
-    }
     singleSelectDate.setSelected(.init(calendar: .init(identifier: .gregorian), year: 2024, month: 2, day: 5), animated: true)
   }
 
-  var decorations: [Date: UICalendarView.Decoration] = [:]
+  var decorations: [Date?: DateDecorationType] = [:]
   
   func addValentinesDay() {
     let valentinesDay = DateComponents(calendar: Calendar(identifier: .gregorian), year: 2024, month: 2, day: 14)
     // Create a calendar decoration for Valentine's day.
-    let heart = UICalendarView.Decoration.image(UIImage(systemName: "heart.fill"), color: UIColor.red, size: .large)
-    guard let date = valentinesDay.date else {
-      return
-    }
-    decorations = [date: heart]
+    decorations = [valentinesDay.date: .heart]
   }
   
   
@@ -73,39 +66,24 @@ class ViewController: UIViewController {
     calendarView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor).isActive = true
     calendarView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor).isActive = true
   }
-  
-  func addTodayIsNoLeftOverFood() {
-    let decoration: UICalendarView.Decoration = .customView {
-      let label = UILabel()
-      label.text = "🍚"
-      return label
-    }
-    add(decoration: decoration, on: .now)
-  }
-  // Add a decoration to the specified date.
-  func add(decoration: UICalendarView.Decoration, on date: Date) {
-    let dateComponents = Calendar.current.dateComponents(
-      [.calendar, .year, .month, .day ],
-      from: date
-    )
-    // Add the decoration to the decorations dictionary.
-    guard let date = dateComponents.date else { return }
-    decorations[date] = decoration
-    // Reload the calendar view's decorations.
-    calendarView.reloadDecorations(
-      forDateComponents: [dateComponents],
-      animated: true
-    )
-  }
+}
+
+enum DateDecorationType {
+  case heart
 }
 
 extension ViewController: UICalendarViewDelegate {
   func calendarView(_ calendarView: UICalendarView, decorationFor dateComponents: DateComponents) -> UICalendarView.Decoration? {
     let day = DateComponents(calendar: dateComponents.calendar, year: dateComponents.year, month: dateComponents.month, day: dateComponents.day)
-    guard let date = day.date else {
-      return nil
+    return makeDecoration(by: decorations[day.date])
+  }
+  
+  func makeDecoration(by type: DateDecorationType?) -> UICalendarView.Decoration? {
+    guard let type else { return nil }
+    switch type {
+    case .heart:
+      return UICalendarView.Decoration.image(UIImage(systemName: "heart.fill"), color: UIColor.red, size: .large)
     }
-    return decorations[date]
   }
 }
 
@@ -116,6 +94,7 @@ extension ViewController: UICalendarSelectionSingleDateDelegate {
     print("\(dateComponents.year!)년 \(dateComponents.month!)월 \(dateComponents.day!)일")
   }
 }
+var decorations: [Date?: UICalendarView.Decoration] = [:]
 
 extension ViewController: UICalendarSelectionMultiDateDelegate {
   func multiDateSelection(_ selection: UICalendarSelectionMultiDate, didSelectDate dateComponents: DateComponents) {
@@ -126,5 +105,49 @@ extension ViewController: UICalendarSelectionMultiDateDelegate {
   func multiDateSelection(_ selection: UICalendarSelectionMultiDate, didDeselectDate dateComponents: DateComponents) {
     print("선택을 취소했습니다.")
     print(dateComponents)
+  }
+}
+
+class TestViewController: UIViewController {
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    view.backgroundColor = .white
+    setup()
+  }
+  
+  func setup() {
+    addValentinesDay()
+    setupViewHierarchyAndConstraints()
+  }
+  private lazy var calendarView: UICalendarView = {
+    let calendarView = UICalendarView()
+    calendarView.delegate = self
+    
+    calendarView.translatesAutoresizingMaskIntoConstraints = false
+    return calendarView
+  }()
+  
+  func addValentinesDay() {
+    let valentinesDay = DateComponents(calendar: Calendar(identifier: .gregorian), year: 2024, month: 2, day: 14)
+    // Create a calendar decoration for Valentine's day.
+    let decoration = UICalendarView.Decoration.image(UIImage(systemName: "heart.fill"), color: UIColor.red, size: .large)
+    decorations = [valentinesDay.date: decoration]
+  }
+  
+  func setupViewHierarchyAndConstraints() {
+    let safeArea = view.safeAreaLayoutGuide
+    
+    view.addSubview(calendarView)
+    calendarView.topAnchor.constraint(equalTo: safeArea.topAnchor).isActive = true
+    calendarView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor).isActive = true
+    calendarView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor).isActive = true
+    calendarView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor).isActive = true
+  }
+}
+
+extension TestViewController: UICalendarViewDelegate {
+  func calendarView(_ calendarView: UICalendarView, decorationFor dateComponents: DateComponents) -> UICalendarView.Decoration? {
+    let day = DateComponents(calendar: dateComponents.calendar, year: dateComponents.year, month: dateComponents.month, day: dateComponents.day)
+    return decorations[day.date]
   }
 }
