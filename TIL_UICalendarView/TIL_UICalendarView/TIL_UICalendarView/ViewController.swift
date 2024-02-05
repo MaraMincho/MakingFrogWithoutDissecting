@@ -98,7 +98,6 @@ class ViewController: UIViewController {
 extension ViewController: UICalendarViewDelegate {
   func calendarView(_ calendarView: UICalendarView, decorationFor dateComponents: DateComponents) -> UICalendarView.Decoration? {
     let day = DateComponents(calendar: dateComponents.calendar, year: dateComponents.year, month: dateComponents.month, day: dateComponents.day)
-    // Return any decoration saved for that date.
     return decorations[day.date]
   }
 }
