@@ -22,13 +22,16 @@ class ViewController: UIViewController {
     singleSelectDate.setSelected(.init(calendar: .init(identifier: .gregorian), year: 2024, month: 2, day: 5), animated: true)
   }
 
-  var decorations: [Date?: UICalendarView.Decoration] = [:]
+  var decorations: [Date: UICalendarView.Decoration] = [:]
   
   func addValentinesDay() {
     let valentinesDay = DateComponents(calendar: Calendar(identifier: .gregorian), year: 2024, month: 2, day: 14)
     // Create a calendar decoration for Valentine's day.
     let heart = UICalendarView.Decoration.image(UIImage(systemName: "heart.fill"), color: UIColor.red, size: .large)
-    decorations = [valentinesDay.date: heart]
+    guard let date = valentinesDay.date else {
+      return
+    }
+    decorations = [date: heart]
   }
   
   
@@ -86,7 +89,8 @@ class ViewController: UIViewController {
       from: date
     )
     // Add the decoration to the decorations dictionary.
-    decorations[dateComponents.date] = decoration
+    guard let date = dateComponents.date else { return }
+    decorations[date] = decoration
     // Reload the calendar view's decorations.
     calendarView.reloadDecorations(
       forDateComponents: [dateComponents],
@@ -98,7 +102,10 @@ class ViewController: UIViewController {
 extension ViewController: UICalendarViewDelegate {
   func calendarView(_ calendarView: UICalendarView, decorationFor dateComponents: DateComponents) -> UICalendarView.Decoration? {
     let day = DateComponents(calendar: dateComponents.calendar, year: dateComponents.year, month: dateComponents.month, day: dateComponents.day)
-    return decorations[day.date]
+    guard let date = day.date else {
+      return nil
+    }
+    return decorations[date]
   }
 }
 
