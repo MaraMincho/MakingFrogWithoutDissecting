@@ -13,6 +13,8 @@
 		E8D02F932B71ECDF0044A155 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8D02F912B71ECDF0044A155 /* Main.storyboard */; };
 		E8D02F952B71ECE10044A155 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8D02F942B71ECE10044A155 /* Assets.xcassets */; };
 		E8D02F982B71ECE10044A155 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8D02F962B71ECE10044A155 /* LaunchScreen.storyboard */; };
+		E8D02FA12B71EE4A0044A155 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = E8D02FA02B71EE4A0044A155 /* Realm */; };
+		E8D02FA32B71EE4A0044A155 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E8D02FA22B71EE4A0044A155 /* RealmSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8D02FA32B71EE4A0044A155 /* RealmSwift in Frameworks */,
+				E8D02FA12B71EE4A0044A155 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +87,10 @@
 			dependencies = (
 			);
 			name = TIL_Realm;
+			packageProductDependencies = (
+				E8D02FA02B71EE4A0044A155 /* Realm */,
+				E8D02FA22B71EE4A0044A155 /* RealmSwift */,
+			);
 			productName = TIL_Realm;
 			productReference = E8D02F882B71ECDF0044A155 /* TIL_Realm.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +119,9 @@
 				Base,
 			);
 			mainGroup = E8D02F7F2B71ECDF0044A155;
+			packageReferences = (
+				E8D02F9F2B71EE4A0044A155 /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = E8D02F892B71ECDF0044A155 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -296,7 +307,6 @@
 				INFOPLIST_FILE = TIL_Realm/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -323,7 +333,6 @@
 				INFOPLIST_FILE = TIL_Realm/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -361,6 +370,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E8D02F9F2B71EE4A0044A155 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E8D02FA02B71EE4A0044A155 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E8D02F9F2B71EE4A0044A155 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		E8D02FA22B71EE4A0044A155 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E8D02F9F2B71EE4A0044A155 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E8D02F802B71ECDF0044A155 /* Project object */;
 }
