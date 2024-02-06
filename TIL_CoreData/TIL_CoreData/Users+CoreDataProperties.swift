@@ -18,7 +18,7 @@ extension Users {
 
     @NSManaged public var age: Int32
     @NSManaged public var id: Int32
-    @NSManaged public var devices: String?
+    @NSManaged public var devices: [String]?
     @NSManaged public var name: String?
     @NSManaged public var signupDate: Date?
 

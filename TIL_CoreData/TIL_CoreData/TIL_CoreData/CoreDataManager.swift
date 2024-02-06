@@ -32,6 +32,7 @@ final class CoreDataManager {
     var models: [Users] = []
     
     let idSort = NSSortDescriptor(key: "id", ascending: ascending)
+    let predict = NSPredicate(format: <#T##String#>, arguments: <#T##CVaListPointer#>)
     let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: modelName)
     fetchRequest.sortDescriptors = [idSort]
     
@@ -56,7 +57,7 @@ final class CoreDataManager {
       user.name = name
       user.age = age
       user.signupDate = date
-      user.devices = devices.description
+      user.devices = devices
       try? context.save()
     }
     
