@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E85280782B71F1CA00376A07 /* CombineCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = E85280772B71F1CA00376A07 /* CombineCocoa */; };
 		E8D02F8C2B71ECDF0044A155 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D02F8B2B71ECDF0044A155 /* AppDelegate.swift */; };
 		E8D02F8E2B71ECDF0044A155 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D02F8D2B71ECDF0044A155 /* SceneDelegate.swift */; };
 		E8D02F902B71ECDF0044A155 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D02F8F2B71ECDF0044A155 /* ViewController.swift */; };
-		E8D02F932B71ECDF0044A155 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8D02F912B71ECDF0044A155 /* Main.storyboard */; };
 		E8D02F952B71ECE10044A155 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8D02F942B71ECE10044A155 /* Assets.xcassets */; };
 		E8D02F982B71ECE10044A155 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8D02F962B71ECE10044A155 /* LaunchScreen.storyboard */; };
 		E8D02FA12B71EE4A0044A155 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = E8D02FA02B71EE4A0044A155 /* Realm */; };
@@ -22,7 +22,6 @@
 		E8D02F8B2B71ECDF0044A155 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8D02F8D2B71ECDF0044A155 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E8D02F8F2B71ECDF0044A155 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E8D02F922B71ECDF0044A155 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E8D02F942B71ECE10044A155 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E8D02F972B71ECE10044A155 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E8D02F992B71ECE10044A155 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -34,6 +33,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8D02FA32B71EE4A0044A155 /* RealmSwift in Frameworks */,
+				E85280782B71F1CA00376A07 /* CombineCocoa in Frameworks */,
 				E8D02FA12B71EE4A0044A155 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -63,7 +63,6 @@
 				E8D02F8B2B71ECDF0044A155 /* AppDelegate.swift */,
 				E8D02F8D2B71ECDF0044A155 /* SceneDelegate.swift */,
 				E8D02F8F2B71ECDF0044A155 /* ViewController.swift */,
-				E8D02F912B71ECDF0044A155 /* Main.storyboard */,
 				E8D02F942B71ECE10044A155 /* Assets.xcassets */,
 				E8D02F962B71ECE10044A155 /* LaunchScreen.storyboard */,
 				E8D02F992B71ECE10044A155 /* Info.plist */,
@@ -90,6 +89,7 @@
 			packageProductDependencies = (
 				E8D02FA02B71EE4A0044A155 /* Realm */,
 				E8D02FA22B71EE4A0044A155 /* RealmSwift */,
+				E85280772B71F1CA00376A07 /* CombineCocoa */,
 			);
 			productName = TIL_Realm;
 			productReference = E8D02F882B71ECDF0044A155 /* TIL_Realm.app */;
@@ -121,6 +121,7 @@
 			mainGroup = E8D02F7F2B71ECDF0044A155;
 			packageReferences = (
 				E8D02F9F2B71EE4A0044A155 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				E85280762B71F1CA00376A07 /* XCRemoteSwiftPackageReference "CombineCocoa" */,
 			);
 			productRefGroup = E8D02F892B71ECDF0044A155 /* Products */;
 			projectDirPath = "";
@@ -138,7 +139,6 @@
 			files = (
 				E8D02F982B71ECE10044A155 /* LaunchScreen.storyboard in Resources */,
 				E8D02F952B71ECE10044A155 /* Assets.xcassets in Resources */,
-				E8D02F932B71ECDF0044A155 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,14 +158,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		E8D02F912B71ECDF0044A155 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E8D02F922B71ECDF0044A155 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E8D02F962B71ECE10044A155 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -372,6 +364,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		E85280762B71F1CA00376A07 /* XCRemoteSwiftPackageReference "CombineCocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CombineCommunity/CombineCocoa";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.4.1;
+			};
+		};
 		E8D02F9F2B71EE4A0044A155 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
@@ -383,6 +383,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		E85280772B71F1CA00376A07 /* CombineCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E85280762B71F1CA00376A07 /* XCRemoteSwiftPackageReference "CombineCocoa" */;
+			productName = CombineCocoa;
+		};
 		E8D02FA02B71EE4A0044A155 /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E8D02F9F2B71EE4A0044A155 /* XCRemoteSwiftPackageReference "realm-swift" */;
