@@ -14,9 +14,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
   func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
     guard let windowScene = (scene as? UIWindowScene) else { return }
     window = .init(windowScene: windowScene)
-    let config = Realm.Configuration(schemaVersion: 2)
-    // Use this configuration when opening realms
-    Realm.Configuration.defaultConfiguration = config
+    let configuration = Realm.Configuration(deleteRealmIfMigrationNeeded: true)
+    let realm = try! Realm(configuration: configuration)
     
     window?.rootViewController = ViewController()
     window?.makeKeyAndVisible()
