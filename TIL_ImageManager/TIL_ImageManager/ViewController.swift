@@ -75,7 +75,7 @@ final class FileCacher {
   }
   
   
-  /// LoadData
+  /// LoadImageData
   /// - Parameters:
   ///   - url: URL
   ///   - completion: Network data
@@ -92,7 +92,6 @@ final class FileCacher {
     }else {
       return loadImage(url: url) { data in
         if let data {
-          print(imagePathURL)
           try! data.write(to: imagePathURL, options: .atomic)
         }
         completion(data)
@@ -124,11 +123,12 @@ extension UIImageView {
     static let queue = DispatchSerialQueue(label: "ImageQueue")
   }
   
-  func setImage(url: URL?){
+  @discardableResult
+  func setImage(url: URL?) -> URLSessionDataTask? {
     guard let url = url else {
-      return
+      return nil
     }
-    _ = FileCacher.load(url: url) { data in
+    return FileCacher.load(url: url) { data in
       guard
         let data,
         let image = UIImage(data: data) else {
