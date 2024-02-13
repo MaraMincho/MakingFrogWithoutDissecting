@@ -1,4 +1,4 @@
-# How to make a completionHandler much safer
+# How to make a completionHandler much safer 번역
 
 이 글은 [How to make a completionHandler much safer](https://www.swiftwithvincent.com/blog/how-to-make-a-completionhandler-much-safer)을 번역한 것 입니다. 문제시 삭제 예정입니다.
 
@@ -72,8 +72,16 @@
 
 
 
+`result`가 `let`으로 선언되어 있기 때문에, 만약 실수로 `result`에 값을 한번 이상 설정한다면 컴파일러가 에러를 전할 것 입니다.
 
 
 
 
+<img src="https://github.com/MaraMincho/MakingFrogWithoutDissecting/assets/103064352/59b5173a-7166-4d9d-9f1f-2b278b733b07" width="500">
+
+<br/><br/><br/><br/>
+
+
+
+이러한 간단한 트릭으로, 코드는 항상 CompletionHandler를 호출하는 것을 가능하게 합니다.
 

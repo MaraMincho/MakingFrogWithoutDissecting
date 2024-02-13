@@ -55,6 +55,7 @@ class ViewController: UIViewController {
   }
   
   func setupView() {
+    imageView.kf.setImage(with: <#T##Source?#>, options: <#T##KingfisherOptionsInfo?#>)
     imageView.setImage(url: URL(string: "https://w7.pngwing.com/pngs/151/483/png-transparent-brown-tabby-cat-cat-dog-kitten-pet-sitting-the-waving-cat-animals-cat-like-mammal-pet-thumbnail.png"))
   }
 
@@ -73,6 +74,9 @@ final class FileCacher {
   private enum ImageCacherConstants {
     static let dirName: String = "Images"
   }
+  public enum FileCacherError: LocalizedError {
+    case noData
+  }
   
   
   /// LoadImageData
@@ -84,10 +88,10 @@ final class FileCacher {
   static func load(url: URL, completion: @escaping (Data?) -> Void) -> URLSessionDataTask?{
     
     /// 파일지 저장될 URL입니다.
-    let imagePathURL = ImageFileManagerProperty.imageDirPath.appendingPathComponent(url.lastPathComponent, conformingTo: .data)
+    let imagePathURL = ImageFileManagerProperty.imageDirPath.appending(path: url.lastPathComponent)
     
     if isExistImageDirectory(url: imagePathURL) {
-      completion(try? Data(contentsOf: imagePathURL))
+      completion(try! Data(contentsOf: imagePathURL))
       return nil
     }else {
       return loadImage(url: url) { data in
@@ -129,13 +133,9 @@ extension UIImageView {
       return nil
     }
     return FileCacher.load(url: url) { data in
-      guard
-        let data,
-        let image = UIImage(data: data) else {
-        return
-      }
+      
       DispatchQueue.main.async {
-        self.image = image
+        self.image = UIImage(data: data!)
       }
     }
   }
