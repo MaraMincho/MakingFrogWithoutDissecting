@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E8517CA72B7F323600CCDCE0 /* ImageCacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8517CA62B7F323600CCDCE0 /* ImageCacher.swift */; };
+		E8517CA92B7F3FCA00CCDCE0 /* FileCacher+PublicExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8517CA82B7F3FCA00CCDCE0 /* FileCacher+PublicExtension.swift */; };
 		E86CBB952B7897D400713687 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86CBB942B7897D400713687 /* AppDelegate.swift */; };
 		E86CBB972B7897D400713687 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86CBB962B7897D400713687 /* SceneDelegate.swift */; };
 		E86CBB992B7897D400713687 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86CBB982B7897D400713687 /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E8517CA62B7F323600CCDCE0 /* ImageCacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacher.swift; sourceTree = "<group>"; };
+		E8517CA82B7F3FCA00CCDCE0 /* FileCacher+PublicExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileCacher+PublicExtension.swift"; sourceTree = "<group>"; };
 		E86CBB912B7897D400713687 /* TIL_ImageManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TIL_ImageManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E86CBB942B7897D400713687 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E86CBB962B7897D400713687 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +63,8 @@
 				E86CBB942B7897D400713687 /* AppDelegate.swift */,
 				E86CBB962B7897D400713687 /* SceneDelegate.swift */,
 				E86CBB982B7897D400713687 /* ViewController.swift */,
+				E8517CA62B7F323600CCDCE0 /* ImageCacher.swift */,
+				E8517CA82B7F3FCA00CCDCE0 /* FileCacher+PublicExtension.swift */,
 				E86CBB9D2B7897D700713687 /* Assets.xcassets */,
 				E86CBB9F2B7897D700713687 /* LaunchScreen.storyboard */,
 				E86CBBA22B7897D700713687 /* Info.plist */,
@@ -142,7 +148,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8517CA92B7F3FCA00CCDCE0 /* FileCacher+PublicExtension.swift in Sources */,
 				E86CBB992B7897D400713687 /* ViewController.swift in Sources */,
+				E8517CA72B7F323600CCDCE0 /* ImageCacher.swift in Sources */,
 				E86CBB952B7897D400713687 /* AppDelegate.swift in Sources */,
 				E86CBB972B7897D400713687 /* SceneDelegate.swift in Sources */,
 			);
