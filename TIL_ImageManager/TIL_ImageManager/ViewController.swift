@@ -99,7 +99,10 @@ class ViewController: UIViewController {
 
 }
 
-var temp:WeakKeyDictionary<UIViewController,TEMP> = .init()
+final class foo {}
+final class bar {}
+var mapTable: NSMapTable<bar, foo> = .weakToStrongObjects()
+
 
 final class WeakKeyDictionary<KEY: AnyObject, VALUE: AnyObject> where KEY: Hashable {
   typealias KeyType = Weak<KEY>
@@ -107,6 +110,8 @@ final class WeakKeyDictionary<KEY: AnyObject, VALUE: AnyObject> where KEY: Hasha
   
   func setObject(_ object: VALUE, forKey key: KEY) {
     dictionary[Weak(value: key)] = object
+    mapTable.object(forKey: <#T##bar?#>)
+    mapTable.setObject(<#T##anObject: foo?##foo?#>, forKey: <#T##bar?#>)
   }
   
   func object(forKey key: KEY) -> VALUE? {
