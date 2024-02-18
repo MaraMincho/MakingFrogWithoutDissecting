@@ -95,58 +95,6 @@ class ViewController: UIViewController {
   
   func setupView() {
     imageView.setImage(url: URL(string: "https://w7.pngwing.com/pngs/151/483/png-transparent-brown-tabby-cat-cat-dog-kitten-pet-sitting-the-waving-cat-animals-cat-like-mammal-pet-thumbnail.png"))
-  }
-
-}
-
-final class foo {}
-final class bar {}
-var mapTable: NSMapTable<bar, foo> = .weakToStrongObjects()
-
-
-final class WeakKeyDictionary<KEY: AnyObject, VALUE: AnyObject> where KEY: Hashable {
-  typealias KeyType = Weak<KEY>
-  var dictionary: [KeyType: VALUE] = [:]
-  
-  func setObject(_ object: VALUE, forKey key: KEY) {
-    dictionary[Weak(value: key)] = object
-    mapTable.object(forKey: <#T##bar?#>)
-    mapTable.setObject(<#T##anObject: foo?##foo?#>, forKey: <#T##bar?#>)
-  }
-  
-  func object(forKey key: KEY) -> VALUE? {
-    return dictionary[Weak(value: key)]
-  }
-  
-  subscript(forKey key: KEY) -> VALUE? {
-    return object(forKey: key)
-  }
-}
-
-final class Weak<T: AnyObject>: Hashable where T: Hashable {
-  static func == (lhs: Weak<T>, rhs: Weak<T>) -> Bool {
-    return lhs.value === rhs.value
-  }
-  
-  func hash(into hasher: inout Hasher) {
-    if let value = value {
-      hasher.combine(ObjectIdentifier(value))
-    }
-  }
-  
-  weak var value: T?
-  
-  init(value: T) {
-    self.value = value
-  }
-}
-
-final class TEMP {
-  var value: Int
-  deinit {
-    print(Self.self, "deinit")
-  }
-  init(value: Int) {
-    self.value = value
+    imageView.cancelFetch()
   }
 }
