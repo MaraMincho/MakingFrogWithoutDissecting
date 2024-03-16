@@ -7,35 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E847C5002B820F5A00D8E0A7 /* MealGokCacher+ManagingFetchImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E847C4F72B820F5A00D8E0A7 /* MealGokCacher+ManagingFetchImage.swift */; };
-		E847C5012B820F5A00D8E0A7 /* UIImage+DownSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = E847C4F82B820F5A00D8E0A7 /* UIImage+DownSample.swift */; };
-		E847C5022B820F5A00D8E0A7 /* ImageFetchDescriptionProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = E847C4F92B820F5A00D8E0A7 /* ImageFetchDescriptionProperty.swift */; };
-		E847C5032B820F5A00D8E0A7 /* DownSampleProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = E847C4FA2B820F5A00D8E0A7 /* DownSampleProperty.swift */; };
-		E847C5042B820F5A00D8E0A7 /* UIImageView+MealGokCacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E847C4FB2B820F5A00D8E0A7 /* UIImageView+MealGokCacher.swift */; };
-		E847C5052B820F5A00D8E0A7 /* MealGokCacher+ManagingFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E847C4FC2B820F5A00D8E0A7 /* MealGokCacher+ManagingFile.swift */; };
-		E847C5062B820F5A00D8E0A7 /* ImageFileManagerProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = E847C4FD2B820F5A00D8E0A7 /* ImageFileManagerProperty.swift */; };
-		E847C5072B820F5A00D8E0A7 /* ImageNetworkFetchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E847C4FE2B820F5A00D8E0A7 /* ImageNetworkFetchManager.swift */; };
-		E847C5082B820F5A00D8E0A7 /* MealGokCacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E847C4FF2B820F5A00D8E0A7 /* MealGokCacher.swift */; };
-		E8517CA92B7F3FCA00CCDCE0 /* FileCacher+PublicExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8517CA82B7F3FCA00CCDCE0 /* FileCacher+PublicExtension.swift */; };
 		E86CBB952B7897D400713687 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86CBB942B7897D400713687 /* AppDelegate.swift */; };
 		E86CBB972B7897D400713687 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86CBB962B7897D400713687 /* SceneDelegate.swift */; };
 		E86CBB992B7897D400713687 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86CBB982B7897D400713687 /* ViewController.swift */; };
 		E86CBB9E2B7897D700713687 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E86CBB9D2B7897D700713687 /* Assets.xcassets */; };
 		E86CBBA12B7897D700713687 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E86CBB9F2B7897D700713687 /* LaunchScreen.storyboard */; };
 		E86CBBAA2B789B7800713687 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = E86CBBA92B789B7800713687 /* Kingfisher */; };
+		E8BA15872B85851600BE2D3B /* MealGokCacher+ManagingFetchImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BA157E2B85851600BE2D3B /* MealGokCacher+ManagingFetchImage.swift */; };
+		E8BA15892B85851600BE2D3B /* ImageFetchDescriptionProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BA15802B85851600BE2D3B /* ImageFetchDescriptionProperty.swift */; };
+		E8BA158A2B85851600BE2D3B /* DownSampleProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BA15812B85851600BE2D3B /* DownSampleProperty.swift */; };
+		E8BA158B2B85851600BE2D3B /* UIImageView+MealGokCacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BA15822B85851600BE2D3B /* UIImageView+MealGokCacher.swift */; };
+		E8BA158C2B85851600BE2D3B /* MealGokCacher+ManagingFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BA15832B85851600BE2D3B /* MealGokCacher+ManagingFile.swift */; };
+		E8BA158D2B85851600BE2D3B /* ImageFileManagerProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BA15842B85851600BE2D3B /* ImageFileManagerProperty.swift */; };
+		E8BA158E2B85851600BE2D3B /* ImageNetworkFetchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BA15852B85851600BE2D3B /* ImageNetworkFetchManager.swift */; };
+		E8BA158F2B85851600BE2D3B /* MealGokCacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BA15862B85851600BE2D3B /* MealGokCacher.swift */; };
+		E8BA15932B85929A00BE2D3B /* MealGkCacherextension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BA15922B85929A00BE2D3B /* MealGkCacherextension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E847C4F72B820F5A00D8E0A7 /* MealGokCacher+ManagingFetchImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MealGokCacher+ManagingFetchImage.swift"; sourceTree = "<group>"; };
-		E847C4F82B820F5A00D8E0A7 /* UIImage+DownSample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+DownSample.swift"; sourceTree = "<group>"; };
-		E847C4F92B820F5A00D8E0A7 /* ImageFetchDescriptionProperty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageFetchDescriptionProperty.swift; sourceTree = "<group>"; };
-		E847C4FA2B820F5A00D8E0A7 /* DownSampleProperty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownSampleProperty.swift; sourceTree = "<group>"; };
-		E847C4FB2B820F5A00D8E0A7 /* UIImageView+MealGokCacher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+MealGokCacher.swift"; sourceTree = "<group>"; };
-		E847C4FC2B820F5A00D8E0A7 /* MealGokCacher+ManagingFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MealGokCacher+ManagingFile.swift"; sourceTree = "<group>"; };
-		E847C4FD2B820F5A00D8E0A7 /* ImageFileManagerProperty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageFileManagerProperty.swift; sourceTree = "<group>"; };
-		E847C4FE2B820F5A00D8E0A7 /* ImageNetworkFetchManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageNetworkFetchManager.swift; sourceTree = "<group>"; };
-		E847C4FF2B820F5A00D8E0A7 /* MealGokCacher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealGokCacher.swift; sourceTree = "<group>"; };
-		E8517CA82B7F3FCA00CCDCE0 /* FileCacher+PublicExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileCacher+PublicExtension.swift"; sourceTree = "<group>"; };
 		E86CBB912B7897D400713687 /* TIL_ImageManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TIL_ImageManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E86CBB942B7897D400713687 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E86CBB962B7897D400713687 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +32,15 @@
 		E86CBB9D2B7897D700713687 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E86CBBA02B7897D700713687 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E86CBBA22B7897D700713687 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E8BA157E2B85851600BE2D3B /* MealGokCacher+ManagingFetchImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MealGokCacher+ManagingFetchImage.swift"; sourceTree = "<group>"; };
+		E8BA15802B85851600BE2D3B /* ImageFetchDescriptionProperty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageFetchDescriptionProperty.swift; sourceTree = "<group>"; };
+		E8BA15812B85851600BE2D3B /* DownSampleProperty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownSampleProperty.swift; sourceTree = "<group>"; };
+		E8BA15822B85851600BE2D3B /* UIImageView+MealGokCacher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+MealGokCacher.swift"; sourceTree = "<group>"; };
+		E8BA15832B85851600BE2D3B /* MealGokCacher+ManagingFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MealGokCacher+ManagingFile.swift"; sourceTree = "<group>"; };
+		E8BA15842B85851600BE2D3B /* ImageFileManagerProperty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageFileManagerProperty.swift; sourceTree = "<group>"; };
+		E8BA15852B85851600BE2D3B /* ImageNetworkFetchManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageNetworkFetchManager.swift; sourceTree = "<group>"; };
+		E8BA15862B85851600BE2D3B /* MealGokCacher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealGokCacher.swift; sourceTree = "<group>"; };
+		E8BA15922B85929A00BE2D3B /* MealGkCacherextension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealGkCacherextension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,22 +55,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E847C4F62B820F5A00D8E0A7 /* NewSources */ = {
-			isa = PBXGroup;
-			children = (
-				E847C4F72B820F5A00D8E0A7 /* MealGokCacher+ManagingFetchImage.swift */,
-				E847C4F82B820F5A00D8E0A7 /* UIImage+DownSample.swift */,
-				E847C4F92B820F5A00D8E0A7 /* ImageFetchDescriptionProperty.swift */,
-				E847C4FA2B820F5A00D8E0A7 /* DownSampleProperty.swift */,
-				E847C4FB2B820F5A00D8E0A7 /* UIImageView+MealGokCacher.swift */,
-				E847C4FC2B820F5A00D8E0A7 /* MealGokCacher+ManagingFile.swift */,
-				E847C4FD2B820F5A00D8E0A7 /* ImageFileManagerProperty.swift */,
-				E847C4FE2B820F5A00D8E0A7 /* ImageNetworkFetchManager.swift */,
-				E847C4FF2B820F5A00D8E0A7 /* MealGokCacher.swift */,
-			);
-			path = NewSources;
-			sourceTree = "<group>";
-		};
 		E86CBB882B7897D400713687 = {
 			isa = PBXGroup;
 			children = (
@@ -92,16 +74,31 @@
 		E86CBB932B7897D400713687 /* TIL_ImageManager */ = {
 			isa = PBXGroup;
 			children = (
-				E847C4F62B820F5A00D8E0A7 /* NewSources */,
+				E8BA157D2B85851600BE2D3B /* ImageSources */,
 				E86CBB942B7897D400713687 /* AppDelegate.swift */,
 				E86CBB962B7897D400713687 /* SceneDelegate.swift */,
 				E86CBB982B7897D400713687 /* ViewController.swift */,
-				E8517CA82B7F3FCA00CCDCE0 /* FileCacher+PublicExtension.swift */,
 				E86CBB9D2B7897D700713687 /* Assets.xcassets */,
 				E86CBB9F2B7897D700713687 /* LaunchScreen.storyboard */,
 				E86CBBA22B7897D700713687 /* Info.plist */,
 			);
 			path = TIL_ImageManager;
+			sourceTree = "<group>";
+		};
+		E8BA157D2B85851600BE2D3B /* ImageSources */ = {
+			isa = PBXGroup;
+			children = (
+				E8BA157E2B85851600BE2D3B /* MealGokCacher+ManagingFetchImage.swift */,
+				E8BA15802B85851600BE2D3B /* ImageFetchDescriptionProperty.swift */,
+				E8BA15812B85851600BE2D3B /* DownSampleProperty.swift */,
+				E8BA15822B85851600BE2D3B /* UIImageView+MealGokCacher.swift */,
+				E8BA15832B85851600BE2D3B /* MealGokCacher+ManagingFile.swift */,
+				E8BA15842B85851600BE2D3B /* ImageFileManagerProperty.swift */,
+				E8BA15852B85851600BE2D3B /* ImageNetworkFetchManager.swift */,
+				E8BA15862B85851600BE2D3B /* MealGokCacher.swift */,
+				E8BA15922B85929A00BE2D3B /* MealGkCacherextension.swift */,
+			);
+			path = ImageSources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,19 +177,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E847C5022B820F5A00D8E0A7 /* ImageFetchDescriptionProperty.swift in Sources */,
-				E847C5002B820F5A00D8E0A7 /* MealGokCacher+ManagingFetchImage.swift in Sources */,
-				E847C5052B820F5A00D8E0A7 /* MealGokCacher+ManagingFile.swift in Sources */,
-				E847C5072B820F5A00D8E0A7 /* ImageNetworkFetchManager.swift in Sources */,
-				E847C5032B820F5A00D8E0A7 /* DownSampleProperty.swift in Sources */,
-				E8517CA92B7F3FCA00CCDCE0 /* FileCacher+PublicExtension.swift in Sources */,
+				E8BA15892B85851600BE2D3B /* ImageFetchDescriptionProperty.swift in Sources */,
+				E8BA15872B85851600BE2D3B /* MealGokCacher+ManagingFetchImage.swift in Sources */,
+				E8BA158C2B85851600BE2D3B /* MealGokCacher+ManagingFile.swift in Sources */,
+				E8BA15932B85929A00BE2D3B /* MealGkCacherextension.swift in Sources */,
+				E8BA158E2B85851600BE2D3B /* ImageNetworkFetchManager.swift in Sources */,
+				E8BA158A2B85851600BE2D3B /* DownSampleProperty.swift in Sources */,
 				E86CBB992B7897D400713687 /* ViewController.swift in Sources */,
-				E847C5012B820F5A00D8E0A7 /* UIImage+DownSample.swift in Sources */,
 				E86CBB952B7897D400713687 /* AppDelegate.swift in Sources */,
 				E86CBB972B7897D400713687 /* SceneDelegate.swift in Sources */,
-				E847C5062B820F5A00D8E0A7 /* ImageFileManagerProperty.swift in Sources */,
-				E847C5082B820F5A00D8E0A7 /* MealGokCacher.swift in Sources */,
-				E847C5042B820F5A00D8E0A7 /* UIImageView+MealGokCacher.swift in Sources */,
+				E8BA158D2B85851600BE2D3B /* ImageFileManagerProperty.swift in Sources */,
+				E8BA158F2B85851600BE2D3B /* MealGokCacher.swift in Sources */,
+				E8BA158B2B85851600BE2D3B /* UIImageView+MealGokCacher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -86,7 +86,6 @@ class ViewController: UIViewController {
   }
   
   @objc func someAction() {
-    imageView.kf.cancelDownloadTask()
     self.present(ViewController(), animated: true)
   }
   @objc func twoAction() {
@@ -95,6 +94,27 @@ class ViewController: UIViewController {
   
   func setupView() {
     imageView.setImage(url: URL(string: "https://w7.pngwing.com/pngs/151/483/png-transparent-brown-tabby-cat-cat-dog-kitten-pet-sitting-the-waving-cat-animals-cat-like-mammal-pet-thumbnail.png"))
-    imageView.cancelFetch()
+    imageView.TempAssociatedObject = SomeClass()
+    imageView.kf.setImage(with: <#T##Source?#>)
+  }
+}
+
+extension UIImageView {
+  private enum AssociatedKeys {
+      static var intKey = "lastOffsetY"
+  }
+  var TempAssociatedObject: SomeClass {
+    get {
+      objc_getAssociatedObject(self, AssociatedKeys.intKey) as? SomeClass ?? SomeClass()
+    }
+    set {
+      objc_setAssociatedObject(self, AssociatedKeys.intKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+    }
+  }
+}
+
+final class SomeClass {
+  deinit {
+    print("나 디이닛 해용 \(Self.self)")
   }
 }

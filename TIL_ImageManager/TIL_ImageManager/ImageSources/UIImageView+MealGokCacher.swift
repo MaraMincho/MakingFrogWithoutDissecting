@@ -13,6 +13,7 @@ import UIKit
 public extension UIImageView {
   func setImage(url: URL?, downSampleProperty property: DownSampleProperty? = nil) {
     MealGokCacher.loadImage(url: url, target: self) { [weak self] result in
+
       switch result {
       // 성공했을 때 다운샘플링 프로퍼티에 따라서 이미지를 resizing 합니다.
       case let .success(data):
@@ -38,7 +39,7 @@ public extension UIImageView {
   }
 
   func applyDownSampling(data: Data, downSampleProperty property: DownSampleProperty?) {
-    let targetImage: UIImage? = property == nil ? UIImage(data: data) : data.downSample(downSampleProperty: property)
+    let targetImage: UIImage? = property == nil ? UIImage(data: data) : data.downSample(downSampleProperty: property!)
 
     DispatchQueue.main.async {
       self.image = targetImage
