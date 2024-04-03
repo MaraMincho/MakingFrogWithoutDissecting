@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/jeongdaham/Documents/GitHub/MakingFrogWithoutDissecting/4th of Obejct Oriented Language Task/4th of Obejct Oriented Language Task",
+      "program": "/Users/jeongdaham/Documents/GitHub/MakingFrogWithoutDissecting/4th of Obejct Oriented Language Task/4th of Obejct Oriented Language Task/build/Debug/outDebug"
+    }
+  ]
+}
