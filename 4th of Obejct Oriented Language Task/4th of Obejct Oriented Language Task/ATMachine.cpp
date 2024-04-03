@@ -135,9 +135,8 @@ int ATMachine::enterMoney(string description) {
 }
 
 int ATMachine::createID() {
-    random_device rd;  // 시드 생성
-    mt19937 gen(rd()); // 메르센 트위스터 엔진 초기화
-    uniform_int_distribution<> distrib(100, 999); // 100 ~ 999 범위의 균등 분포
-
-    return distrib(gen); // 랜덤 계좌 번호 생성 후 반환
+    random_device rd;
+    mt19937 gen(rd());
+    uniform_int_distribution<> distrib(100, 999);
+    return distrib(gen);
 }
