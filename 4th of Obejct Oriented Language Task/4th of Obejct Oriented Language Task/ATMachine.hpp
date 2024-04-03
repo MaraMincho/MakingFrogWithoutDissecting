@@ -8,11 +8,13 @@
 #ifndef ATMachine_hpp
 #define ATMachine_hpp
 
-
 #include "Account.hpp"
 #include <string>
+#include <random>
 
-using std::string;
+
+using namespace std;
+
 #define NEGATIVE_ATM_BALANCE -10 // ATM 잔액 부족
 class ATMachine {
 private:
@@ -21,6 +23,12 @@ private:
   int nMaxAccountNum; // 동적 생성된 고객계좌 배열 크기
   int nCurrentAccountNum; // 개설된 고객 계좌 수
   string strManagerPassword; // 관리자 비밀번호
+  
+  string enterName();
+  int enterID();
+  string enterPW();
+  int createID();
+  int enterMoney(string description);
   
 public:
   ATMachine(int size, int balance, string password); // 계좌 배열크기, ATM 잔고, 관리자 암호 초기화
