@@ -47,7 +47,7 @@
 		E80DD2D22BBCD8C300C3D31E = {
 			isa = PBXGroup;
 			children = (
-				E80DD2DD2BBCD8C300C3D31E /* 4th of Obejct Oriented Language Task */,
+				E80DD2DD2BBCD8C300C3D31E /* 4th of Obejct Oriented Language Task Sources */,
 				E80DD2DC2BBCD8C300C3D31E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -60,7 +60,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E80DD2DD2BBCD8C300C3D31E /* 4th of Obejct Oriented Language Task */ = {
+		E80DD2DD2BBCD8C300C3D31E /* 4th of Obejct Oriented Language Task Sources */ = {
 			isa = PBXGroup;
 			children = (
 				E80DD2DE2BBCD8C300C3D31E /* main.cpp */,
@@ -69,7 +69,7 @@
 				E834B4142BBD2BC900EB8AA1 /* ATMachine.cpp */,
 				E834B4152BBD2BC900EB8AA1 /* ATMachine.hpp */,
 			);
-			path = "4th of Obejct Oriented Language Task";
+			path = "4th of Obejct Oriented Language Task Sources";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

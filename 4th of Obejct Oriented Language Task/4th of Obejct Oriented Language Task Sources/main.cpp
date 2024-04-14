@@ -6,9 +6,19 @@
 //
 #include <iostream>
 #include "ATMachine.hpp"
+enum Tst {
+  case1,
+  cas2,
+};
+Tst Test() {
+  return cas2;
+}
+
 
 using namespace std;
 int main() {
+  auto val = Test();
+
   int select;
   // 고객 수(100명), ATM 잔금 초기화, 관리자 암호
   ATMachine atm(100, 50000, "admin");
