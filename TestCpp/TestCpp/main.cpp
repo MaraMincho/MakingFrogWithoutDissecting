@@ -1,63 +1,41 @@
 #include <iostream>
 using namespace std;
+class Rect;
 
-class Beverage {
-public:
-  char * name = nullptr;
-  int volume;
-  Beverage(int volume): volume(volume) { }
-  Beverage(Beverage &other) {
-    volume = other.volume;
-    setName(other.name);
-  }
-  Beverage(const char *name, int volume = 100) {
-    setName(name);
-    this->volume = volume;
-  }
-  void setName(const char *name) {
-    if (this->name != nullptr) {
-      delete [] this->name;
-    }
-    unsigned long length = strlen(name);
-    this->name = new char[length];
-    strcpy(this->name, name);
-  }
-  ~Beverage() {
-    if (this->name != nullptr) {
-      delete [] this->name;
-    }
-  }
+
+class RectManager { // RectManager 클래스 선언
+public: 
+  bool equals(Rect r, Rect s);
+  void copy(Rect& dest, Rect& src);
 };
 
+class Rect { // Rect 클래스 선언
+  int width, height; 
+public:
+  Rect(int width, int height) {
+    this->width = width;
+    this->height = height;
+  }
+  friend RectManager;
+};
+
+bool RectManager::equals(Rect r, Rect s) { // r과 s가 같으면 true 리턴
+  if(r.width == s.width && r.height == s.height) 
+    return true;
+  else
+    return false;
+}
+void RectManager::copy(Rect& dest, Rect& src) { // src를 dest에 복사
+  dest.width = src.width;
+  dest.height = src.height;
+}
+
 int main() {
-  Beverage cola("cola");
-  Beverage coffee = cola; // 복사 생성자 호출
-  return 0;
-}
-
-// 매개변수로 받은 음료와 똑같이 생긴 "새 음료수" 마시기
-void drinkABeverage(Beverage beverage, int volume) {
-  beverage.volume -= volume;
-}
-
-// 정확하게 "가르키고 있는 음료" 마시기
-void drinkTheBeverage(Beverage *beverage, int volume) {
-  beverage->volume -= volume;
-}
-
-// 음료 마시기
-void drinkBeverage(Beverage &beverage, int volume) {
-  beverage.volume -= volume;
-}
-
-void serveBeverage(Beverage drink) {
-    // 함수 내에서 drink 객체 사용
-}
-Beverage createBeverage() {
-    return Beverage("cola"); // 복사 생성자 호출 (임시 객체가 반환될 때)
-}
-int main() {
-    Beverage cola("cola");
-    serveBeverage(cola); // 복사 생성자 호출
-    return 0;
+  Rect a(3,4), b(5,6);
+  RectManager man;
+  man.copy(b, a); // a를 b에 복사한다.
+  if(man.equals(a, b)) 
+    cout << "equal" << endl;
+  else
+    cout << "not equal" << endl;
 }
