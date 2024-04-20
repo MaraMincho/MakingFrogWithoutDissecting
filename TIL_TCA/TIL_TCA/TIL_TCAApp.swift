@@ -10,11 +10,51 @@ import ComposableArchitecture
 
 @main
 struct TIL_TCAApp: App {
-    var body: some Scene {
-      WindowGroup {
-        AlertAndConfirmationDialogView(store: .init(initialState: AlertAndConfirmationDialog.State()) {
-          AlertAndConfirmationDialog()
-        })
-      }
+  var body: some Scene {
+    WindowGroup {
+      CounterDemoView(
+        store: .init(
+          initialState: {
+            Counter.State()
+          }(),
+          reducer: {
+            Counter()
+          }
+        ))
     }
+  }
 }
+
+
+func foo(initialClosure: () -> (), sar: Int) {
+  print("before")
+  initialClosure()
+  print("after")
+}
+func bar(initialClosure: @autoclosure () -> (), sar: Int) {
+  print("before")
+  initialClosure()
+  print("after")
+}
+
+//func maybeMain() {
+//  // Error
+//  foo(initialClosure: print("Im not auto closure"), sar: 0)
+//  // OK
+//  foo(initialClosure: {print("Im not auto closure")}, sar: 1)
+//  // OK
+//  foo(initialClosure: { print("Im not auto closure") }, sar: 2)
+//  
+//  // UsingAutoClosure
+//  bar(initialClosure: print("Im auto closure"), sar: 3)
+//}
+//
+//func makeStore() {
+//  CounterDemoView(store:
+//      .init(initialState: {
+//        Counter.State()
+//      }(), reducer: {
+//        Counter()
+//      })
+//  )
+//}

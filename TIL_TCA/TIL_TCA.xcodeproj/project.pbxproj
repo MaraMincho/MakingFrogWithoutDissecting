@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E80425082BD36DCF0082E175 /* d2-01-GettingStarted-Counter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80425072BD36DCF0082E175 /* d2-01-GettingStarted-Counter.swift */; };
 		E848CE5C2BCB93250057A045 /* TIL_TCAApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CE5B2BCB93250057A045 /* TIL_TCAApp.swift */; };
 		E848CE5E2BCB93250057A045 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CE5D2BCB93250057A045 /* ContentView.swift */; };
 		E848CE602BCB93270057A045 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E848CE5F2BCB93270057A045 /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E80425072BD36DCF0082E175 /* d2-01-GettingStarted-Counter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "d2-01-GettingStarted-Counter.swift"; sourceTree = "<group>"; };
 		E848CE582BCB93250057A045 /* TIL_TCA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TIL_TCA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E848CE5B2BCB93250057A045 /* TIL_TCAApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TIL_TCAApp.swift; sourceTree = "<group>"; };
 		E848CE5D2BCB93250057A045 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				E848CE5F2BCB93270057A045 /* Assets.xcassets */,
 				E848CE612BCB93270057A045 /* Preview Content */,
 				E84C8BB72BD1FE6900177D28 /* d1-01-GettingStarted-AlertsAndConfirmationDialogs.swift */,
+				E80425072BD36DCF0082E175 /* d2-01-GettingStarted-Counter.swift */,
 				E84C8BB92BD1FE9400177D28 /* AboutView.swift */,
 			);
 			path = TIL_TCA;
@@ -162,6 +165,7 @@
 			files = (
 				E848CE5E2BCB93250057A045 /* ContentView.swift in Sources */,
 				E848CE5C2BCB93250057A045 /* TIL_TCAApp.swift in Sources */,
+				E80425082BD36DCF0082E175 /* d2-01-GettingStarted-Counter.swift in Sources */,
 				E84C8BB82BD1FE6900177D28 /* d1-01-GettingStarted-AlertsAndConfirmationDialogs.swift in Sources */,
 				E88167092BD0E04A0032F334 /* TempContent.swift in Sources */,
 				E84C8BBA2BD1FE9400177D28 /* AboutView.swift in Sources */,
