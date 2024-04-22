@@ -12,15 +12,10 @@ import ComposableArchitecture
 struct TIL_TCAApp: App {
   var body: some Scene {
     WindowGroup {
-      CounterDemoView(
-        store: .init(
-          initialState: {
-            Counter.State()
-          }(),
-          reducer: {
-            Counter()
-          }
-        ))
+      ScreenAView(store: .init(initialState: ScreenA.State(), reducer: {
+        ScreenA()
+      }))
+      
     }
   }
 }

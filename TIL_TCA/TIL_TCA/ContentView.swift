@@ -185,6 +185,12 @@ struct ScreenA {
     var count = 0
     var fact: String?
     var isLoading = false
+    var path = StackState<Path.State>()
+  }
+  
+  @Reducer(state: .equatable)
+  enum Path {
+    case first(First)
   }
 
   enum Action {
@@ -193,6 +199,7 @@ struct ScreenA {
     case incrementButtonTapped
     case factButtonTapped
     case factResponse(Result<String, Error>)
+    case path(StackAction<Path.State, Path.Action>)
   }
 
   @Dependency(\.dismiss) var dismiss
@@ -200,6 +207,11 @@ struct ScreenA {
   var body: some Reducer<State, Action> {
     Reduce { state, action in
       switch action {
+      case let .path(pathCase) :
+        switch pathCase {
+        case .element(id: _, action: .first(.tappedNextButton)) :
+        }
+        return .none
       case .decrementButtonTapped:
         state.count -= 1
         return .none
@@ -232,7 +244,8 @@ struct ScreenA {
 }
 
 struct ScreenAView: View {
-  let store: StoreOf<ScreenA>
+  @Bindable
+  var store: StoreOf<ScreenA>
 
   var body: some View {
     Form {
@@ -244,63 +257,67 @@ struct ScreenAView: View {
         root stack view to pop the feature off the stack.
         """
       )
-
-      Section {
-        HStack {
-          Text("\(store.count)")
-          Spacer()
-          Button {
-            store.send(.decrementButtonTapped)
-          } label: {
-            Image(systemName: "minus")
-          }
-          Button {
-            store.send(.incrementButtonTapped)
-          } label: {
-            Image(systemName: "plus")
-          }
-        }
-        .buttonStyle(.borderless)
-
-        Button {
-          store.send(.factButtonTapped)
-        } label: {
+      NavigationStack(path: $store.scope(state: \.path, action: \.path)) {
+        Section {
           HStack {
-            Text("Get fact")
-            if store.isLoading {
-              Spacer()
-              ProgressView()
+            Text("\(store.count)")
+            Spacer()
+            Button {
+              store.send(.decrementButtonTapped)
+            } label: {
+              Image(systemName: "minus")
+            }
+            Button {
+              store.send(.incrementButtonTapped)
+            } label: {
+              Image(systemName: "plus")
             }
           }
+          .buttonStyle(.borderless)
+
+          Button {
+            store.send(.factButtonTapped)
+          } label: {
+            HStack {
+              Text("Get fact")
+              if store.isLoading {
+                Spacer()
+                ProgressView()
+              }
+            }
+          }
+
+          if let fact = store.fact {
+            Text(fact)
+          }
         }
 
-        if let fact = store.fact {
-          Text(fact)
+        Section {
+          Button("Dismiss") {
+            store.send(.dismissButtonTapped)
+          }
+        }
+
+        Section {
+          NavigationLink(
+            "Go to screen A",
+            state: NavigationDemo.Path.State.screenA(ScreenA.State(count: store.count))
+          )
+          NavigationLink(
+            "Go to screen B",
+            state: NavigationDemo.Path.State.screenB(ScreenB.State())
+          )
+          NavigationLink(
+            "Go to screen C",
+            state: NavigationDemo.Path.State.screenC(ScreenC.State(count: store.count))
+          )
+          NavigationLink(state: ScreenA.Path.State.first(First.State())) {
+            Text("Go to FirstView")
+          }
         }
       }
-
-      Section {
-        Button("Dismiss") {
-          store.send(.dismissButtonTapped)
-        }
+      .navigationTitle("Screen A")
       }
-
-      Section {
-        NavigationLink(
-          "Go to screen A",
-          state: NavigationDemo.Path.State.screenA(ScreenA.State(count: store.count))
-        )
-        NavigationLink(
-          "Go to screen B",
-          state: NavigationDemo.Path.State.screenB(ScreenB.State())
-        )
-        NavigationLink(
-          "Go to screen C",
-          state: NavigationDemo.Path.State.screenC(ScreenC.State(count: store.count))
-        )
-      }
-    }
-    .navigationTitle("Screen A")
   }
 }
 
@@ -451,3 +468,29 @@ struct ScreenCView: View {
     }
   )
 }
+@Reducer
+struct First {
+  @ObservableState
+  struct State: Equatable {
+  }
+
+  enum Action {
+    case tappedNextButton
+  }
+
+  var body: some Reducer<State, Action> {
+    Reduce { state, action in
+      return .none
+    }
+  }
+}
+
+struct FirstView: View {
+  var store: StoreOf<First>
+  var body: some View {
+    VStack {
+      Text("End")
+    }
+  }
+}
+

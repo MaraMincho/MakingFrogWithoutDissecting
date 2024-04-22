@@ -1,41 +1,47 @@
 #include <iostream>
 using namespace std;
-class Rect;
 
 
-class RectManager { // RectManager 클래스 선언
-public: 
-  bool equals(Rect r, Rect s);
-  void copy(Rect& dest, Rect& src);
-};
-
-class Rect { // Rect 클래스 선언
-  int width, height; 
+class Beverage {
 public:
-  Rect(int width, int height) {
-    this->width = width;
-    this->height = height;
+  char * name = nullptr;
+  int volume;
+  Beverage(int volume): volume(volume) {};
+  Beverage(const char *name, int volume = 100) {
+    setName(name);
+    this->volume = volume;
   }
-  friend RectManager;
+  void setName(const char *name) {
+    if (this->name != nullptr) {
+      delete [] this->name;
+    }
+    auto length = strlen(name);
+    this->name = new char[length];
+    strcpy(this->name, name);
+  };
+  
+  Beverage(Beverage const &other) {
+    volume = other.volume;
+    setName(other.name);
+  }
+  
+  ~Beverage() {
+    if(this-> name != nullptr) {
+      delete [] this->name;
+    };
+  }
 };
 
-bool RectManager::equals(Rect r, Rect s) { // r과 s가 같으면 true 리턴
-  if(r.width == s.width && r.height == s.height) 
-    return true;
-  else
-    return false;
-}
-void RectManager::copy(Rect& dest, Rect& src) { // src를 dest에 복사
-  dest.width = src.width;
-  dest.height = src.height;
-}
+
 
 int main() {
-  Rect a(3,4), b(5,6);
-  RectManager man;
-  man.copy(b, a); // a를 b에 복사한다.
-  if(man.equals(a, b)) 
-    cout << "equal" << endl;
-  else
-    cout << "not equal" << endl;
+  auto cola = Beverage("cola");
+  cout << "cola Name:" << cola.name << endl;
+
+  auto coffee = cola;
+  coffee.setName("coffee");
+  cout << "cola Name:" << cola.name << endl;
+  cout << "coffee Name:" << coffee.name << endl;
+  
+  return 0;
 }

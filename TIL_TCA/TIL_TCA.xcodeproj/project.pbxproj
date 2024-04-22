@@ -17,6 +17,7 @@
 		E848CE712BCB94EA0057A045 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = E848CE702BCB94EA0057A045 /* ComposableArchitecture */; };
 		E84C8BB82BD1FE6900177D28 /* d1-01-GettingStarted-AlertsAndConfirmationDialogs.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84C8BB72BD1FE6900177D28 /* d1-01-GettingStarted-AlertsAndConfirmationDialogs.swift */; };
 		E84C8BBA2BD1FE9400177D28 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84C8BB92BD1FE9400177D28 /* AboutView.swift */; };
+		E84CE65A2BD414AB00BAB7B1 /* d2-01-NavgationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84CE6592BD414AB00BAB7B1 /* d2-01-NavgationView.swift */; };
 		E88167092BD0E04A0032F334 /* TempContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88167082BD0E04A0032F334 /* TempContent.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		E848CE622BCB93270057A045 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E84C8BB72BD1FE6900177D28 /* d1-01-GettingStarted-AlertsAndConfirmationDialogs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "d1-01-GettingStarted-AlertsAndConfirmationDialogs.swift"; sourceTree = "<group>"; };
 		E84C8BB92BD1FE9400177D28 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		E84CE6592BD414AB00BAB7B1 /* d2-01-NavgationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "d2-01-NavgationView.swift"; sourceTree = "<group>"; };
 		E88167082BD0E04A0032F334 /* TempContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempContent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -72,6 +74,7 @@
 				E848CE612BCB93270057A045 /* Preview Content */,
 				E84C8BB72BD1FE6900177D28 /* d1-01-GettingStarted-AlertsAndConfirmationDialogs.swift */,
 				E80425072BD36DCF0082E175 /* d2-01-GettingStarted-Counter.swift */,
+				E84CE6592BD414AB00BAB7B1 /* d2-01-NavgationView.swift */,
 				E84C8BB92BD1FE9400177D28 /* AboutView.swift */,
 			);
 			path = TIL_TCA;
@@ -168,6 +171,7 @@
 				E80425082BD36DCF0082E175 /* d2-01-GettingStarted-Counter.swift in Sources */,
 				E84C8BB82BD1FE6900177D28 /* d1-01-GettingStarted-AlertsAndConfirmationDialogs.swift in Sources */,
 				E88167092BD0E04A0032F334 /* TempContent.swift in Sources */,
+				E84CE65A2BD414AB00BAB7B1 /* d2-01-NavgationView.swift in Sources */,
 				E84C8BBA2BD1FE9400177D28 /* AboutView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
