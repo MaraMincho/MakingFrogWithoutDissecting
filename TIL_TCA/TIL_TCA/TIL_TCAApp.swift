@@ -13,11 +13,13 @@ struct TIL_TCAApp: App {
   var body: some Scene {
     WindowGroup {
     
-      BindingBasicsView(
-        store: Store(initialState: BindingBasics.State()) {
-          BindingBasics()
+      
+      BindingFormView(
+        store: Store(initialState: BindingForm.State()) {
+          BindingForm()
         }
       )
+      
     }
   }
 }

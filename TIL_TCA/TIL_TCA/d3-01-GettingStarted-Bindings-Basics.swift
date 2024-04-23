@@ -26,6 +26,7 @@ struct BindingBasics {
     var sliderValue = 5.0
     var stepCount = 10
     var text = ""
+    var curText = ""
     var toggleIsOn = false
   }
 
@@ -63,12 +64,14 @@ struct BindingBasics {
 struct BindingBasicsView: View {
   @Bindable var store: StoreOf<BindingBasics>
 
+  @State
+  var toggleValue = true
   var body: some View {
     Form {
       Section {
         AboutView(readMe: readMe)
       }
-
+      Toggle("Test Toggle",isOn: $toggleValue)
       HStack {
         TextField("Type here", text: $store.text.sending(\.textChanged))
           .disableAutocorrection(true)
@@ -144,3 +147,5 @@ extension Binding {
     )
   }
 }
+
+
