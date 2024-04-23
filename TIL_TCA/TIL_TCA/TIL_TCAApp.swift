@@ -12,10 +12,12 @@ import ComposableArchitecture
 struct TIL_TCAApp: App {
   var body: some Scene {
     WindowGroup {
-      ScreenAView(store: .init(initialState: ScreenA.State(), reducer: {
-        ScreenA()
-      }))
-      
+    
+      BindingBasicsView(
+        store: Store(initialState: BindingBasics.State()) {
+          BindingBasics()
+        }
+      )
     }
   }
 }
