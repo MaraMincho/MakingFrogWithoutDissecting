@@ -20,6 +20,7 @@
 		E84CE65A2BD414AB00BAB7B1 /* d2-01-NavgationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84CE6592BD414AB00BAB7B1 /* d2-01-NavgationView.swift */; };
 		E874FEA22BD7FAEE008A9474 /* d3-01-GettingStarted-Bindings-Basics.swift in Sources */ = {isa = PBXBuildFile; fileRef = E874FEA12BD7FAED008A9474 /* d3-01-GettingStarted-Bindings-Basics.swift */; };
 		E874FEA52BD810CD008A9474 /* d4-01-GettingStarted-Bindings-Forms.swift in Sources */ = {isa = PBXBuildFile; fileRef = E874FEA42BD810CC008A9474 /* d4-01-GettingStarted-Bindings-Forms.swift */; };
+		E874FEA72BD81284008A9474 /* TTSS.swift in Sources */ = {isa = PBXBuildFile; fileRef = E874FEA62BD81284008A9474 /* TTSS.swift */; };
 		E88167092BD0E04A0032F334 /* TempContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88167082BD0E04A0032F334 /* TempContent.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		E84CE6592BD414AB00BAB7B1 /* d2-01-NavgationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "d2-01-NavgationView.swift"; sourceTree = "<group>"; };
 		E874FEA12BD7FAED008A9474 /* d3-01-GettingStarted-Bindings-Basics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "d3-01-GettingStarted-Bindings-Basics.swift"; sourceTree = "<group>"; };
 		E874FEA42BD810CC008A9474 /* d4-01-GettingStarted-Bindings-Forms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "d4-01-GettingStarted-Bindings-Forms.swift"; sourceTree = "<group>"; };
+		E874FEA62BD81284008A9474 /* TTSS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSS.swift; sourceTree = "<group>"; };
 		E88167082BD0E04A0032F334 /* TempContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempContent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,6 +84,7 @@
 				E84CE6592BD414AB00BAB7B1 /* d2-01-NavgationView.swift */,
 				E874FEA12BD7FAED008A9474 /* d3-01-GettingStarted-Bindings-Basics.swift */,
 				E874FEA42BD810CC008A9474 /* d4-01-GettingStarted-Bindings-Forms.swift */,
+				E874FEA62BD81284008A9474 /* TTSS.swift */,
 				E84C8BB92BD1FE9400177D28 /* AboutView.swift */,
 			);
 			path = TIL_TCA;
@@ -187,6 +190,7 @@
 				E88167092BD0E04A0032F334 /* TempContent.swift in Sources */,
 				E874FEA22BD7FAEE008A9474 /* d3-01-GettingStarted-Bindings-Basics.swift in Sources */,
 				E874FEA52BD810CD008A9474 /* d4-01-GettingStarted-Bindings-Forms.swift in Sources */,
+				E874FEA72BD81284008A9474 /* TTSS.swift in Sources */,
 				E84CE65A2BD414AB00BAB7B1 /* d2-01-NavgationView.swift in Sources */,
 				E84C8BBA2BD1FE9400177D28 /* AboutView.swift in Sources */,
 			);
