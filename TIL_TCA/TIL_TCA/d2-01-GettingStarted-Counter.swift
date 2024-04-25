@@ -79,18 +79,36 @@ struct CounterDemoView: View {
   }
 
   var body: some View {
-    Form {
-      Section {
-        AboutView(readMe: readMe)
+    NavigationStack {
+      NavigationLink {
+        Color.red
+      } label: {
+        VStack{
+          ZStack {
+            Color.gray
+            Text("asdf")
+          }
+        }
       }
-
-      Section {
-        CounterView(store: store)
-          .frame(maxWidth: .infinity)
+      Form { 
+        Section {
+          AboutView(readMe: readMe)
+        }
+        
+        Section {
+          CounterView(store: store)
+            .frame(maxWidth: .infinity)
+        }
       }
     }
+    
     .buttonStyle(.borderless)
     .navigationTitle("Counter demo")
   }
 }
 
+enum SomeNavigation {
+  case ta
+  case tb
+  case tc
+}

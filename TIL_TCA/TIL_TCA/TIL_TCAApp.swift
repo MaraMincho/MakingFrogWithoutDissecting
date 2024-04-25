@@ -15,17 +15,9 @@ struct TIL_TCAApp: App {
   var body: some Scene {
     WindowGroup {
     
-      NavigationStack(path: $router.navPath) {
-        HomeView()
-          .navigationDestination(for: Router.Destination.self) { destination in
-            switch destination {
-            case .livingroom:
-              LivingroomView()
-            case .bedroom(let owner):
-              BedroomView(ownerName: owner)
-            }
-          }
-      }
+      CounterDemoView(store: .init(initialState: Counter.State(), reducer: {
+        Counter()
+      }))
       
      
       .environmentObject(router)

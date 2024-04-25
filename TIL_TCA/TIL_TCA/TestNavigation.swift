@@ -55,14 +55,13 @@ struct NavigationRoot {
     Reduce { state, action in
       switch action {
       case .tapped:
-//        state.nextPath.append(.secondTest(SecondTest.State()))
         state.nextPath.append(.bindingForm(BindingForm.State()))
-//        state.nextPath.append(.firstText(FirstTest.State(path: state.nextPath)))
       case let .nextPath(action) :
         switch action {
         case .element(id: _, action: .bindingForm(.resetButtonTapped)) :
           state.nextPath.append(.firstText(FirstTest.State(path: state.nextPath)))
           return .none
+//        case .element(id: _, action: .bindingForm())
         default:
           break
         }
@@ -79,6 +78,12 @@ struct NavigationRootView: View {
   @Bindable
   var store: StoreOf<NavigationRoot>
   var body: some View {
+    
+//    VStack {
+//      NavigationStack {
+//        
+//      }
+//    }
     VStack {
       NavigationStack(path: $store.scope(state: \.nextPath, action: \.nextPath)) {
         Button("push man") {
@@ -100,6 +105,9 @@ struct NavigationRootView: View {
           }
         }
       }
+      
     }
+    
+    
   }
 }
