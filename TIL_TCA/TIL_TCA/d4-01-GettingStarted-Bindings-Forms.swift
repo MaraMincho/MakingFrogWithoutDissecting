@@ -22,7 +22,7 @@ struct BindingForm {
     var toggleIsOn = false
   }
 
-  enum Action: BindableAction {
+  enum Action: BindableAction, Equatable {
     case binding(BindingAction<State>)
     case resetButtonTapped
   }

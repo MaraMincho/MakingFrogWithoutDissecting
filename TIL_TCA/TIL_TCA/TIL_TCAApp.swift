@@ -10,15 +10,31 @@ import ComposableArchitecture
 
 @main
 struct TIL_TCAApp: App {
+  @ObservedObject
+  var router = Router.shared
   var body: some Scene {
     WindowGroup {
     
+      NavigationStack(path: $router.navPath) {
+        HomeView()
+          .navigationDestination(for: Router.Destination.self) { destination in
+            switch destination {
+            case .livingroom:
+              LivingroomView()
+            case .bedroom(let owner):
+              BedroomView(ownerName: owner)
+            }
+          }
+      }
       
-      BindingFormView(
-        store: Store(initialState: BindingForm.State()) {
-          BindingForm()
-        }
-      )
+     
+      .environmentObject(router)
+      
+//      NavigationRootView(
+//        store: Store(initialState: NavigationRoot.State()) {
+//          NavigationRoot()
+//        }
+//      )
       
     }
   }
