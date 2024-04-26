@@ -15,18 +15,11 @@ struct TIL_TCAApp: App {
   var body: some Scene {
     WindowGroup {
     
-      CounterDemoView(store: .init(initialState: Counter.State(), reducer: {
-        Counter()
-      }))
-      
-     
-      .environmentObject(router)
-      
-//      NavigationRootView(
-//        store: Store(initialState: NavigationRoot.State()) {
-//          NavigationRoot()
-//        }
-//      )
+      OptionalBasicsView(
+        store: Store(initialState: OptionalBasics.State()) {
+          OptionalBasics()
+        }
+      )
       
     }
   }
