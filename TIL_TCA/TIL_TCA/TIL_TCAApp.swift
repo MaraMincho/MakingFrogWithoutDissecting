@@ -15,9 +15,9 @@ struct TIL_TCAApp: App {
   var body: some Scene {
     WindowGroup {
     
-      OptionalBasicsView(
-        store: Store(initialState: OptionalBasics.State()) {
-          OptionalBasics()
+      SharedStateView(
+        store: Store(initialState: SharedState.State()) {
+          SharedState()
         }
       )
       

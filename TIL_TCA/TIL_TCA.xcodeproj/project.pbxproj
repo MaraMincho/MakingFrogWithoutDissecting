@@ -26,6 +26,7 @@
 		E874FEA72BD81284008A9474 /* TTSS.swift in Sources */ = {isa = PBXBuildFile; fileRef = E874FEA62BD81284008A9474 /* TTSS.swift */; };
 		E88167092BD0E04A0032F334 /* TempContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88167082BD0E04A0032F334 /* TempContent.swift */; };
 		E88A98242BDBBC2B00172EDB /* d5-01-GettingStarted-OptionalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88A98232BDBBC2B00172EDB /* d5-01-GettingStarted-OptionalState.swift */; };
+		E8AFE22C2BDD44BB003D843A /* d6-01-GettingStarted-SharedState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8AFE22B2BDD44BB003D843A /* d6-01-GettingStarted-SharedState.swift */; };
 		E8D3D4262BD8DB5600A887A0 /* SecondTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D3D4242BD8DB5600A887A0 /* SecondTestView.swift */; };
 		E8D3D4272BD8DB5600A887A0 /* SecondTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D3D4252BD8DB5600A887A0 /* SecondTest.swift */; };
 		E8D3D4292BD8F39C00A887A0 /* RouterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D3D4282BD8F39C00A887A0 /* RouterView.swift */; };
@@ -49,6 +50,7 @@
 		E874FEA62BD81284008A9474 /* TTSS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSS.swift; sourceTree = "<group>"; };
 		E88167082BD0E04A0032F334 /* TempContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempContent.swift; sourceTree = "<group>"; };
 		E88A98232BDBBC2B00172EDB /* d5-01-GettingStarted-OptionalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "d5-01-GettingStarted-OptionalState.swift"; sourceTree = "<group>"; };
+		E8AFE22B2BDD44BB003D843A /* d6-01-GettingStarted-SharedState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "d6-01-GettingStarted-SharedState.swift"; sourceTree = "<group>"; };
 		E8D3D4242BD8DB5600A887A0 /* SecondTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTestView.swift; sourceTree = "<group>"; };
 		E8D3D4252BD8DB5600A887A0 /* SecondTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTest.swift; sourceTree = "<group>"; };
 		E8D3D4282BD8F39C00A887A0 /* RouterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterView.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				E874FEA12BD7FAED008A9474 /* d3-01-GettingStarted-Bindings-Basics.swift */,
 				E874FEA42BD810CC008A9474 /* d4-01-GettingStarted-Bindings-Forms.swift */,
 				E88A98232BDBBC2B00172EDB /* d5-01-GettingStarted-OptionalState.swift */,
+				E8AFE22B2BDD44BB003D843A /* d6-01-GettingStarted-SharedState.swift */,
 				E874FEA62BD81284008A9474 /* TTSS.swift */,
 				E84C8BB92BD1FE9400177D28 /* AboutView.swift */,
 			);
@@ -212,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8AFE22C2BDD44BB003D843A /* d6-01-GettingStarted-SharedState.swift in Sources */,
 				E8748D742BD8C3B2007E4BAE /* TestNavigation.swift in Sources */,
 				E848CE5E2BCB93250057A045 /* ContentView.swift in Sources */,
 				E848CE5C2BCB93250057A045 /* TIL_TCAApp.swift in Sources */,
