@@ -14,6 +14,8 @@ private let readMe = """
   can be reset from the other tab.
   """
 
+import Combine
+
 @Reducer
 struct CounterTab {
   @ObservableState
@@ -150,20 +152,30 @@ struct ProfileTabView: View {
 struct SharedState {
   enum Tab { case counter, profile }
 
+
   @ObservableState
   struct State: Equatable {
+    var stats: Stats
     var currentTab = Tab.counter
-    var counter = CounterTab.State()
-    var profile = ProfileTab.State()
+    var counter: CounterTab.State
+    var profile: ProfileTab.State
+    init() {
+      let newStats = Stats()
+      self.stats = newStats
+      self.counter = .init(stats: newStats)
+      self.profile = .init(stats: newStats)
+    }
   }
 
-  enum Action: Equatable {
+  enum Action: BindableAction, Equatable {
     case counter(CounterTab.Action)
     case profile(ProfileTab.Action)
     case selectTab(Tab)
+    case binding(BindingAction<State>)
   }
 
   var body: some Reducer<State, Action> {
+    BindingReducer()
     Scope(state: \.counter, action: \.counter) {
       CounterTab()
     }
@@ -173,6 +185,16 @@ struct SharedState {
         return .none
       }
     }
+    
+//    Scope(state: \.counter, action: \.counter) {
+//      CounterTab()
+//    }
+//    .onChange(of: \.counter.stats) { oldValue, newValue in
+//      Reduce { state, action in
+//        state.profile.stats = newValue
+//        return .none
+//      }
+//    }
 
     Scope(state: \.profile, action: \.profile) {
       ProfileTab()
@@ -186,6 +208,12 @@ struct SharedState {
 
     Reduce { state, action in
       switch action {
+      case .binding :
+        return .none
+      case .counter(.incrementButtonTapped):
+        return .none
+      case .counter(.decrementButtonTapped):
+        return .none
       case .counter, .profile:
         return .none
       case let .selectTab(tab):
@@ -220,7 +248,9 @@ struct SharedStateView: View {
   }
 }
 
+
 struct Stats: Equatable {
+  
   private(set) var count = 0
   private(set) var maxCount = 0
   private(set) var minCount = 0
@@ -236,7 +266,7 @@ struct Stats: Equatable {
     minCount = min(minCount, count)
   }
   mutating func reset() {
-    self = Self()
+    self = .init()
   }
 }
 
