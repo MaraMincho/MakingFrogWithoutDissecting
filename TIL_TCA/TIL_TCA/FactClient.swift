@@ -30,3 +30,25 @@ extension FactClient: DependencyKey {
   /// to prove do not need the dependency.
   static let testValue = Self()
 }
+
+@DependencyClient
+struct TestDependency {
+  var count = 0
+  
+  mutating func increment() {
+    count += 1
+  }
+}
+
+extension DependencyValues {
+  var testDependency: TestDependency {
+    get { self[TestDependency.self]}
+    set { self[TestDependency.self] = newValue}
+  }
+}
+
+extension TestDependency: DependencyKey {
+  static var liveValue: TestDependency {
+    return .init()
+  }
+}

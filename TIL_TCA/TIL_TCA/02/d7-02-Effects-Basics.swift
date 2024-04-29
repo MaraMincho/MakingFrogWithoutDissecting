@@ -37,6 +37,8 @@ struct EffectsBasics {
 
   @Dependency(\.continuousClock) var clock
   @Dependency(\.factClient) var factClient
+  @Dependency(\.testDependency) var testDependency
+  
   private enum CancelID { case delay }
 
   var body: some Reducer<State, Action> {
@@ -63,6 +65,8 @@ struct EffectsBasics {
       case .incrementButtonTapped:
         state.count += 1
         state.numberFact = nil
+        print(testDependency.count)
+        
         return state.count >= 0
           ? .cancel(id: CancelID.delay)
           : .none
