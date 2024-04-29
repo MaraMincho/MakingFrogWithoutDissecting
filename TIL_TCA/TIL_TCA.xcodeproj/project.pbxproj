@@ -42,6 +42,7 @@
 		E88167082BD0E04A0032F334 /* TempContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempContent.swift; sourceTree = "<group>"; };
 		E88612712BDF3CC40018F794 /* d7-02-Effects-Basics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "d7-02-Effects-Basics.swift"; sourceTree = "<group>"; };
 		E88612752BDF3D310018F794 /* FactClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactClient.swift; sourceTree = "<group>"; };
+		E88612772BDF3F1E0018F794 /* TIL-TCA-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "TIL-TCA-Info.plist"; sourceTree = SOURCE_ROOT; };
 		E88A98232BDBBC2B00172EDB /* d5-01-GettingStarted-OptionalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "d5-01-GettingStarted-OptionalState.swift"; sourceTree = "<group>"; };
 		E8AFE22B2BDD44BB003D843A /* d6-01-GettingStarted-SharedState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "d6-01-GettingStarted-SharedState.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -79,6 +80,7 @@
 		E848CE5A2BCB93250057A045 /* TIL_TCA */ = {
 			isa = PBXGroup;
 			children = (
+				E88612772BDF3F1E0018F794 /* TIL-TCA-Info.plist */,
 				E874FEA32BD7FB66008A9474 /* Internal */,
 				E848CE5B2BCB93250057A045 /* TIL_TCAApp.swift */,
 				E848CE5D2BCB93250057A045 /* ContentView.swift */,
@@ -356,6 +358,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"TIL_TCA/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "TIL-TCA-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -384,6 +387,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"TIL_TCA/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "TIL-TCA-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

@@ -10,14 +10,12 @@ import ComposableArchitecture
 
 @main
 struct TIL_TCAApp: App {
-  @ObservedObject
-  var router = Router.shared
   var body: some Scene {
     WindowGroup {
     
-      SharedStateView(
-        store: Store(initialState: SharedState.State()) {
-          SharedState()
+      EffectsBasicsView(
+        store: Store(initialState: EffectsBasics.State()) {
+          EffectsBasics()
         }
       )
       
