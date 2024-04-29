@@ -46,7 +46,6 @@ struct EffectsBasics {
       switch action {
       case .decrementButtonTapped:
         state.count -= 1
-        state.numberFact = nil
         // Return an effect that re-increments the count after 1 second if the count is negative
         return state.count >= 0
           ? .none
@@ -83,7 +82,9 @@ struct EffectsBasics {
       case let .numberFactResponse(.success(response)):
         state.isNumberFactRequestInFlight = false
         state.numberFact = response
-        return .none
+        return .run { send in
+          await send(.decrementButtonTapped)
+        }
 
       case .numberFactResponse(.failure):
         // NB: This is where we could handle the error is some way, such as showing an alert.

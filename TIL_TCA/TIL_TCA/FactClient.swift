@@ -17,7 +17,7 @@ extension FactClient: DependencyKey {
   /// This is the "live" fact dependency that reaches into the outside world to fetch trivia.
   /// Typically this live implementation of the dependency would live in its own module so that the
   /// main feature doesn't need to compile it.
-  static let liveValue = Self(
+  static let liveValue = FactClient(
     fetch: { number in
       try await Task.sleep(for: .seconds(1))
       let (data, _) = try await URLSession.shared
