@@ -18,8 +18,6 @@
 		E84C8BB82BD1FE6900177D28 /* d1-01-GettingStarted-AlertsAndConfirmationDialogs.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84C8BB72BD1FE6900177D28 /* d1-01-GettingStarted-AlertsAndConfirmationDialogs.swift */; };
 		E84C8BBA2BD1FE9400177D28 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84C8BB92BD1FE9400177D28 /* AboutView.swift */; };
 		E84CE65A2BD414AB00BAB7B1 /* d2-01-NavgationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84CE6592BD414AB00BAB7B1 /* d2-01-NavgationView.swift */; };
-		E8748D772BD8CABA007E4BAE /* FirstTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8748D752BD8CABA007E4BAE /* FirstTestView.swift */; };
-		E8748D782BD8CABA007E4BAE /* FirstTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8748D762BD8CABA007E4BAE /* FirstTest.swift */; };
 		E874FEA22BD7FAEE008A9474 /* d3-01-GettingStarted-Bindings-Basics.swift in Sources */ = {isa = PBXBuildFile; fileRef = E874FEA12BD7FAED008A9474 /* d3-01-GettingStarted-Bindings-Basics.swift */; };
 		E874FEA52BD810CD008A9474 /* d4-01-GettingStarted-Bindings-Forms.swift in Sources */ = {isa = PBXBuildFile; fileRef = E874FEA42BD810CC008A9474 /* d4-01-GettingStarted-Bindings-Forms.swift */; };
 		E88167092BD0E04A0032F334 /* TempContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88167082BD0E04A0032F334 /* TempContent.swift */; };
@@ -27,9 +25,6 @@
 		E88612762BDF3D310018F794 /* FactClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88612752BDF3D310018F794 /* FactClient.swift */; };
 		E88A98242BDBBC2B00172EDB /* d5-01-GettingStarted-OptionalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88A98232BDBBC2B00172EDB /* d5-01-GettingStarted-OptionalState.swift */; };
 		E8AFE22C2BDD44BB003D843A /* d6-01-GettingStarted-SharedState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8AFE22B2BDD44BB003D843A /* d6-01-GettingStarted-SharedState.swift */; };
-		E8D3D4262BD8DB5600A887A0 /* SecondTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D3D4242BD8DB5600A887A0 /* SecondTestView.swift */; };
-		E8D3D4272BD8DB5600A887A0 /* SecondTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D3D4252BD8DB5600A887A0 /* SecondTest.swift */; };
-		E8D3D4292BD8F39C00A887A0 /* RouterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D3D4282BD8F39C00A887A0 /* RouterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,8 +37,6 @@
 		E84C8BB72BD1FE6900177D28 /* d1-01-GettingStarted-AlertsAndConfirmationDialogs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "d1-01-GettingStarted-AlertsAndConfirmationDialogs.swift"; sourceTree = "<group>"; };
 		E84C8BB92BD1FE9400177D28 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		E84CE6592BD414AB00BAB7B1 /* d2-01-NavgationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "d2-01-NavgationView.swift"; sourceTree = "<group>"; };
-		E8748D752BD8CABA007E4BAE /* FirstTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTestView.swift; sourceTree = "<group>"; };
-		E8748D762BD8CABA007E4BAE /* FirstTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTest.swift; sourceTree = "<group>"; };
 		E874FEA12BD7FAED008A9474 /* d3-01-GettingStarted-Bindings-Basics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "d3-01-GettingStarted-Bindings-Basics.swift"; sourceTree = "<group>"; };
 		E874FEA42BD810CC008A9474 /* d4-01-GettingStarted-Bindings-Forms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "d4-01-GettingStarted-Bindings-Forms.swift"; sourceTree = "<group>"; };
 		E88167082BD0E04A0032F334 /* TempContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempContent.swift; sourceTree = "<group>"; };
@@ -51,9 +44,6 @@
 		E88612752BDF3D310018F794 /* FactClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactClient.swift; sourceTree = "<group>"; };
 		E88A98232BDBBC2B00172EDB /* d5-01-GettingStarted-OptionalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "d5-01-GettingStarted-OptionalState.swift"; sourceTree = "<group>"; };
 		E8AFE22B2BDD44BB003D843A /* d6-01-GettingStarted-SharedState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "d6-01-GettingStarted-SharedState.swift"; sourceTree = "<group>"; };
-		E8D3D4242BD8DB5600A887A0 /* SecondTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTestView.swift; sourceTree = "<group>"; };
-		E8D3D4252BD8DB5600A887A0 /* SecondTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTest.swift; sourceTree = "<group>"; };
-		E8D3D4282BD8F39C00A887A0 /* RouterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +85,6 @@
 				E88167082BD0E04A0032F334 /* TempContent.swift */,
 				E848CE5F2BCB93270057A045 /* Assets.xcassets */,
 				E848CE612BCB93270057A045 /* Preview Content */,
-				E8D3D4232BD8DB4300A887A0 /* TestNavigationViews */,
 				E88612732BDF3CD30018F794 /* 01 */,
 				E88612742BDF3CF70018F794 /* 02 */,
 				E84C8BB92BD1FE9400177D28 /* AboutView.swift */,
@@ -139,18 +128,6 @@
 				E88612712BDF3CC40018F794 /* d7-02-Effects-Basics.swift */,
 			);
 			path = 02;
-			sourceTree = "<group>";
-		};
-		E8D3D4232BD8DB4300A887A0 /* TestNavigationViews */ = {
-			isa = PBXGroup;
-			children = (
-				E8748D752BD8CABA007E4BAE /* FirstTestView.swift */,
-				E8748D762BD8CABA007E4BAE /* FirstTest.swift */,
-				E8D3D4242BD8DB5600A887A0 /* SecondTestView.swift */,
-				E8D3D4252BD8DB5600A887A0 /* SecondTest.swift */,
-				E8D3D4282BD8F39C00A887A0 /* RouterView.swift */,
-			);
-			path = TestNavigationViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,13 +211,8 @@
 				E8AFE22C2BDD44BB003D843A /* d6-01-GettingStarted-SharedState.swift in Sources */,
 				E848CE5E2BCB93250057A045 /* ContentView.swift in Sources */,
 				E848CE5C2BCB93250057A045 /* TIL_TCAApp.swift in Sources */,
-				E8D3D4262BD8DB5600A887A0 /* SecondTestView.swift in Sources */,
-				E8D3D4272BD8DB5600A887A0 /* SecondTest.swift in Sources */,
-				E8748D772BD8CABA007E4BAE /* FirstTestView.swift in Sources */,
-				E8748D782BD8CABA007E4BAE /* FirstTest.swift in Sources */,
 				E88A98242BDBBC2B00172EDB /* d5-01-GettingStarted-OptionalState.swift in Sources */,
 				E88612722BDF3CC40018F794 /* d7-02-Effects-Basics.swift in Sources */,
-				E8D3D4292BD8F39C00A887A0 /* RouterView.swift in Sources */,
 				E80425082BD36DCF0082E175 /* d2-01-GettingStarted-Counter.swift in Sources */,
 				E84C8BB82BD1FE6900177D28 /* d1-01-GettingStarted-AlertsAndConfirmationDialogs.swift in Sources */,
 				E88612762BDF3D310018F794 /* FactClient.swift in Sources */,
