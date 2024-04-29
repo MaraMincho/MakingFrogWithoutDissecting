@@ -13,19 +13,7 @@ struct TIL_TCAApp: App {
   var body: some Scene {
     WindowGroup {
     
-      EffectsBasicsView(
-        store: Store(initialState: EffectsBasics.State()) {
-          EffectsBasics()
-            .dependency(\.factClient, FactClient(
-              fetch: { number in
-                try await Task.sleep(for: .seconds(0))
-                let (data, _) = try await URLSession.shared
-                  .data(from: URL(string: "http://numbersapi.com/\(number)/trivia")!)
-                return "CustomDependencies"
-              }
-            ))
-        }
-      )
+      SignUpFlow()
       
     }
   }
