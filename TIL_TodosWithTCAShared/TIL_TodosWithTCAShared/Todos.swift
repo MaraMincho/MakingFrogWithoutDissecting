@@ -27,10 +27,21 @@ struct TodosMainView: View {
       ScrollView() {
         VStack {
           ForEach(store.todosContent) { content in
-            Text(content.title)
-              .onTapGesture {
-                store.send(.tappedDetailOfTodos(id: content.id))
+            HStack {
+              Text(content.title)
+                .onTapGesture {
+                  store.send(.tappedDetailOfTodos(id: content.id))
+                }
+              Spacer()
+              Button {
+                store.send(.deleteTodo(id: content.id))
+              } label: {
+                Image(systemName: "pencil")
               }
+
+              
+            }
+           
           }
         }
       }
@@ -69,6 +80,7 @@ struct TodosMain {
     case tappedDetailOfTodos(id: UUID)
     case presentTodo(id: UUID)
     case todo(PresentationAction<Todo.Action>)
+    case deleteTodo(id: UUID)
   }
   
   var body: some Reducer<State, Action> {
@@ -97,6 +109,9 @@ struct TodosMain {
         }
         return .none
       case .todo:
+        return .none
+      case let .deleteTodo(id):
+        state.todosContent = state.todosContent.filter{$0.id != id}
         return .none
       }
     }
