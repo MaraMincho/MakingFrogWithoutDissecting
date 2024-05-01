@@ -13,7 +13,11 @@ struct TIL_TCAApp: App {
   var body: some Scene {
     WindowGroup {
     
-      SignUpFlow()
+      EffectsCancellationView(
+        store: Store(initialState: EffectsCancellation.State()) {
+          EffectsCancellation()
+        }
+      )
       
     }
   }

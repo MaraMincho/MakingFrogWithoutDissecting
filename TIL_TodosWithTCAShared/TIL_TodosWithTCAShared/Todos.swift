@@ -34,7 +34,7 @@ struct TodosMainView: View {
       
       ScrollView() {
         VStack {
-          ForEach(store.todosContent) { content in
+          ForEach(store.todosContent.todo) { content in
             ZStack {
               Color
                 .black
@@ -62,13 +62,14 @@ struct TodosMainView: View {
     .sheet(item: $store.scope(state: \.todo, action: \.todo)) { store in
       TodoView(store: store)
     }
+    
     .navigationTitle("투두둑 투두둑")
     .padding()
   }
 }
 
 
-struct TodoContentProperty: Equatable, Identifiable {
+struct TodoContentProperty: Codable, Equatable, Identifiable {
   var title: String
   var content: String
   var id = UUID()
@@ -79,12 +80,11 @@ struct TodoContentProperty: Equatable, Identifiable {
 struct TodosMain {
   @ObservableState
   struct State {
-    @Shared var todosContent: [TodoContentProperty]
+    @Shared(.todosContent) var todosContent = TodosContentProperty(todo: [])
     @Presents var todo: Todo.State? = nil
     @Shared var recentEdited: TodoContentProperty
     init() {
       _recentEdited = .init(TodoContentProperty(title: "", content: ""))
-      _todosContent = .init([])
     }
   }
   
@@ -131,5 +131,18 @@ struct TodosMain {
     .ifLet(\.$todo, action: \.todo) {
       Todo()
     }
+  }
+}
+
+extension PersistenceReaderKey where Self == AppStorageKey<TodosContentProperty> {
+  fileprivate static var todosContent: Self {
+    appStorage("TodosContentProperty")
+  }
+}
+
+struct TodosContentProperty: Equatable, Codable {
+  var todo: [TodoContentProperty]
+  init(todo: [TodoContentProperty]) {
+    self.todo = todo
   }
 }

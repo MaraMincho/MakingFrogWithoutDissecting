@@ -22,6 +22,7 @@
 		E88612762BDF3D310018F794 /* FactClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88612752BDF3D310018F794 /* FactClient.swift */; };
 		E88A98242BDBBC2B00172EDB /* d5-01-GettingStarted-OptionalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88A98232BDBBC2B00172EDB /* d5-01-GettingStarted-OptionalState.swift */; };
 		E8AFE22C2BDD44BB003D843A /* d6-01-GettingStarted-SharedState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8AFE22B2BDD44BB003D843A /* d6-01-GettingStarted-SharedState.swift */; };
+		E8DC12502BE3056C00847D78 /* d10-03-Effects-Cancellation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DC124F2BE3056C00847D78 /* d10-03-Effects-Cancellation.swift */; };
 		E8E21C2F2BE0643F00468933 /* 02-SharedState-OnBoarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E21C2E2BE0643F00468933 /* 02-SharedState-OnBoarding.swift */; };
 		E8E21C322BE0659300468933 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = E8E21C312BE0659300468933 /* ComposableArchitecture */; };
 /* End PBXBuildFile section */
@@ -44,6 +45,7 @@
 		E88612772BDF3F1E0018F794 /* TIL-TCA-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "TIL-TCA-Info.plist"; sourceTree = SOURCE_ROOT; };
 		E88A98232BDBBC2B00172EDB /* d5-01-GettingStarted-OptionalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "d5-01-GettingStarted-OptionalState.swift"; sourceTree = "<group>"; };
 		E8AFE22B2BDD44BB003D843A /* d6-01-GettingStarted-SharedState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "d6-01-GettingStarted-SharedState.swift"; sourceTree = "<group>"; };
+		E8DC124F2BE3056C00847D78 /* d10-03-Effects-Cancellation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "d10-03-Effects-Cancellation.swift"; sourceTree = "<group>"; };
 		E8E21C2E2BE0643F00468933 /* 02-SharedState-OnBoarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "02-SharedState-OnBoarding.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -127,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				E88612712BDF3CC40018F794 /* d7-02-Effects-Basics.swift */,
+				E8DC124F2BE3056C00847D78 /* d10-03-Effects-Cancellation.swift */,
 			);
 			path = 02;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 				E8AFE22C2BDD44BB003D843A /* d6-01-GettingStarted-SharedState.swift in Sources */,
 				E848CE5E2BCB93250057A045 /* ContentView.swift in Sources */,
 				E848CE5C2BCB93250057A045 /* TIL_TCAApp.swift in Sources */,
+				E8DC12502BE3056C00847D78 /* d10-03-Effects-Cancellation.swift in Sources */,
 				E88A98242BDBBC2B00172EDB /* d5-01-GettingStarted-OptionalState.swift in Sources */,
 				E88612722BDF3CC40018F794 /* d7-02-Effects-Basics.swift in Sources */,
 				E80425082BD36DCF0082E175 /* d2-01-GettingStarted-Counter.swift in Sources */,
