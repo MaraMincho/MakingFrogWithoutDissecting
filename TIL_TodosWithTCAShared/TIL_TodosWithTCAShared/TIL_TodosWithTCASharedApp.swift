@@ -11,8 +11,8 @@ import SwiftUI
 struct TIL_TodosWithTCASharedApp: App {
   var body: some Scene {
     WindowGroup {
-      TodosView(store: .init(initialState: Todos.State(), reducer: {
-        Todos()
+      TodosMainView(store: .init(initialState: TodosMain.State(), reducer: {
+        TodosMain()
       }))
     }
   }
