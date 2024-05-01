@@ -41,9 +41,10 @@ struct EffectsCancellation {
       case let .stepperChanged(value):
         state.count = value
         state.currentFact = nil
-        state.isFactRequestInFlight = false
-        return .cancel(id: CancelID.factRequest)
-
+        return .run { send in
+          await send(.cancelButtonTapped)
+        }
+        
       case .factButtonTapped:
         state.currentFact = nil
         state.isFactRequestInFlight = true

@@ -15,7 +15,7 @@ struct TIL_TCAApp: App {
     
       EffectsCancellationView(
         store: Store(initialState: EffectsCancellation.State()) {
-          EffectsCancellation()
+          EffectsCancellation()._printChanges()
         }
       )
       
