@@ -17,7 +17,7 @@ struct TodoView: View {
       
       Color.gray
         .frame(maxWidth: .infinity, maxHeight: 4)
-      TextField("", text: $store.todo.content, axis: .horizontal)
+      TextField("", text: $store.todo.content, axis: .vertical)
     }
     .padding()
   }
@@ -29,8 +29,8 @@ struct Todo {
   @ObservableState
   struct State {
     @Shared var todo: TodoContentProperty
-    init(todo: TodoContentProperty) {
-      _todo = .init(todo)
+    init(todo: Shared<TodoContentProperty>) {
+      _todo = todo
     }
   }
   

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E8AB46B82BE2550400230208 /* TIL_TodosWithTCASharedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8AB46B72BE2550400230208 /* TIL_TodosWithTCASharedApp.swift */; };
-		E8AB46BA2BE2550400230208 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8AB46B92BE2550400230208 /* ContentView.swift */; };
+		E8AB46BA2BE2550400230208 /* Todos.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8AB46B92BE2550400230208 /* Todos.swift */; };
 		E8AB46BC2BE2550600230208 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8AB46BB2BE2550600230208 /* Assets.xcassets */; };
 		E8AB46BF2BE2550600230208 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8AB46BE2BE2550600230208 /* Preview Assets.xcassets */; };
 		E8AB46C72BE2557C00230208 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = E8AB46C62BE2557C00230208 /* ComposableArchitecture */; };
@@ -18,7 +18,7 @@
 /* Begin PBXFileReference section */
 		E8AB46B42BE2550400230208 /* TIL_TodosWithTCAShared.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TIL_TodosWithTCAShared.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8AB46B72BE2550400230208 /* TIL_TodosWithTCASharedApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TIL_TodosWithTCASharedApp.swift; sourceTree = "<group>"; };
-		E8AB46B92BE2550400230208 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E8AB46B92BE2550400230208 /* Todos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todos.swift; sourceTree = "<group>"; };
 		E8AB46BB2BE2550600230208 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E8AB46BE2BE2550600230208 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E8AB46C82BE257CE00230208 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
@@ -56,7 +56,7 @@
 			isa = PBXGroup;
 			children = (
 				E8AB46B72BE2550400230208 /* TIL_TodosWithTCASharedApp.swift */,
-				E8AB46B92BE2550400230208 /* ContentView.swift */,
+				E8AB46B92BE2550400230208 /* Todos.swift */,
 				E8AB46C82BE257CE00230208 /* Todo.swift */,
 				E8AB46BB2BE2550600230208 /* Assets.xcassets */,
 				E8AB46BD2BE2550600230208 /* Preview Content */,
@@ -148,7 +148,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E8AB46BA2BE2550400230208 /* ContentView.swift in Sources */,
+				E8AB46BA2BE2550400230208 /* Todos.swift in Sources */,
 				E8AB46C92BE257CE00230208 /* Todo.swift in Sources */,
 				E8AB46B82BE2550400230208 /* TIL_TodosWithTCASharedApp.swift in Sources */,
 			);

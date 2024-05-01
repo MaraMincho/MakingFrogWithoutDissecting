@@ -9,13 +9,14 @@ import SwiftUI
 import ComposableArchitecture
 
 struct TodosView: View {
+  @Bindable
   var store: StoreOf<Todos>
-  
-  var todo: Todo.State? = nil
-  var presented = false
   
   var body: some View {
     VStack {
+      
+      Text("최근 편집한 TODO: \(store.recentEdited.title)")
+      
       HStack {
         Text("투두 투두 ")
         Spacer()
@@ -23,13 +24,15 @@ struct TodosView: View {
           store.send(.tappedCreateTodo)
         }
       }
-      .frame(width: .infinity)
       List(store.todosContent) { content in
         Text(content.title)
           .onTapGesture {
             store.send(.tappedDetailOfTodos(id: content.id))
           }
       }
+    }
+    .sheet(item: $store.scope(state: \.todo, action: \.todo)) { store in
+      TodoView(store: store)
     }
     .navigationTitle("투두둑 투두둑")
     .padding()
@@ -48,10 +51,11 @@ struct TodoContentProperty: Equatable, Identifiable {
 struct Todos {
   @ObservableState
   struct State {
-    @Shared var todosContent: [TodoContentProperty]
-    var todo: Todo.State? = nil
+    var todosContent: [TodoContentProperty] = []
+    @Presents var todo: Todo.State? = nil
+    @Shared var recentEdited: TodoContentProperty
     init() {
-      _todosContent = .init([])
+      _recentEdited = .init(TodoContentProperty(title: "", content: ""))
     }
   }
   
@@ -59,7 +63,7 @@ struct Todos {
     case tappedCreateTodo
     case tappedDetailOfTodos(id: UUID)
     case presentTodo(id: UUID)
-    case todo(Todo.Action)
+    case todo(PresentationAction<Todo.Action>)
   }
   
   var body: some Reducer<State, Action> {
@@ -67,24 +71,25 @@ struct Todos {
       switch action {
       case .tappedCreateTodo:
         let newTodo = TodoContentProperty(title: "", content: "")
-        state.todosContent.append(newTodo)
-        return .run { send in
-          await send(.presentTodo(id: newTodo.id))
-        }
+        state.recentEdited = newTodo
+        state.todo = .init(todo: state.$recentEdited)
+        return .none
       case let .tappedDetailOfTodos(id):
         return .run { send in
           await send(.presentTodo(id: id))
         }
       case let .presentTodo(id):
-        if let todo = state.todosContent.filter({$0.id == id}).first {
-          state.todo = .init(todo: todo)
-        }
+//        if let todo = state.todosContent.filter({$0.id == id}).first {
+//          state.todo = .init(todo: todo)
+//        }
+        return .none
+      case .todo(.dismiss):
         return .none
       case .todo:
         return .none
       }
     }
-    .ifLet(\.todo, action: \.todo) {
+    .ifLet(\.$todo, action: \.todo) {
       Todo()
     }
   }
