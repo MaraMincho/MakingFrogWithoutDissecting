@@ -17,7 +17,17 @@ struct TodoView: View {
       
       Color.gray
         .frame(maxWidth: .infinity, maxHeight: 4)
-      TextField("", text: $store.todo.content, axis: .vertical)
+      ZStack {
+        Color
+          .black
+          .opacity(0.1)
+          .frame(maxHeight: .infinity)
+          .clipShape(RoundedRectangle(cornerRadius: 8))
+        TextField("", text: $store.todo.content, axis: .vertical)
+          .frame(maxHeight: .infinity)
+      }
+      
+      
     }
     .padding()
   }

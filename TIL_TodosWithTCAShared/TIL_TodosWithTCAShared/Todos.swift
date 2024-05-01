@@ -17,31 +17,44 @@ struct TodosMainView: View {
       
       Text("최근 편집한 TODO: \(store.recentEdited.title)")
       
-      HStack {
-        Text("투두 투두 ")
-        Spacer()
-        Button("추가") {
-          store.send(.tappedCreateTodo)
+      ZStack {
+        Color
+          .green
+          .frame(height: 60)
+          .clipShape(RoundedRectangle(cornerRadius: 8))
+        HStack {
+          Text("투두 투두 ")
+          Spacer()
+          Button("추가") {
+            store.send(.tappedCreateTodo)
+          }
         }
+        .padding()
       }
+      
       ScrollView() {
         VStack {
           ForEach(store.todosContent) { content in
-            HStack {
-              Text(content.title)
-                .onTapGesture {
-                  store.send(.tappedDetailOfTodos(id: content.id))
+            ZStack {
+              Color
+                .black
+                .opacity(0.1)
+                .frame(height: 60)
+                .clipShape(RoundedRectangle(cornerRadius: 8))
+              HStack {
+                Text(content.title)
+                  .onTapGesture {
+                    store.send(.tappedDetailOfTodos(id: content.id))
+                  }
+                Spacer()
+                Button {
+                  store.send(.deleteTodo(id: content.id))
+                } label: {
+                  Image(systemName: "pencil")
                 }
-              Spacer()
-              Button {
-                store.send(.deleteTodo(id: content.id))
-              } label: {
-                Image(systemName: "pencil")
               }
-
-              
+              .frame(maxWidth: .infinity)
             }
-           
           }
         }
       }
