@@ -13,11 +13,9 @@ struct TIL_TCAApp: App {
   var body: some Scene {
     WindowGroup {
     
-      EffectsCancellationView(
-        store: Store(initialState: EffectsCancellation.State()) {
-          EffectsCancellation()._printChanges()
-        }
-      )
+      GridExampleView(store: .init(initialState: GridExample.State(), reducer: {
+        GridExample()
+      }))
       
     }
   }
