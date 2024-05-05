@@ -64,14 +64,6 @@ struct GridExampleView: View {
           }
         }
         .background(Color.green)
-        //        LazyVGrid(
-        //          columns: [.init(.adaptive(minimum: 0, maximum: 100), spacing: 10)],
-        //          alignment: .leading) {
-        //            ForEach(store.contents) { content in
-        //              Text(content.id.description)
-        //                .font(.title2)
-        //            }
-        //          }
       }
     }
    

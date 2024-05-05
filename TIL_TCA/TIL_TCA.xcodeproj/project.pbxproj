@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E80425082BD36DCF0082E175 /* d2-01-GettingStarted-Counter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80425072BD36DCF0082E175 /* d2-01-GettingStarted-Counter.swift */; };
+		E83109092BE7038F005C1BED /* d11-03-effects-longliving.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83109082BE7038F005C1BED /* d11-03-effects-longliving.swift */; };
 		E848CE5C2BCB93250057A045 /* TIL_TCAApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CE5B2BCB93250057A045 /* TIL_TCAApp.swift */; };
 		E848CE5E2BCB93250057A045 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E848CE5D2BCB93250057A045 /* ContentView.swift */; };
 		E848CE602BCB93270057A045 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E848CE5F2BCB93270057A045 /* Assets.xcassets */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		E80425072BD36DCF0082E175 /* d2-01-GettingStarted-Counter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "d2-01-GettingStarted-Counter.swift"; sourceTree = "<group>"; };
+		E83109082BE7038F005C1BED /* d11-03-effects-longliving.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "d11-03-effects-longliving.swift"; sourceTree = "<group>"; };
 		E848CE582BCB93250057A045 /* TIL_TCA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TIL_TCA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E848CE5B2BCB93250057A045 /* TIL_TCAApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TIL_TCAApp.swift; sourceTree = "<group>"; };
 		E848CE5D2BCB93250057A045 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 			children = (
 				E88612712BDF3CC40018F794 /* d7-02-Effects-Basics.swift */,
 				E8DC124F2BE3056C00847D78 /* d10-03-Effects-Cancellation.swift */,
+				E83109082BE7038F005C1BED /* d11-03-effects-longliving.swift */,
 			);
 			path = 02;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 				E848CE5E2BCB93250057A045 /* ContentView.swift in Sources */,
 				E848CE5C2BCB93250057A045 /* TIL_TCAApp.swift in Sources */,
 				E8DC12502BE3056C00847D78 /* d10-03-Effects-Cancellation.swift in Sources */,
+				E83109092BE7038F005C1BED /* d11-03-effects-longliving.swift in Sources */,
 				E88A98242BDBBC2B00172EDB /* d5-01-GettingStarted-OptionalState.swift in Sources */,
 				E88612722BDF3CC40018F794 /* d7-02-Effects-Basics.swift in Sources */,
 				E80425082BD36DCF0082E175 /* d2-01-GettingStarted-Counter.swift in Sources */,
@@ -378,6 +382,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TIL_TCA/Preview Content\"";
+				DEVELOPMENT_TEAM = 2G5Z92682P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "TIL-TCA-Info.plist";
@@ -407,6 +412,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TIL_TCA/Preview Content\"";
+				DEVELOPMENT_TEAM = 2G5Z92682P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "TIL-TCA-Info.plist";

@@ -12,10 +12,12 @@ import ComposableArchitecture
 struct TIL_TCAApp: App {
   var body: some Scene {
     WindowGroup {
-    
-      GridExampleView(store: .init(initialState: GridExample.State(), reducer: {
-        GridExample()
-      }))
+      
+      LongLivingEffectsView(
+        store: Store(initialState: LongLivingEffects.State()) {
+          LongLivingEffects()
+        }
+      )
       
     }
   }
