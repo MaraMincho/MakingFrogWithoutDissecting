@@ -30,6 +30,12 @@ private:
   int createID();
   int enterMoney(string description);
   
+  // 추가 기능 2,3 - 고객 관리 기능
+  bool isManager(string password); // 메니저 암호 확인
+  void displayReport(); // 통계 화면 처리
+  Account* checkAccount(int id, string pw);
+  Account* checkID(int id);
+  
 public:
   ATMachine(int size, int balance, string password); // 계좌 배열크기, ATM 잔고, 관리자 암호 초기화
   ~ATMachine();
@@ -40,5 +46,10 @@ public:
   void close();
   void depositMoney();
   void withdrawMoney();
+  
+  // 추가 기능 2,3 - 고객 관리 기능
+  void managerMode(); // 고객 관리
+  void transfer(); // 계좌 이체
+  int getNumberOfActiveAccount();
 };
 #endif

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		E80DD2DF2BBCD8C300C3D31E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E80DD2DE2BBCD8C300C3D31E /* main.cpp */; };
 		E80DD2EA2BBCD9CE00C3D31E /* Account.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E80DD2E82BBCD9CE00C3D31E /* Account.cpp */; };
+		E831090E2BE741A8005C1BED /* Statics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E831090C2BE741A8005C1BED /* Statics.cpp */; };
 		E834B4162BBD2BC900EB8AA1 /* ATMachine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E834B4142BBD2BC900EB8AA1 /* ATMachine.cpp */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,8 @@
 		E80DD2DE2BBCD8C300C3D31E /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		E80DD2E82BBCD9CE00C3D31E /* Account.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Account.cpp; sourceTree = "<group>"; };
 		E80DD2E92BBCD9CE00C3D31E /* Account.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Account.hpp; sourceTree = "<group>"; };
+		E831090C2BE741A8005C1BED /* Statics.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Statics.cpp; sourceTree = "<group>"; };
+		E831090D2BE741A8005C1BED /* Statics.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Statics.hpp; sourceTree = "<group>"; };
 		E834B4142BBD2BC900EB8AA1 /* ATMachine.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ATMachine.cpp; sourceTree = "<group>"; };
 		E834B4152BBD2BC900EB8AA1 /* ATMachine.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ATMachine.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -68,6 +71,8 @@
 				E80DD2E92BBCD9CE00C3D31E /* Account.hpp */,
 				E834B4142BBD2BC900EB8AA1 /* ATMachine.cpp */,
 				E834B4152BBD2BC900EB8AA1 /* ATMachine.hpp */,
+				E831090C2BE741A8005C1BED /* Statics.cpp */,
+				E831090D2BE741A8005C1BED /* Statics.hpp */,
 			);
 			path = "4th of Obejct Oriented Language Task Sources";
 			sourceTree = "<group>";
@@ -132,6 +137,7 @@
 				E834B4162BBD2BC900EB8AA1 /* ATMachine.cpp in Sources */,
 				E80DD2EA2BBCD9CE00C3D31E /* Account.cpp in Sources */,
 				E80DD2DF2BBCD8C300C3D31E /* main.cpp in Sources */,
+				E831090E2BE741A8005C1BED /* Statics.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

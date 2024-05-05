@@ -53,3 +53,19 @@ int Account::withdraw(int id, string password, int money) {
   }
   return AUTHENTIFICATION_FAIL;
 }
+
+int Account::withdraw(int money) {
+  if (nBalance >= money) {
+    this->nBalance -= money;
+    return money;
+  }
+  return NOT_ENOUGH_TO_WITHDRAW_MONEY;
+}
+
+bool Account::deposit(int id, int money) {
+  if (this->isMatchID(id)) {
+    this->nBalance += money;
+    return true;
+  }
+  return false;
+}

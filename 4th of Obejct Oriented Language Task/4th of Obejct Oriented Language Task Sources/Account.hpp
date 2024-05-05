@@ -19,6 +19,8 @@ using std::string;
 #define ACCOUNT_CLOSE_SUCCESS 1
 #define ACCOUNT_CLOSE_FAIL -1
 
+#define NOT_ENOUGH_TO_WITHDRAW_MONEY -1
+
 class Account {
 private:
   int nID; // 계좌 번호 (초기 값 = -1) , 계좌 해지시 초기값으로 변경
@@ -41,6 +43,12 @@ public:
   bool activeAccount() { return accountStatus;};
   int deposit(int id, string password, int money);
   int withdraw(int id, string password, int money);
+  int withdraw(int money);
+  
+  //추가기능2
+  bool deposit(int id, int money); // 송금 계좌와 이체 금액
+  string getAccountName() { return strAccountName; }
+  bool isMatchID(int id) { return (nID == id); }
   
   void display() {
     std::cout << "id:  " << nID << "\n" << "비밀번호:  " << strPassword << std::endl;

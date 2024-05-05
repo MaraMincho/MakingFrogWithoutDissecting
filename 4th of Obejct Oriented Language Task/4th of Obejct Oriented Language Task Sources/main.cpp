@@ -43,6 +43,12 @@ int main() {
       case 5:
         atm.withdrawMoney();
         break;
+      case 6:
+        atm.transfer();
+        break;
+      case 7:
+        atm.managerMode();
+        break;
       case 9:
         return 0;
       default:
