@@ -71,7 +71,6 @@ Account* ATMachine::checkAccount(int id, string pw) {
   for (int ind = 0 ; ind < nCurrentAccountNum ; ind ++) {
     auto cur = &pAcctArray[ind];
     if (cur->check(id, pw) != AUTHENTIFICATION_FAIL) {
-      cout << "현재 금액은 : " << cur->getBalance() << endl;
       return cur;
     }
   }
@@ -168,7 +167,7 @@ void ATMachine::transfer() {
   int currentID = enterID();
   string currentPW = enterPW();
   int transferTargetID = enterID();
-  int money = enterMoney("이체금액 입력:");
+  int money = enterMoney("이체금액 입력: ");
   
   Account* currentUser = checkAccount(currentID, currentPW);
   Account* transferTargetUser = checkID(transferTargetID);
@@ -178,9 +177,13 @@ void ATMachine::transfer() {
     return;
   }
   
-  if (currentUser->withdraw(money) != NOT_ENOUGH_TO_WITHDRAW_MONEY && transferTargetUser->deposit(transferTargetID, money)) {
-    cout << "현재 잔액 : " << currentUser->getBalance() << endl;
+  if (currentUser->withdraw(money) == NOT_ENOUGH_TO_WITHDRAW_MONEY)  {
+    cout << "계좌 이체할만한 충분한 잔고가 없습니다." << endl;
+    return;
   }
+  cout << "현재 잔액 : " << currentUser->getBalance() << endl;
+  transferTargetUser->deposit(transferTargetID, money);
+  
 }
 
 bool ATMachine::isManager(string password) {
