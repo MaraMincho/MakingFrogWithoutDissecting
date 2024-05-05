@@ -9,30 +9,40 @@ import Foundation
 import SwiftUI
 
 struct Message: Decodable, Identifiable {
-    let id: Int
-    let from: String
-    let text: String
+  let id: Int
+  let from: String
+  let text: String
 }
 
 struct TaskModifierView: View {
   @State private var messages = [Message]()
+  @State private var count = 0
   
   var body: some View {
     NavigationView {
-      List(messages) { message in
-        VStack(alignment: .leading) {
-          Text(message.from)
-            .font(.headline)
+      VStack {
+        Button{
+          count += 1
+        }label: {
+          Text("Button count\(self.count)")
+        }
+        List(messages) { message in
           
-          Text(message.text)
+          VStack(alignment: .leading) {
+            Text(message.from)
+              .font(.headline)
+            
+            Text(message.text)
+          }
         }
       }
       .navigationTitle("Inbox")
       .onAppear{
-        print("View is appeard")
+        print("View is appeared")
       }
       .task {
-        print("Task was Started")
+        print("Task will be Started")
+        sleep(3)
         await loadMessages()
         print("Task was end")
       }

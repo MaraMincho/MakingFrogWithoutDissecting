@@ -26,6 +26,7 @@ struct LongLivingEffects {
     case task
     case taskWithPublisher
     case userDidTakeScreenshotNotification
+    case userDidTakeScreenshotNotification2(String)
   }
 
   @Dependency(\.screenshots) var screenshots
@@ -47,14 +48,17 @@ struct LongLivingEffects {
         // When the view appears, start the effect that emits when screenshots are taken.
         return .publisher {
           ss.ssnotification()
-            .map{_ in Action.userDidTakeScreenshotNotification}
+            .map{str in Action.userDidTakeScreenshotNotification2(str)}
         }
 
       case .userDidTakeScreenshotNotification:
-        print(state.screenshotCount)
         state.screenshotCount += 1
         return .none
+      case let .userDidTakeScreenshotNotification2(str) :
+        print(str)
+        return .none
       }
+  
     }
   }
 }
@@ -63,9 +67,9 @@ struct LongLivingEffects {
 final class SSAdaptor: DependencyKey {
   static var liveValue: SSAdaptor = .init()
   
-  func ssnotification() -> AnyPublisher<Void, Never> {
+  func ssnotification() -> AnyPublisher<String, Never> {
     return NotificationCenter.default.publisher(for: UIApplication.userDidTakeScreenshotNotification)
-      .map{_ in return }
+      .map{cur in return cur.description}
       .eraseToAnyPublisher()
   }
 }
@@ -96,26 +100,31 @@ struct LongLivingEffectsView: View {
   var store: StoreOf<LongLivingEffects>
 
   var body: some View {
-    Form {
-      Section {
-        AboutView(readMe: readMe)
-      }
-
-      Text("A screenshot of this screen has been taken \(store.screenshotCount) times.")
-        .font(.headline)
-
-      List {
-        NavigationLink {
-          detailView
-        } label: {
-          Text("Navigate to another screen")
+    NavigationStack {
+      Form {
+        Section {
+          AboutView(readMe: readMe)
+        }
+        Text("A screenshot of this screen has been taken \(store.screenshotCount) times.")
+          .font(.headline)
+        
+        Section {
+          NavigationLink {
+            detailView
+          } label: {
+            Text("Navigate to another screen")
+          }
         }
       }
-      
     }
     .navigationTitle("Long-living effects")
     .task {
-      await store.send(.task).finish()
+      // MARK:- 이 화면에서만 동작하게
+//       await store.send(.task).finish()
+      
+      // MARK:- 다른 화면에서도 동작하게
+      store.send(.task)
+      store.send(.taskWithPublisher)
     }
   }
 
