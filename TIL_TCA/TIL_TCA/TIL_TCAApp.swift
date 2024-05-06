@@ -13,9 +13,9 @@ struct TIL_TCAApp: App {
   var body: some Scene {
     WindowGroup {
       
-      LongLivingEffectsView(
-        store: Store(initialState: LongLivingEffects.State()) {
-          LongLivingEffects()
+      RefreshableView(
+        store: Store(initialState: Refreshable.State()) {
+          Refreshable()
         }
       )
       

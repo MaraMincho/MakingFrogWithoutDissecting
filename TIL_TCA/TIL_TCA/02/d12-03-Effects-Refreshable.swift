@@ -18,6 +18,7 @@ struct Refreshable {
   struct State: Equatable {
     var count = 0
     var fact: String?
+    var isLoading: Bool = false
   }
 
   enum Action {
@@ -35,7 +36,7 @@ struct Refreshable {
     Reduce { state, action in
       switch action {
       case .cancelButtonTapped:
-        return .cancel(id: CancelID.factRequest)
+        return .merge(.cancel(id: CancelID.factRequest))
 
       case .decrementButtonTapped:
         state.count -= 1

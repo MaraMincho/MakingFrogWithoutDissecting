@@ -86,8 +86,6 @@
 			children = (
 				E88612772BDF3F1E0018F794 /* TIL-TCA-Info.plist */,
 				E848CE5B2BCB93250057A045 /* TIL_TCAApp.swift */,
-				E84C8BB92BD1FE9400177D28 /* AboutView.swift */,
-				E848CE5F2BCB93270057A045 /* Assets.xcassets */,
 				E8DC12542BE31E3A00847D78 /* TestContents */,
 				E848CE612BCB93270057A045 /* Preview Content */,
 				E88612732BDF3CD30018F794 /* 01 */,
@@ -134,7 +132,9 @@
 		E8DC12542BE31E3A00847D78 /* TestContents */ = {
 			isa = PBXGroup;
 			children = (
+				E848CE5F2BCB93270057A045 /* Assets.xcassets */,
 				E8DC12552BE31E4700847D78 /* GridExample.swift */,
+				E84C8BB92BD1FE9400177D28 /* AboutView.swift */,
 				E831090A2BE73029005C1BED /* TaskModifier.swift */,
 			);
 			path = TestContents;
