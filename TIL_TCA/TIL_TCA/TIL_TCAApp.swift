@@ -13,9 +13,9 @@ struct TIL_TCAApp: App {
   var body: some Scene {
     WindowGroup {
       
-      RefreshableView(
-        store: Store(initialState: Refreshable.State()) {
-          Refreshable()
+      TimersView(
+        store: Store(initialState: Timers.State()) {
+          Timers()
         }
       )
       
