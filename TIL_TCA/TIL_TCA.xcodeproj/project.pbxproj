@@ -18,6 +18,7 @@
 		E84C8BB82BD1FE6900177D28 /* d1-01-GettingStarted-AlertsAndConfirmationDialogs.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84C8BB72BD1FE6900177D28 /* d1-01-GettingStarted-AlertsAndConfirmationDialogs.swift */; };
 		E84C8BBA2BD1FE9400177D28 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84C8BB92BD1FE9400177D28 /* AboutView.swift */; };
 		E84CE65A2BD414AB00BAB7B1 /* d2-01-NavgationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84CE6592BD414AB00BAB7B1 /* d2-01-NavgationView.swift */; };
+		E85CDDCB2BE9B1FB00EE3FA6 /* d14-03-Efects-Websocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85CDDCA2BE9B1FB00EE3FA6 /* d14-03-Efects-Websocket.swift */; };
 		E874FEA22BD7FAEE008A9474 /* d3-01-GettingStarted-Bindings-Basics.swift in Sources */ = {isa = PBXBuildFile; fileRef = E874FEA12BD7FAED008A9474 /* d3-01-GettingStarted-Bindings-Basics.swift */; };
 		E874FEA52BD810CD008A9474 /* d4-01-GettingStarted-Bindings-Forms.swift in Sources */ = {isa = PBXBuildFile; fileRef = E874FEA42BD810CC008A9474 /* d4-01-GettingStarted-Bindings-Forms.swift */; };
 		E88612722BDF3CC40018F794 /* d7-02-Effects-Basics.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88612712BDF3CC40018F794 /* d7-02-Effects-Basics.swift */; };
@@ -43,6 +44,7 @@
 		E84C8BB72BD1FE6900177D28 /* d1-01-GettingStarted-AlertsAndConfirmationDialogs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "d1-01-GettingStarted-AlertsAndConfirmationDialogs.swift"; sourceTree = "<group>"; };
 		E84C8BB92BD1FE9400177D28 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		E84CE6592BD414AB00BAB7B1 /* d2-01-NavgationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "d2-01-NavgationView.swift"; sourceTree = "<group>"; };
+		E85CDDCA2BE9B1FB00EE3FA6 /* d14-03-Efects-Websocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "d14-03-Efects-Websocket.swift"; sourceTree = "<group>"; };
 		E874FEA12BD7FAED008A9474 /* d3-01-GettingStarted-Bindings-Basics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "d3-01-GettingStarted-Bindings-Basics.swift"; sourceTree = "<group>"; };
 		E874FEA42BD810CC008A9474 /* d4-01-GettingStarted-Bindings-Forms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "d4-01-GettingStarted-Bindings-Forms.swift"; sourceTree = "<group>"; };
 		E88612712BDF3CC40018F794 /* d7-02-Effects-Basics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "d7-02-Effects-Basics.swift"; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				E83109082BE7038F005C1BED /* d11-03-effects-longliving.swift */,
 				E80720C52BE8519B004C48F6 /* d12-03-Effects-Refreshable.swift */,
 				E80720C72BE859A4004C48F6 /* d13-03-Effects-Timer.swift */,
+				E85CDDCA2BE9B1FB00EE3FA6 /* d14-03-Efects-Websocket.swift */,
 			);
 			path = 02;
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 				E848CE5C2BCB93250057A045 /* TIL_TCAApp.swift in Sources */,
 				E831090B2BE73029005C1BED /* TaskModifier.swift in Sources */,
 				E8DC12502BE3056C00847D78 /* d10-03-Effects-Cancellation.swift in Sources */,
+				E85CDDCB2BE9B1FB00EE3FA6 /* d14-03-Efects-Websocket.swift in Sources */,
 				E80720C82BE859A4004C48F6 /* d13-03-Effects-Timer.swift in Sources */,
 				E83109092BE7038F005C1BED /* d11-03-effects-longliving.swift in Sources */,
 				E88A98242BDBBC2B00172EDB /* d5-01-GettingStarted-OptionalState.swift in Sources */,

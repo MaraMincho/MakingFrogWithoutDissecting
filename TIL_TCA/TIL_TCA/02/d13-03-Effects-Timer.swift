@@ -43,6 +43,7 @@ struct Timers {
           for await _ in self.clock.timer(interval: .seconds(1)) {
             await send(.timerTicked, animation: .interpolatingSpring(stiffness: 3000, damping: 40))
           }
+          print("toggleTimerButtonTapped 끝남")
         }
         .cancellable(id: CancelID.timer, cancelInFlight: true)
       }
