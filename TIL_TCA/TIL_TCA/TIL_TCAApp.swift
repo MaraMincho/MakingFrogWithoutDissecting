@@ -13,9 +13,9 @@ struct TIL_TCAApp: App {
   var body: some Scene {
     WindowGroup {
       
-      TimersView(
-        store: Store(initialState: Timers.State()) {
-          Timers()
+      WebSocketView(
+        store: Store(initialState: WebSocket.State(receivedMessages: ["Hi"])) {
+          WebSocket()
         }
       )
       
