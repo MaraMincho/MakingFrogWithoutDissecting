@@ -29,6 +29,7 @@
 		E8DC12502BE3056C00847D78 /* d10-03-Effects-Cancellation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DC124F2BE3056C00847D78 /* d10-03-Effects-Cancellation.swift */; };
 		E8DC12532BE30DFB00847D78 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = E8DC12522BE30DFB00847D78 /* ComposableArchitecture */; };
 		E8DC12562BE31E4700847D78 /* GridExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DC12552BE31E4700847D78 /* GridExample.swift */; };
+		E8E16C222BEE54D000C42C0A /* 05-HigherOrderReducers-Recursion.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E16C212BEE54D000C42C0A /* 05-HigherOrderReducers-Recursion.swift */; };
 		E8E21C2F2BE0643F00468933 /* 02-SharedState-OnBoarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E21C2E2BE0643F00468933 /* 02-SharedState-OnBoarding.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,7 @@
 		E8AFE22B2BDD44BB003D843A /* d6-01-GettingStarted-SharedState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "d6-01-GettingStarted-SharedState.swift"; sourceTree = "<group>"; };
 		E8DC124F2BE3056C00847D78 /* d10-03-Effects-Cancellation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "d10-03-Effects-Cancellation.swift"; sourceTree = "<group>"; };
 		E8DC12552BE31E4700847D78 /* GridExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridExample.swift; sourceTree = "<group>"; };
+		E8E16C212BEE54D000C42C0A /* 05-HigherOrderReducers-Recursion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "05-HigherOrderReducers-Recursion.swift"; sourceTree = "<group>"; };
 		E8E21C2E2BE0643F00468933 /* 02-SharedState-OnBoarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "02-SharedState-OnBoarding.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,6 +108,7 @@
 				E88612742BDF3CF70018F794 /* 02 */,
 				E8E21C2D2BE0641700468933 /* SharedState */,
 				E88612752BDF3D310018F794 /* FactClient.swift */,
+				E8E16C202BEE54C500C42C0A /* 04 */,
 				E8302EAC2BED189C000B1FEA /* 03 */,
 			);
 			path = TIL_TCA;
@@ -155,6 +158,14 @@
 				E831090A2BE73029005C1BED /* TaskModifier.swift */,
 			);
 			path = TestContents;
+			sourceTree = "<group>";
+		};
+		E8E16C202BEE54C500C42C0A /* 04 */ = {
+			isa = PBXGroup;
+			children = (
+				E8E16C212BEE54D000C42C0A /* 05-HigherOrderReducers-Recursion.swift */,
+			);
+			path = 04;
 			sourceTree = "<group>";
 		};
 		E8E21C2D2BE0641700468933 /* SharedState */ = {
@@ -249,6 +260,7 @@
 				E85CDDCB2BE9B1FB00EE3FA6 /* d14-03-Efects-Websocket.swift in Sources */,
 				E80720C82BE859A4004C48F6 /* d13-03-Effects-Timer.swift in Sources */,
 				E83109092BE7038F005C1BED /* d11-03-effects-longliving.swift in Sources */,
+				E8E16C222BEE54D000C42C0A /* 05-HigherOrderReducers-Recursion.swift in Sources */,
 				E88A98242BDBBC2B00172EDB /* d5-01-GettingStarted-OptionalState.swift in Sources */,
 				E88612722BDF3CC40018F794 /* d7-02-Effects-Basics.swift in Sources */,
 				E80425082BD36DCF0082E175 /* d2-01-GettingStarted-Counter.swift in Sources */,
