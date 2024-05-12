@@ -48,7 +48,7 @@ struct Nested {
         state.rows.remove(atOffsets: indexSet)
         return .none
 
-      case .rows(.element(id: _, action: .addRowButtonTapped)):
+      case .rows(.element(id: _, action: _)):
         return .none
       }
     }
