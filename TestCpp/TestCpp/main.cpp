@@ -1,32 +1,54 @@
 #include <iostream>
+#include <string>
 using namespace std;
-class Power {
-  int kick;
-  
-  int punch; 
-public:
-  Power(int kick=0, int punch=0) {
-    this->kick = kick; this->punch = punch;
-  } 
-  void show(); // 프렌드 선언
-  
-  friend Power operator+(int op1, Power op2);
-}; 
-void Power::show() {
-  cout << "kick=" << kick << ',' << "punch=" << punch << endl;
-}
-Power operator+(int op1, Power op2) {
-  Power tmp; // 임시 객체 생성
-  tmp.kick = op1 + op2.kick; //kick 더하기
-  tmp.punch = op1 + op2.punch; //punch더하기
-  return tmp; // 임시 객체 리턴
-}
+
+class Person {
+protected:
+  string name;
+  int height;
+  int weight;
+};
+
+class Artist : public Person {
+public: virtual void makeContent() const = 0;
+};
+
+class Youtuber : public Artist {
+public: void makeContent() const override { cout << "YoutubeContent" << endl; }
+};
+
+class DramaPD : public Artist {
+public: void makeContent() const override { cout << "DramaContent" <<endl; };
+};
 
 int main() {
-  Power a(3,5), b;
-  a.show();
-  b.show();
-  b = 2+a; // 파워 객체 더하기 연산
-  a.show();
-  b.show();
+  Artist* worker;
+  Youtuber youtuber;
+  DramaPD pd;
+  
+  int num = 0;
+  cout << "누구한테 외주를 맞기겠습니까? \n 1: 유튜버, 2: 드라마 PD" << endl;
+  cin >> num;
+  
+  if (num == 1) { worker = &youtuber; }
+  else if (num == 2) { worker = &pd; }
+  else { worker = nullptr; }
+  worker->makeContent();
+  
+  return 0;
 }
+
+
+class Parent {
+public:
+    virtual ~Parent() {
+      cout << "부모 소멸자" << endl;
+    }
+};
+
+class Child : public Parent {
+public:
+    ~Child() override {
+      cout << "자식 소멸자" << endl;
+    }
+};
