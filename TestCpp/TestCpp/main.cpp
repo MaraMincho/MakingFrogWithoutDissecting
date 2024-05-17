@@ -14,7 +14,8 @@ public: virtual void makeContent() const = 0;
 };
 
 class Youtuber : public Artist {
-public: void makeContent() const override { cout << "YoutubeContent" << endl; }
+public: 
+  void makeContent() const override { cout << "YoutubeContent" << endl; }
 };
 
 class DramaPD : public Artist {
@@ -39,62 +40,97 @@ public: void makeContent() const override { cout << "DramaContent" <<endl; };
 //}
 #include <iostream>
 
-using namespace std;
 
 class Calculator {
-public: 
+public:
   virtual int add(int a, int b) = 0; // 두 정수의 합 리턴
   virtual int subtract(int a, int b) = 0; // 두 정수의 차 리턴
   virtual double average(int a [], int size) = 0; // 배열 a의 평균 리턴. size는 배열의 크기
 };
-
 #include <iostream>
-using namespace std;
-class GoodCalc : public Calculator {
-  
-public:
-  int add(int a, int b) { return a + b; }
-  
-  int subtract(int a, int b) { return a - b; }
-  
-  double average(int a [], int size) {
-    double sum = 0;
-    for(int i=0; i<size; i++)
-      sum += a[i];
-    return sum/size;
+
+template <class T>
+T add(T data [], int n) { // 배열 data에서 n개의 원소를 합한 결과를 리턴
+  T sum = 0;
+  for(int i=0; i<n; i++) {
+    sum += data[i];
   }
+  return sum; // sum와 타입과 리턴 타입이 모두 T로 선언되어 있음
+}
+
+template<class T>
+class MyOptional {
+  T value;
+public:
+  MyOptional() : value(T()) {} // Default constructor initializing value to default constructed T
+  MyOptional(T value) : value(value) {}
+};
+
+template <class T>
+class MyStack {
+  int tos; // Top of Stack
+  T data[100];
+public:
   
-};
-
-class Fluid {
-
-public:
-  virtual void isTakable() = 0;
-  virtual ~Fluid() {
-    cout << "Fluid was deinit" << endl;
-  };
-  double amount;
-  bool isTakableProperty;
-};
-
-class Water: public Fluid {
-public:
-  virtual void isTakable() {
-    this->isTakableProperty = true;
+  MyStack();
+  void push(T element);
+  T pop();
+  MyOptional<T> popOptional() {
+    MyOptional<T> retData;
+    if(tos == - 1) {
+      cout << "stack Empty";
+      return retData;
+    }
+    retData = MyOptional<T>(data[tos--]);
+    return retData;
   }
-  
 };
 
-class Cola: public Fluid {
-public:
-  virtual ~Cola() {
-    cout << "deinit Cola" << endl;
-  }
-  virtual void isTakable() {
-    cout << "not Takable" << endl;
-  };
+template <class T>
+MyStack<T>::MyStack() {
+  tos = -1;
 };
+
+
+
+template <class T>
+void MyStack<T>::push(T element) {
+  if (tos == 99) {
+    cout << "stack Full" << endl;
+    return;
+  }
+  tos++;
+  data[tos] = element;
+}
+
+template <class T>
+T MyStack<T>::pop() {
+  T retData;
+  if(tos == - 1) {
+    cout << "stack Empty" << endl;
+    return 0;
+  }
+  retData = data[tos--];
+  return retData;
+}
+
+
+
 int main() {
-  Cola thisCola;
-  thisCola.isTakable();
+  MyStack<int> iStack;
+  iStack.push(3);
+  cout << iStack.pop() << endl;
+  
+  auto doubleStack = MyStack<double>();
+  doubleStack.push(3.5);
+  cout << doubleStack.pop() << endl;
+  
+  MyStack<char> *p = new MyStack<char>();
+  p->push('a');
+  cout << p->pop() << p->pop() << endl;
+  delete p;
+  
+  auto ss = MyStack<Youtuber>();
+  ss.push(Youtuber());
+  MyOptional<Youtuber> popedValue = ss.popOptional();
 }
