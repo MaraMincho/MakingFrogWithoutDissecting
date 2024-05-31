@@ -25,6 +25,7 @@ protected:
 public:
   Screen(string name, int price, int row, int col); 
   ~Screen();
+  
   void showSeatMap(); // 좌석 예약 여부 맵으로 보기
   virtual void showMovieMenu(); // 영화 예매 메뉴
   virtual void showMovieInfo() = 0; // 영화 소개 정보
@@ -32,8 +33,25 @@ public:
   void reserveTicket(); // 좌석 예약하기
   Ticket* getTicket(int row, int col) {
     // Assuming a row-major order
-    return &pSeatArray[row][col];
+    if (0 <= row && row < nRowMax && 0 <= col && col < nColMax) {
+      return &pSeatArray[row][col];
+    }
+    return nullptr;
   };
+  
+  void changeTicket();// 좌석 변경
+  
+  Ticket* getTicket(int id) {
+    for (int row = 0; row < nRowMax; row ++) {
+      for( int col = 0; col < nColMax; col ++) {
+        Ticket * currentTicket = getTicket(row, col);
+        if (currentTicket->getReservedID() == id) {
+          return currentTicket;
+        }
+      }
+    }
+    return nullptr;
+  }
 };
 
 class CGVScreen : public Screen {

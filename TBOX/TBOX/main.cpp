@@ -35,6 +35,9 @@ int main() {
       case 3: //좌석 예약하기
         screen->reserveTicket();
         break;
+      case 4:
+        screen->changeTicket();
+        break;
       case 7: // 스크린 메인 메뉴
         bScreenMenu = true;
         break;
