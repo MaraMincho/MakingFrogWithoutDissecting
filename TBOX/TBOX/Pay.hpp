@@ -59,17 +59,10 @@ public:
 class PaymentSystem {
 private:
   Pay* payment[4];
-  static PaymentSystem* paymentInstance;
-  
   
 public:
   PaymentSystem();
-  static PaymentSystem* shared() {
-    if (paymentInstance == nullptr) {
-      paymentInstance = new PaymentSystem();
-    }
-    return paymentInstance;
-  }
+  ~PaymentSystem();
   
   void paymentProcess(int amount, Ticket* ticket);
   Pay* getPay(int ind) {
@@ -79,5 +72,4 @@ public:
     return nullptr;
   }
 };
-
 #endif

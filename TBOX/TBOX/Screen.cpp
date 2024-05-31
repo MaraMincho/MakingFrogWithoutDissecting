@@ -157,7 +157,7 @@ void Screen::payment() {
   }
   
   printPaymentDescription();
-  PaymentSystem* paymentSystem = new PaymentSystem();
+  PaymentSystem * paymentSystem = new PaymentSystem;
   paymentSystem->paymentProcess(getTicketPrice(), currentTicket);
 }
 

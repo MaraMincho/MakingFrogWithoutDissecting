@@ -66,6 +66,12 @@ PaymentSystem::PaymentSystem() {
     payment[BANK_TRANSFER_PAYMENT] = new BankTransfer();
     payment[CREDIT_CARD_PAYMENT] = new CardPay();
 }
+PaymentSystem::~PaymentSystem() {
+  for (int i = 0; i < 4; i ++) {
+    delete payment[i];
+  }
+  
+}
 
 
 void PaymentSystem::paymentProcess(int amount, Ticket* ticket) {
