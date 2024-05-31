@@ -38,6 +38,9 @@ int main() {
       case 4:
         screen->changeTicket();
         break;
+      case 5:
+        screen->payment();
+        break;
       case 7: // 스크린 메인 메뉴
         bScreenMenu = true;
         break;

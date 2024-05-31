@@ -4,7 +4,7 @@
 //
 //  Created by MaraMincho on 5/30/24.
 //
-
+#pragma once
 #ifndef Ticket_hpp
 #define Ticket_hpp
 
@@ -19,8 +19,9 @@ class Ticket {
   int nReservedID; // 예약 번호
   int nPayAmount; // 결제 금액
   int nPayMethod; // 결제 수단
+
 public:
-  Ticket() {} 
+  Ticket() {}
   void setCheck(char check) { charCheck = check; }
   char getCheck() { return charCheck; }
   
@@ -29,6 +30,10 @@ public:
   // 좌석 예약 번호 저장
   void setReservedID(int reserved) { nReservedID = reserved; }
   int getReservedID() { return nReservedID; }
+  
+  void setPayAmount(int amount) { nPayAmount = amount; }
+  int getPayAmount() { return nPayAmount;}
+  void setPayMethod(int method) { nPayMethod = method; }
 };
 
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E800842A2C09707700CFB3A9 /* Pay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E80084282C09707700CFB3A9 /* Pay.cpp */; };
 		E8D411C72C0832A60072F0A5 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E8D411C62C0832A60072F0A5 /* main.cpp */; };
 		E8D411CF2C0832E70072F0A5 /* TicketBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E8D411CD2C0832E70072F0A5 /* TicketBox.cpp */; };
 		E8D411D22C08331C0072F0A5 /* Screen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E8D411D02C08331C0072F0A5 /* Screen.cpp */; };
@@ -26,6 +27,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E80084282C09707700CFB3A9 /* Pay.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Pay.cpp; sourceTree = "<group>"; };
+		E80084292C09707700CFB3A9 /* Pay.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Pay.hpp; sourceTree = "<group>"; };
 		E8D411C32C0832A60072F0A5 /* TBOX */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TBOX; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8D411C62C0832A60072F0A5 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		E8D411CD2C0832E70072F0A5 /* TicketBox.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TicketBox.cpp; sourceTree = "<group>"; };
@@ -73,6 +76,8 @@
 				E8D411D12C08331C0072F0A5 /* Screen.hpp */,
 				E8D411D32C0833480072F0A5 /* Ticket.cpp */,
 				E8D411D42C0833480072F0A5 /* Ticket.hpp */,
+				E80084282C09707700CFB3A9 /* Pay.cpp */,
+				E80084292C09707700CFB3A9 /* Pay.hpp */,
 			);
 			path = TBOX;
 			sourceTree = "<group>";
@@ -134,6 +139,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E800842A2C09707700CFB3A9 /* Pay.cpp in Sources */,
 				E8D411C72C0832A60072F0A5 /* main.cpp in Sources */,
 				E8D411CF2C0832E70072F0A5 /* TicketBox.cpp in Sources */,
 				E8D411D22C08331C0072F0A5 /* Screen.cpp in Sources */,

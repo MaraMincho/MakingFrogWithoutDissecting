@@ -11,7 +11,7 @@
 #include <iostream>
 #include <cstring>
 #include "Ticket.hpp"
-#include <map>
+#include "Pay.hpp"
 
 using namespace std;
 class Screen {
@@ -40,7 +40,6 @@ public:
   };
   
   void changeTicket();// 좌석 변경
-  
   Ticket* getTicket(int id) {
     for (int row = 0; row < nRowMax; row ++) {
       for( int col = 0; col < nColMax; col ++) {
@@ -52,6 +51,11 @@ public:
     }
     return nullptr;
   }
+  
+  int getTicketPrice() { return nTicketPrice; }
+  void payment(); // 결제하기
+  void printPaymentDescription();
+  
 };
 
 class CGVScreen : public Screen {

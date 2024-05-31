@@ -112,25 +112,24 @@ void Screen::changeTicket() {
   // 기존 티켓 가져오기
   int userInputTicketReserveID;
   cin >> userInputTicketReserveID;
-  Ticket * currentTicket = getTicket(userInputTicketReserveID);
   
+  Ticket * currentTicket = getTicket(userInputTicketReserveID);
   if (currentTicket == nullptr){
     cout << "잘못된 티켓 번호 입니다." << endl << endl;
     return;
   }
   
+  int userInputCol, userInputRow;
   cout << "좌석 행 번호 입력 (" << this->nColMax << " ~ 1) : ";
-  int userInputCol;
   cin >> userInputCol;
-  
   cout << "좌석 열 번호 입력 (" << this->nRowMax << " ~ 1) : ";
-  int userInputRow;
   cin >> userInputRow;
   
   // 가중치 조정
   userInputCol -= 1;
   userInputRow -= 1;
   Ticket* targetOfChangeTicket = getTicket(userInputRow, userInputCol);
+  
   if (targetOfChangeTicket != nullptr && targetOfChangeTicket->getCheck() == SEAT_EMPTY_MARK) {
     currentTicket->setReservedID(NOT_RESERVED_ID);
     currentTicket->setCheck(SEAT_EMPTY_MARK);
@@ -142,6 +141,32 @@ void Screen::changeTicket() {
   }else {
     cout << "이미 예약된 좌석입니다. 다른 좌석을 입력해 주세요" << endl << endl;
   }
+}
+
+void Screen::payment() {
+  cout<< "[좌석 예약 결제]" << endl;
+  cout<< "예약 번호 입력: ";
+  
+  // 기존 티켓 가져오기
+  int userInputTicketReserveID;
+  cin >> userInputTicketReserveID;
+  
+  Ticket * currentTicket = getTicket(userInputTicketReserveID);
+  if (currentTicket == nullptr){
+    cout << "잘못된 티켓 번호 입니다." << endl << endl;
+    return;
+  }
+  
+  printPaymentDescription();
+  PaymentSystem* paymentSystem = new PaymentSystem();
+  paymentSystem->paymentProcess(getTicketPrice(), currentTicket);
+}
+
+void Screen::printPaymentDescription() {
+  cout << "결제 방식 선택" << endl;
+  cout << "1. 모바일 결제" << endl;
+  cout << "2. 은행 이체 결제" << endl;
+  cout << "결제 방식 선택" << endl;
 }
 
 // MARK: - CGV Screen
