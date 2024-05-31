@@ -41,6 +41,7 @@ void Screen::showMovieMenu() {
   cout << "2. 예약 현황" << endl;
   cout << "3. 예약 하기" << endl;
   cout << "4. 좌석 변경" << endl;
+  cout << "5. 예약 결제" << endl;
   cout << "7. 메인 메뉴 이동" << endl << endl;
 }
 
@@ -131,13 +132,11 @@ void Screen::changeTicket() {
   Ticket* targetOfChangeTicket = getTicket(userInputRow, userInputCol);
   
   if (targetOfChangeTicket != nullptr && targetOfChangeTicket->getCheck() == SEAT_EMPTY_MARK) {
-    currentTicket->setReservedID(NOT_RESERVED_ID);
-    currentTicket->setCheck(SEAT_EMPTY_MARK);
-    
-    targetOfChangeTicket->setReservedID(userInputTicketReserveID);
-    targetOfChangeTicket->setCheck(SEAT_RESERVED_MARK);
-    
-    cout << " 예약번호 " << userInputTicketReserveID << " 행[" << userInputRow << "] 열[" << userInputCol << "] 좌석으로 변경되었습니다." << endl << endl;
+    auto temp = *currentTicket;
+    pSeatArray[currentTicket->getRow()][currentTicket->getCol()] = *targetOfChangeTicket;
+    pSeatArray[targetOfChangeTicket->getRow()][targetOfChangeTicket->getCol()] = temp;
+
+    cout << " 예약번호 " << userInputTicketReserveID << " 행[" << userInputRow + 1 << "] 열[" << userInputCol + 1 << "] 좌석으로 변경되었습니다." << endl << endl;
   }else {
     cout << "이미 예약된 좌석입니다. 다른 좌석을 입력해 주세요" << endl << endl;
   }

@@ -34,6 +34,9 @@ public:
   void setPayAmount(int amount) { nPayAmount = amount; }
   int getPayAmount() { return nPayAmount;}
   void setPayMethod(int method) { nPayMethod = method; }
+  
+  int getRow() { return nRow; }
+  int getCol() { return nCol; }
 };
 
 
