@@ -10,6 +10,8 @@
 
 #include <iostream>
 #include "Screen.hpp"
+#include "Statistics.hpp"
+#define TICKETBOX_MANAGER_PWD "admin"
 using namespace std;
 
 class TicketBox {
@@ -31,6 +33,7 @@ public:
   ~TUKoreaTBox();
   Screen * selectMenu() override;
   void Initialize();
+  void Manage();
 };
 
 

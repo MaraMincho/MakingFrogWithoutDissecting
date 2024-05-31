@@ -56,6 +56,9 @@ public:
   void payment(); // 결제하기
   void printPaymentDescription();
   
+  int getRowMax() { return nRowMax; }
+  int getColMax() { return nColMax; }
+  Ticket** getTicketArray() { return pSeatArray; }
 };
 
 class CGVScreen : public Screen {

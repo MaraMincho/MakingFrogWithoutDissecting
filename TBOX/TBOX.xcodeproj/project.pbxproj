@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E800842A2C09707700CFB3A9 /* Pay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E80084282C09707700CFB3A9 /* Pay.cpp */; };
+		E800842D2C09A80B00CFB3A9 /* Statistics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E800842B2C09A80B00CFB3A9 /* Statistics.cpp */; };
 		E8D411C72C0832A60072F0A5 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E8D411C62C0832A60072F0A5 /* main.cpp */; };
 		E8D411CF2C0832E70072F0A5 /* TicketBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E8D411CD2C0832E70072F0A5 /* TicketBox.cpp */; };
 		E8D411D22C08331C0072F0A5 /* Screen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E8D411D02C08331C0072F0A5 /* Screen.cpp */; };
@@ -29,6 +30,8 @@
 /* Begin PBXFileReference section */
 		E80084282C09707700CFB3A9 /* Pay.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Pay.cpp; sourceTree = "<group>"; };
 		E80084292C09707700CFB3A9 /* Pay.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Pay.hpp; sourceTree = "<group>"; };
+		E800842B2C09A80B00CFB3A9 /* Statistics.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Statistics.cpp; sourceTree = "<group>"; };
+		E800842C2C09A80B00CFB3A9 /* Statistics.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Statistics.hpp; sourceTree = "<group>"; };
 		E8D411C32C0832A60072F0A5 /* TBOX */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TBOX; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8D411C62C0832A60072F0A5 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		E8D411CD2C0832E70072F0A5 /* TicketBox.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TicketBox.cpp; sourceTree = "<group>"; };
@@ -70,6 +73,8 @@
 			isa = PBXGroup;
 			children = (
 				E8D411C62C0832A60072F0A5 /* main.cpp */,
+				E800842B2C09A80B00CFB3A9 /* Statistics.cpp */,
+				E800842C2C09A80B00CFB3A9 /* Statistics.hpp */,
 				E8D411CD2C0832E70072F0A5 /* TicketBox.cpp */,
 				E8D411CE2C0832E70072F0A5 /* TicketBox.hpp */,
 				E8D411D02C08331C0072F0A5 /* Screen.cpp */,
@@ -139,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E800842D2C09A80B00CFB3A9 /* Statistics.cpp in Sources */,
 				E800842A2C09707700CFB3A9 /* Pay.cpp in Sources */,
 				E8D411C72C0832A60072F0A5 /* main.cpp in Sources */,
 				E8D411CF2C0832E70072F0A5 /* TicketBox.cpp in Sources */,

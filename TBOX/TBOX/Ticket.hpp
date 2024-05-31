@@ -37,6 +37,7 @@ public:
   
   int getRow() { return nRow; }
   int getCol() { return nCol; }
+  bool isChargeTicket() { return getCheck() == SEAT_COMPLETION_MARK; }
 };
 
 
