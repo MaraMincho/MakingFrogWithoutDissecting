@@ -1,28 +1,45 @@
 #include <iostream>
+#include <string> 
 using namespace std;
 
-// baseexp 값을 계산하여 ret에 저장
-bool getExp(int base, int exp, int &ret) {
-  if(base <= 0 || exp <= 0) {
-    return false;
+class MyException { // 사용자가 만드는 기본 예외 클래스 선언
+  int lineNo;
+  string func, msg;
+public:
+  MyException(int n, string f, string m) {
+    lineNo = n; func = f; msg = m;
   }
-  int value=1;
-  for(int n=0; n<exp; n++)
-    value = value * base;
-  
-  ret = value;
-  return true;
-}
-int main() {
-  int v = 0;
-  if(getExp(2, 3, v)) // v = 23 = 8. getExp()는 true 리턴
-    cout << "2의 3승은 " << v << "입니다." << endl;
-  else
-    cout << " 오류. 2의 3승은 " << "계산할 수 없습니다." << endl;
-  
-  int e=0;
-  if(getExp(2, -3, e)) // 2-3 ? getExp()는 false 리턴
-    cout << "2의 -3승은 " << e << "입니다." << endl;
-  else
-    cout << "오류. 2의 -3승은 " << "계산할 수 없습니다." << endl;
+  void print() {
+    cout << func << ":" << lineNo << " ," << msg << endl;
+  }
+};
+
+
+class DivideByZeroException : public MyException { // 0으로 나누는 예외 클래스 선언
+public:
+  DivideByZeroException(int lineNo, string func, string msg): MyException(lineNo, func, msg) { }
+};
+
+class InvalidInputException : public MyException { // 잘못된 입력 예외 클래스 선언
+public:
+  InvalidInputException(int lineNo, string func, string msg): MyException(lineNo, func, msg) { }
+};
+
+int main() { int x, y;
+  try { 
+    cout << "나눗셈을 합니다. 두 개의 양의 정수를 입력하세요>>";
+    cin >> x >> y;
+    
+    if(x < 0 || y < 0)
+      throw InvalidInputException(34, "main()", "음수 입력 예외 발생");
+    
+    if(y == 0)
+      throw DivideByZeroException(36, "main()", "0으로 나누는 예외 발생");
+    
+    cout << (double)x / (double)y;
+  } catch(DivideByZeroException &e) {
+    e.print();
+  } catch(InvalidInputException &e) {
+    e.print();
+  }
 }
