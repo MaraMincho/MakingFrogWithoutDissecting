@@ -7,8 +7,8 @@
 
 import Combine
 import ComposableArchitecture
-import UIKit
 import SwiftUI
+import UIKit
 
 // 첫번째 ViewController
 final class FirstViewController: UIHostingController<FirstView> {
@@ -21,6 +21,7 @@ final class FirstViewController: UIHostingController<FirstView> {
       reducer
     })))
   }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -39,7 +40,8 @@ final class FirstViewController: UIHostingController<FirstView> {
       }
   }
   
-  @MainActor required dynamic init?(coder aDecoder: NSCoder) {
+  @available(*, unavailable)
+  @MainActor dynamic required init?(coder _: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
 }
@@ -49,7 +51,6 @@ enum FirstViewPushDestinations {
   case secondScreen
   case thirdScreen
 }
-
 
 // 첫번째 뷰 리듀서
 @Reducer
@@ -64,11 +65,10 @@ struct FirstReducer {
     case push(FirstViewPushDestinations)
   }
   
-  
   var publisher: PassthroughSubject<FirstViewPushDestinations, Never> = .init()
   
   var body: some ReducerOf<Self> {
-    Reduce { state, action in
+    Reduce { _, action in
       switch action {
       case .navigationSecondScreen:
         return .send(.push(.secondScreen))
@@ -120,7 +120,7 @@ final class SecondViewController: UIHostingController<SecondView> {
     
     navigationSubscriber = reducer
       .publisher
-      .sink{[weak self] val in
+      .sink { [weak self] val in
         let pushViewController: UIViewController
         switch val {
         case .thirdScreen:
@@ -130,7 +130,8 @@ final class SecondViewController: UIHostingController<SecondView> {
       }
   }
   
-  @MainActor required dynamic init?(coder aDecoder: NSCoder) {
+  @available(*, unavailable)
+  @MainActor dynamic required init?(coder _: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
 }
@@ -153,10 +154,10 @@ struct SecondReducer {
   }
   
   var body: some ReducerOf<Self> {
-    Reduce { state, action in
+    Reduce { _, action in
       switch action {
       case .navigationThirdScreen:
-        return .none
+        return .send(.push(.thirdScreen))
       case let .push(val):
         publisher.send(val)
         return .none
@@ -164,8 +165,6 @@ struct SecondReducer {
     }
   }
 }
-
-
 struct SecondView: View {
   var store: StoreOf<SecondReducer>
   var body: some View {
@@ -181,10 +180,6 @@ struct SecondView: View {
     }
   }
 }
-
-
-
-
 
 final class ThirdViewController: UIHostingController<ThirdView> {
   var reducer: ThirdReducer
@@ -203,7 +198,7 @@ final class ThirdViewController: UIHostingController<ThirdView> {
     
     navigationSubscriber = reducer
       .publisher
-      .sink{[weak self] val in
+      .sink { [weak self] val in
         let pushViewController: UIViewController
         switch val {
         case .secondScreen:
@@ -213,7 +208,8 @@ final class ThirdViewController: UIHostingController<ThirdView> {
       }
   }
   
-  @MainActor required dynamic init?(coder aDecoder: NSCoder) {
+  @available(*, unavailable)
+  @MainActor dynamic required init?(coder _: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
 }
@@ -236,7 +232,7 @@ struct ThirdReducer {
   }
   
   var body: some ReducerOf<Self> {
-    Reduce { state, action in
+    Reduce { _, action in
       switch action {
       case .navigationSecondScreen:
         return .send(.push(.secondScreen))
@@ -247,7 +243,6 @@ struct ThirdReducer {
     }
   }
 }
-
 
 struct ThirdView: View {
   var store: StoreOf<ThirdReducer>
@@ -264,5 +259,3 @@ struct ThirdView: View {
     }
   }
 }
-
-
