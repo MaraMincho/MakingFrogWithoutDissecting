@@ -87,6 +87,7 @@ struct FirstView: View {
   var store: StoreOf<FirstReducer>
   var body: some View {
     VStack(spacing: 0) {
+      Text("UIHostinhController를 통해 생성된 뷰")
       Button {
         store.send(.navigationSecondScreen)
       } label: {
@@ -123,7 +124,7 @@ final class SecondViewController: UIHostingController<SecondView> {
         let pushViewController: UIViewController
         switch val {
         case .thirdScreen:
-          pushViewController = UIViewController()
+          pushViewController = ThirdViewController(state: .init(), reducer: .init())
         }
         self?.navigationController?.pushViewController(pushViewController, animated: true)
       }
