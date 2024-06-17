@@ -103,6 +103,9 @@ struct FirstView: View {
 
 @Reducer
 struct SecondReducer {
+  init(t: Int) {
+    
+  }
   struct State: Equatable {
     var onAppear: Bool = false
   }
