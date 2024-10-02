@@ -10,6 +10,10 @@
 		E80425082BD36DCF0082E175 /* d2-01-GettingStarted-Counter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80425072BD36DCF0082E175 /* d2-01-GettingStarted-Counter.swift */; };
 		E80720C62BE8519B004C48F6 /* d12-03-Effects-Refreshable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80720C52BE8519B004C48F6 /* d12-03-Effects-Refreshable.swift */; };
 		E80720C82BE859A4004C48F6 /* d13-03-Effects-Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80720C72BE859A4004C48F6 /* d13-03-Effects-Timer.swift */; };
+		E8159B842C5A05F5007E55BD /* RootNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8159B822C5A05F5007E55BD /* RootNavigationView.swift */; };
+		E8159B852C5A05F5007E55BD /* RootNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8159B832C5A05F5007E55BD /* RootNavigation.swift */; };
+		E8159B882C5A062D007E55BD /* ChildNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8159B862C5A062D007E55BD /* ChildNavigationView.swift */; };
+		E8159B892C5A062D007E55BD /* ChildNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8159B872C5A062D007E55BD /* ChildNavigation.swift */; };
 		E8302EAE2BED18A9000B1FEA /* 04-Navigation-Lists-NavigateAndLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8302EAD2BED18A9000B1FEA /* 04-Navigation-Lists-NavigateAndLoad.swift */; };
 		E83109092BE7038F005C1BED /* d11-03-effects-longliving.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83109082BE7038F005C1BED /* d11-03-effects-longliving.swift */; };
 		E831090B2BE73029005C1BED /* TaskModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E831090A2BE73029005C1BED /* TaskModifier.swift */; };
@@ -37,6 +41,10 @@
 		E80425072BD36DCF0082E175 /* d2-01-GettingStarted-Counter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "d2-01-GettingStarted-Counter.swift"; sourceTree = "<group>"; };
 		E80720C52BE8519B004C48F6 /* d12-03-Effects-Refreshable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "d12-03-Effects-Refreshable.swift"; sourceTree = "<group>"; };
 		E80720C72BE859A4004C48F6 /* d13-03-Effects-Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "d13-03-Effects-Timer.swift"; sourceTree = "<group>"; };
+		E8159B822C5A05F5007E55BD /* RootNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootNavigationView.swift; sourceTree = "<group>"; };
+		E8159B832C5A05F5007E55BD /* RootNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootNavigation.swift; sourceTree = "<group>"; };
+		E8159B862C5A062D007E55BD /* ChildNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildNavigationView.swift; sourceTree = "<group>"; };
+		E8159B872C5A062D007E55BD /* ChildNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildNavigation.swift; sourceTree = "<group>"; };
 		E8302EAD2BED18A9000B1FEA /* 04-Navigation-Lists-NavigateAndLoad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "04-Navigation-Lists-NavigateAndLoad.swift"; sourceTree = "<group>"; };
 		E83109082BE7038F005C1BED /* d11-03-effects-longliving.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "d11-03-effects-longliving.swift"; sourceTree = "<group>"; };
 		E831090A2BE73029005C1BED /* TaskModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModifier.swift; sourceTree = "<group>"; };
@@ -73,6 +81,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E8159B802C5A05E2007E55BD /* TestViews */ = {
+			isa = PBXGroup;
+			children = (
+				E8159B812C5A05E8007E55BD /* NavigationTests */,
+			);
+			path = TestViews;
+			sourceTree = "<group>";
+		};
+		E8159B812C5A05E8007E55BD /* NavigationTests */ = {
+			isa = PBXGroup;
+			children = (
+				E8159B822C5A05F5007E55BD /* RootNavigationView.swift */,
+				E8159B832C5A05F5007E55BD /* RootNavigation.swift */,
+				E8159B862C5A062D007E55BD /* ChildNavigationView.swift */,
+				E8159B872C5A062D007E55BD /* ChildNavigation.swift */,
+			);
+			path = NavigationTests;
+			sourceTree = "<group>";
+		};
 		E8302EAC2BED189C000B1FEA /* 03 */ = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +129,7 @@
 			children = (
 				E88612772BDF3F1E0018F794 /* TIL-TCA-Info.plist */,
 				E848CE5B2BCB93250057A045 /* TIL_TCAApp.swift */,
+				E8159B802C5A05E2007E55BD /* TestViews */,
 				E8DC12542BE31E3A00847D78 /* TestContents */,
 				E848CE612BCB93270057A045 /* Preview Content */,
 				E88612732BDF3CD30018F794 /* 01 */,
@@ -259,6 +287,8 @@
 				E8302EAE2BED18A9000B1FEA /* 04-Navigation-Lists-NavigateAndLoad.swift in Sources */,
 				E85CDDCB2BE9B1FB00EE3FA6 /* d14-03-Efects-Websocket.swift in Sources */,
 				E80720C82BE859A4004C48F6 /* d13-03-Effects-Timer.swift in Sources */,
+				E8159B882C5A062D007E55BD /* ChildNavigationView.swift in Sources */,
+				E8159B892C5A062D007E55BD /* ChildNavigation.swift in Sources */,
 				E83109092BE7038F005C1BED /* d11-03-effects-longliving.swift in Sources */,
 				E8E16C222BEE54D000C42C0A /* 05-HigherOrderReducers-Recursion.swift in Sources */,
 				E88A98242BDBBC2B00172EDB /* d5-01-GettingStarted-OptionalState.swift in Sources */,
@@ -267,6 +297,8 @@
 				E84C8BB82BD1FE6900177D28 /* d1-01-GettingStarted-AlertsAndConfirmationDialogs.swift in Sources */,
 				E80720C62BE8519B004C48F6 /* d12-03-Effects-Refreshable.swift in Sources */,
 				E88612762BDF3D310018F794 /* FactClient.swift in Sources */,
+				E8159B842C5A05F5007E55BD /* RootNavigationView.swift in Sources */,
+				E8159B852C5A05F5007E55BD /* RootNavigation.swift in Sources */,
 				E874FEA22BD7FAEE008A9474 /* d3-01-GettingStarted-Bindings-Basics.swift in Sources */,
 				E874FEA52BD810CD008A9474 /* d4-01-GettingStarted-Bindings-Forms.swift in Sources */,
 				E84CE65A2BD414AB00BAB7B1 /* d2-01-NavgationView.swift in Sources */,
@@ -415,6 +447,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -445,6 +478,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

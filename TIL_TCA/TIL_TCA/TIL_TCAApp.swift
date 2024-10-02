@@ -12,48 +12,10 @@ import ComposableArchitecture
 struct TIL_TCAApp: App {
   var body: some Scene {
     WindowGroup {
-      
-      WebSocketView(
-        store: Store(initialState: WebSocket.State(receivedMessages: ["Hi"])) {
-          WebSocket()
-        }
-      )
-      
-      
+      RootNavigationView(store: .init(initialState: .init(), reducer: {
+        RootNavigation()
+          ._printChanges()
+      }))
     }
   }
 }
-
-
-func foo(initialClosure: () -> (), sar: Int) {
-  print("before")
-  initialClosure()
-  print("after")
-}
-func bar(initialClosure: @autoclosure () -> (), sar: Int) {
-  print("before")
-  initialClosure()
-  print("after")
-}
-
-//func maybeMain() {
-//  // Error
-//  foo(initialClosure: print("Im not auto closure"), sar: 0)
-//  // OK
-//  foo(initialClosure: {print("Im not auto closure")}, sar: 1)
-//  // OK
-//  foo(initialClosure: { print("Im not auto closure") }, sar: 2)
-//  
-//  // UsingAutoClosure
-//  bar(initialClosure: print("Im auto closure"), sar: 3)
-//}
-//
-//func makeStore() {
-//  CounterDemoView(store:
-//      .init(initialState: {
-//        Counter.State()
-//      }(), reducer: {
-//        Counter()
-//      })
-//  )
-//}
