@@ -133,7 +133,7 @@ struct AlertAndConfirmationDialog {
 }
 
 struct AlertAndConfirmationDialogView: View {
-  @Bindable var store: StoreOf<AlertAndConfirmationDialog>
+  var store: StoreOf<AlertAndConfirmationDialog>
 
   var body: some View {
     
@@ -159,8 +159,8 @@ struct AlertAndConfirmationDialogView: View {
       }
     }
     .navigationTitle("Alerts & Dialogs")
-    .alert($store.scope(state: \.alert, action: \.alert))
-    .confirmationDialog($store.scope(state: \.confirmationDialo, action: \.confirmationDialog))
+//    .alert($store.scope(state: \.alert, action: \.alert))
+//    .confirmationDialog($store.scope(state: \.confirmationDialo, action: \.confirmationDialog))
   }
 }
 
