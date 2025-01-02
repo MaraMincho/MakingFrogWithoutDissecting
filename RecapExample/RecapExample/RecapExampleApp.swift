@@ -1,14 +1,14 @@
 //
-//  TestApp.swift
-//  Test
+//  RecapExampleApp.swift
+//  RecapExample
 //
-//  Created by MaraMincho on 11/4/24.
+//  Created by MaraMincho on 1/2/25.
 //
 
 import SwiftUI
 
 @main
-struct TestApp: App {
+struct RecapExampleApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
